@@ -63,19 +63,15 @@ function setMaxAmount(statMaxAmountVar, newAmount) {
   localStorage.setItem(statMaxAmountVar, newAmount);
 }
 
-function addProgress(statType, statCurrentAmount, statProgressAmount, amount) {
-  let progressBar = document.getElementById(statType + "-progress-bar");
-  let currentAmount = localStorage.getItem(statCurrentAmount);
-  let newProgress = Number(currentAmount) + amount;
-  let max = progressBar.getAttribute("max");
+function addProgress(statType, statCurrentAmount, statProgressVar) {
+    let amount = document.getElementById(statType + '-input').value;
+    let progressBar = document.getElementById(statType + '-progress-bar');
+    let currentAmount = localStorage.getItem(statCurrentAmount);
+    let newProgress = Number(currentAmount) + Number(amount);
 
-  // If the new amount is larger than the max of the progress bar, return
-  if (newProgress > max) {
-    return;
-  }
+    localStorage.setItem(statCurrentAmount, newProgress);
+    setProgress(statType, statProgressVar);
 
-  localStorage.setItem(statCurrentAmount, newProgress);
-  setProgress(statType, statProgressAmount);
 }
 
 function toggleStatInfo(statType) {
