@@ -18,3 +18,17 @@
 a {
     text-decoration: none;
 }
+
+#time {
+    all: 50%;
+    padding-left: 5px;
+    position: absolute;
+}
+#workProgress {
+    width: 0%;
+    height: 10vh;
+    background: rgba(0, 255, 13, 0.842);
+    border-radius: 5px;
+    position: relative;
+    bottom: 0;
+  }
