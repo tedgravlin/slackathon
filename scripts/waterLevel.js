@@ -9,5 +9,5 @@ function setWaterLevel(x) {
     } else {
       clearInterval(waterInterval);
     }
-  }, 0.01);
+  }, 0.1);
 }

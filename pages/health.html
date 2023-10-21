@@ -5,6 +5,7 @@
     <!-- Import CSS and Scripts-->
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/health.css">
+    <script src="../scripts/health.js"></script>
     <!-- Scale page to display width -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Page Title -->
@@ -20,14 +21,18 @@
             <li><a href="./health.html"><img src="/assets/icons/exercise.svg" />Health</a></li>
         </ul>
     </nav>
+
     <!-- Site Header and Navigation-->
     <header>
         <h1> Health Life </h1>
     </header>
     <!-- Main Page -->
     <main>
-        <div class="card container">  
-            <p>Sleep</p>
+        <div class="card container sleep" id="sleep">  
+            <h2>Sleep</h2>
+            <p class="sleep-goal" id="sleep-goal">Sleep Goal: </p> 
+            <p id="prev-sleep">Last Night's Sleep: </p>
+            
         </div>
         <div class="card container">
             <p>Exercise</p>
