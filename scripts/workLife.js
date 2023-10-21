@@ -7,13 +7,13 @@ function onLoad() {
     if (localStorage.getItem("startTime") != null) {
         startTime.setTime(localStorage.getItem("startTime"));
     } else {
-        startTime.setHours(12, 0, 0);
+        startTime.setHours(9, 0, 0);
     }
 
     if (localStorage.getItem("endTime") != null) {
         endTime.setTime(localStorage.getItem("endTime"));
     } else {
-        startTime.setHours(12, 0, 0);
+        endTime.setHours(17, 0, 0);
     }
 
     timeProgress();
@@ -46,24 +46,53 @@ function timeProgress() {
 
         document.getElementById("time").innerHTML = x + "%";
         progress.style.width = x + "%";
+
+        let timesMessage = "";
+        let startHour = startTime.getHours() > 12 ? startTime.getHours() - 12 : startTime.getHours();
+        let endHour = endTime.getHours() > 12 ? endTime.getHours() - 12: endTime.getHours();
+        let startMinutes = (startTime.getMinutes() + "").padStart(2, '0');
+        let endMinutes = (endTime.getMinutes() + "").padStart(2, '0');
+        let startMeridiem = startTime.getHours() > 12 ? "pm " : "am ";
+        let endMeridiem = endTime.getHours() > 12 ? "pm " : "am ";
+        let startWork = d2.getTime() < startTime.getTime() ? "Work starts at " : "Work started at ";
+        let endWork = d2.getTime() < endTime.getTime() ? "work ends at " : "work ended at ";
+
+        timesMessage = startWork + startHour + ":" + startMinutes + startMeridiem + " and " + endWork + endHour
+            + ":" + endMinutes + endMeridiem;
+
+        document.getElementById("timesSet").innerHTML = timesMessage;
+
+        let currHour = d2.getHours() > 12 ? d2.getHours() - 12 : d2.getHours();
+        let currMeridiem = d2.getHours() > 12 ? "pm" : "am";
+
+        if (d2.getTime() < endTime.getTime()) {
+            document.getElementById("timeCurrent").innerHTML = currHour + ":" + d2.getMinutes() + currMeridiem;
+        } else {
+            document.getElementById("timeCurrent").innerHTML = "";
+        }
     }
 }
 
 function validateForm() {
-    if (document.forms["timeForm"]["startTime"].value != "" && document.forms["timeForm"]["endTime"].value != "") {
+    if (document.forms["timeForm"]["startTime"].value != "") {
         let start = document.forms["timeForm"]["startTime"].value;
-        let end = document.forms["timeForm"]["endTime"].value;
 
         let startT = (start + "").split(":");
-        let endT = (end + "").split(":");
 
         startTime.setHours(Number(startT[0]));
         startTime.setMinutes(Number(startT[1]));
 
+        localStorage.setItem("startTime", startTime.getTime());
+    }
+
+    if (document.forms["timeForm"]["endTime"].value != "") {
+        let end = document.forms["timeForm"]["endTime"].value;
+
+        let endT = (end + "").split(":");
+
         endTime.setHours(Number(endT[0]));
         endTime.setMinutes(Number(endT[1]));
 
-        localStorage.setItem("startTime", startTime.getTime());
         localStorage.setItem("endTime", endTime.getTime());
     }
 }
