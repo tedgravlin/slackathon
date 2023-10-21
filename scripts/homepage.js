@@ -20,6 +20,21 @@ function devValues() {
   setMaxAmount("foodMaxAmount", 1500);
   setProgress("food", "foodProgress");
   getProgress();
+  // Work
+  setCurrentAmount("workCurrentAmount", 500);
+  setMaxAmount("workMaxAmount", 1500);
+  setProgress("work", "workProgress");
+  getProgress();
+  // Sleep
+  setCurrentAmount("sleepCurrentAmount", 500);
+  setMaxAmount("sleepMaxAmount", 1500);
+  setProgress("sleep", "sleepProgress");
+  getProgress();
+  // Exercise
+  setCurrentAmount("exerciseCurrentAmount", 500);
+  setMaxAmount("exerciseMaxAmount", 1500);
+  setProgress("exercise", "exerciseProgress");
+  getProgress();
 }
 
 function getProgress() {
@@ -72,6 +87,8 @@ function addProgress(statType, statCurrentAmount, statProgressVar) {
     localStorage.setItem(statCurrentAmount, newProgress);
     setProgress(statType, statProgressVar);
 
+    // Close the stat info
+    toggleStatInfo(statType);
 }
 
 function toggleStatInfo(statType) {
