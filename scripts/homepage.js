@@ -1,38 +1,57 @@
 window.addEventListener("load", (event) => {
+    // Water
+    setCurrentAmount('waterCurrentAmount', 1);
+    setMaxAmount('waterMaxAmount', 8)
+    setProgress('water', 'waterProgress');
+    // Food
+    setCurrentAmount('foodCurrentAmount', 500);
+    setMaxAmount('foodMaxAmount', 1500)
+    setProgress('food', 'foodProgress');
     getProgress();
 });
 
 function getProgress() {
     // Water
-    document.getElementById('water-progress-bar').setAttribute("value", localStorage.getItem('water'));
+    document.getElementById('water-progress-bar').setAttribute("value", localStorage.getItem('waterProgress'));
     // Food
-    document.getElementById('food-progress-bar').setAttribute("value", localStorage.getItem('food'));
+    document.getElementById('food-progress-bar').setAttribute("value", localStorage.getItem('foodProgress'));
     // Work
-    document.getElementById('work-progress-bar').setAttribute("value", localStorage.getItem('work'));
+    document.getElementById('work-progress-bar').setAttribute("value", localStorage.getItem('workProgress'));
     // Sleep
-    document.getElementById('sleep-progress-bar').setAttribute("value", localStorage.getItem('sleep'));
+    document.getElementById('sleep-progress-bar').setAttribute("value", localStorage.getItem('sleepProgress'));
     // Exercise
-    document.getElementById('exercise-progress-bar').setAttribute("value", localStorage.getItem('exercise'));
+    document.getElementById('exercise-progress-bar').setAttribute("value", localStorage.getItem('exerciseProgress'));
 }
 
-function setProgress(stat, newProgress) {
-    localStorage.setItem(stat, newProgress);
-    document.getElementById(stat + '-progress-bar').setAttribute("value", newProgress);
+function setProgress(statType, statProgressVar) {
+    let currentAmount = localStorage.getItem(statType + 'CurrentAmount');
+    let maxAmount = localStorage.getItem(statType + 'MaxAmount');
+    let progress = (currentAmount / maxAmount) * 100;
+    localStorage.setItem(statProgressVar, progress);
+    document.getElementById(statType + '-progress-bar').setAttribute("value", progress);
 }
 
-function addProgress(stat, amount) {
-    let progressBar = document.getElementById(stat + '-progress-bar');
-    let currentAmount = localStorage.getItem(stat);
-    let newAmount = Number(currentAmount) + amount;
+function setCurrentAmount(statCurrentAmountVar, newAmount) {
+    localStorage.setItem(statCurrentAmountVar, newAmount);
+}
+
+function setMaxAmount(statMaxAmountVar, newAmount) {
+    localStorage.setItem(statMaxAmountVar, newAmount);
+}
+
+function addProgress(statType, statCurrentAmount, statProgressAmount, amount) {
+    let progressBar = document.getElementById(statType + '-progress-bar');
+    let currentAmount = localStorage.getItem(statCurrentAmount);
+    let newProgress = Number(currentAmount) + amount;
     let max = progressBar.getAttribute("max");
 
     // If the new amount is larger than the max of the progress bar, return
-    if (newAmount > max) {
+    if (newProgress > max) {
         return;
     }
 
-    localStorage.setItem(stat, newAmount);
-    progressBar.setAttribute("value", newAmount);
+    localStorage.setItem(statCurrentAmount, newProgress);
+    setProgress(statType, statProgressAmount);
 }
 
 function toggleStatInfo(statType) {

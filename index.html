@@ -33,10 +33,10 @@
                 <h2><a href="./pages/water.html">Consumption</a></h2>
                 <div onclick="toggleStatInfo('water')" class="stat">
                     <img src="/assets/icons/water.svg" />
-                    <progress id="water-progress-bar" onclick="" max="100" value="0"></progress>
+                    <progress id="water-progress-bar" max="100" value="0"></progress>
                 </div>
                 <div class="stat-info" id="water-stat-info">
-                    <button onclick="addProgress('water', 10)">Add</button>
+                    <button onclick="addProgress('water', 'waterCurrentAmount', 'waterProgress', 1)">Add</button>
                     <button>Settings</button>
                 </div>
                 <div class="stat">
