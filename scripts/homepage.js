@@ -1,10 +1,5 @@
 window.addEventListener("load", (event) => {
     getProgress();
-    setProgress('water', 30);
-    setProgress('food', 50);
-    setProgress('work', 20);
-    setProgress('sleep', 90);
-    setProgress('exercise', 50);
 });
 
 function getProgress() {
@@ -23,4 +18,34 @@ function getProgress() {
 function setProgress(stat, newProgress) {
     localStorage.setItem(stat, newProgress);
     document.getElementById(stat + '-progress-bar').setAttribute("value", newProgress);
+}
+
+function addProgress(stat, amount) {
+    let progressBar = document.getElementById(stat + '-progress-bar');
+    let currentAmount = localStorage.getItem(stat);
+    let newAmount = Number(currentAmount) + amount;
+    let max = progressBar.getAttribute("max");
+
+    // If the new amount is larger than the max of the progress bar, return
+    if (newAmount > max) {
+        return;
+    }
+
+    localStorage.setItem(stat, newAmount);
+    progressBar.setAttribute("value", newAmount);
+}
+
+function toggleStatInfo(statType) {
+    let statInfo = document.getElementById(statType + '-stat-info');
+
+    if(statInfo.style.display == '') {
+        statInfo.style.display = "none";
+    }
+
+    if (statInfo.style.display === 'none') {
+        statInfo.style.display = "block";
+    }
+    else if (statInfo.style.display === 'block') {
+        statInfo.style.display = "none";
+    }
 }

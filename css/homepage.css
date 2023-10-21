@@ -39,7 +39,14 @@ div.stat img {
 div.stat progress {
     width: 75%;
 }
-
+div.stat {
+    cursor: pointer;
+}
 div.stat:hover {
     background-color: rgba(0, 72, 255, 0.187);
+}
+
+div.stat-info {
+    display: none;
+    text-align: center;
 }
