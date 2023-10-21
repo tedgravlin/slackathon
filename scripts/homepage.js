@@ -1,5 +1,17 @@
 window.addEventListener("load", (event) => {
   // Water
+  //   setCurrentAmount("waterCurrentAmount", 1);
+  //   setMaxAmount("waterMaxAmount", 8);
+  //   setProgress("water", "waterProgress");
+  //   // Food
+  //   setCurrentAmount("foodCurrentAmount", 500);
+  //   setMaxAmount("foodMaxAmount", 1500);
+  //   setProgress("food", "foodProgress");
+  getProgress();
+});
+
+function devValues() {
+  // Water
   setCurrentAmount("waterCurrentAmount", 1);
   setMaxAmount("waterMaxAmount", 8);
   setProgress("water", "waterProgress");
@@ -8,7 +20,7 @@ window.addEventListener("load", (event) => {
   setMaxAmount("foodMaxAmount", 1500);
   setProgress("food", "foodProgress");
   getProgress();
-});
+}
 
 function getProgress() {
   // Water
