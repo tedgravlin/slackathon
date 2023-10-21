@@ -1,52 +1,62 @@
 div.card-container {
-    display: grid;
-    row-gap: 1em;
-    grid-template-columns: auto auto;
-    margin: auto;
-    width: 50vw;
+  display: grid;
+  row-gap: 1em;
+  grid-template-columns: auto auto;
+  margin: auto;
+  width: 50vw;
 }
 
 div.card {
-    width: 20vw;
-    margin: auto;
-    border: 2px solid grey;
-    border-radius: 24px;
-    padding: 1em;
+  width: 20vw;
+  margin: auto;
+  border: 2px solid grey;
+  border-radius: 24px;
+  padding: 1em;
+  height: 20vh;
 }
 
 div.card h2 {
-    text-align: center;
-    margin: 0;
-    margin-bottom: 1em;
+  text-align: center;
+  margin: 0;
+  margin-bottom: 1em;
 }
 
 div.stat {
-    border: 2px solid grey;
-    border-radius: 10px;
-    display: grid;
-    padding: 1em;
-    column-gap: 1em;
-    width: 75%;
-    margin: auto;
-    grid-template-columns: 0.25fr 0.75fr;
-    margin-bottom: 0.5em;
+  border: 2px solid grey;
+  border-radius: 10px;
+  display: grid;
+  padding: 1em;
+  column-gap: 1em;
+  width: 75%;
+  margin: auto;
+  grid-template-columns: 0.25fr 0.75fr;
+  margin-bottom: 0.5em;
 }
 
 div.stat img {
-    justify-self: right;
+  justify-self: right;
 }
 
 div.stat progress {
-    width: 75%;
+  width: 75%;
 }
 div.stat {
-    cursor: pointer;
+  cursor: pointer;
 }
 div.stat:hover {
-    background-color: rgba(0, 72, 255, 0.187);
+  background-color: rgba(0, 72, 255, 0.187);
 }
 
 div.stat-info {
-    display: none;
-    text-align: center;
+  display: none;
+  text-align: center;
+}
+
+#author {
+  text-align: center;
+  margin-top: 1em;
+}
+#quote {
+  text-align: center;
+  margin-top: 10px;
 }

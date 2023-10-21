@@ -7,6 +7,7 @@ window.addEventListener("load", (event) => {
   //   setCurrentAmount("foodCurrentAmount", 500);
   //   setMaxAmount("foodMaxAmount", 1500);
   //   setProgress("food", "foodProgress");
+  dailyQuote();
   getProgress();
 });
 
@@ -79,16 +80,16 @@ function setMaxAmount(statMaxAmountVar, newAmount) {
 }
 
 function addProgress(statType, statCurrentAmount, statProgressVar) {
-    let amount = document.getElementById(statType + '-input').value;
-    let progressBar = document.getElementById(statType + '-progress-bar');
-    let currentAmount = localStorage.getItem(statCurrentAmount);
-    let newProgress = Number(currentAmount) + Number(amount);
+  let amount = document.getElementById(statType + "-input").value;
+  let progressBar = document.getElementById(statType + "-progress-bar");
+  let currentAmount = localStorage.getItem(statCurrentAmount);
+  let newProgress = Number(currentAmount) + Number(amount);
 
-    localStorage.setItem(statCurrentAmount, newProgress);
-    setProgress(statType, statProgressVar);
+  localStorage.setItem(statCurrentAmount, newProgress);
+  setProgress(statType, statProgressVar);
 
-    // Close the stat info
-    toggleStatInfo(statType);
+  // Close the stat info
+  toggleStatInfo(statType);
 }
 
 function toggleStatInfo(statType) {
