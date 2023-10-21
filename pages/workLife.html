@@ -25,11 +25,12 @@
     </header>
     <!-- Main Page -->
     <main>
-        <div id="timeStart"></div>
-        <div id="timeEnd"></div>
-        <div id="timeCurrent"></div>
+        <div id="timesSet"></div>
         <div class="card">
-            <div id="workProgress"><p id="time"></p></div>
+            <div id="workProgress">
+                <p id="time"></p>
+                <div style="padding-left: 100%;" id="timeCurrent"></div>
+            </div>
         </div>
         <form name="timeForm" onsubmit=validateForm() method="get">
             <label for="startTime">Select a start time:</label>
