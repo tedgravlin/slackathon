@@ -1,0 +1,17 @@
+input {
+    display:inline-block;
+    width:30%;
+}
+
+label {
+    display:inline-block;
+    width:30%;
+}
+
+button {
+    display: inline-block;
+}
+
+.label-box {
+    margin-top:15px;
+}
