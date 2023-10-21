@@ -5,14 +5,20 @@
     <link rel="stylesheet" href="/css/water.css" />
     <title>Hackathon 2023</title>
   </head>
-  <body>
+  <body onload="setWaterLevel(88)">
     <header>
       <h1>Water Consumption</h1>
     </header>
-
-    <div id="glass" onclick="setWaterLevel(80)">
-      <div id="water"></div>
+    <div class="container">
+      <div id="glass">
+        <div id="water"></div>
+      </div>
+      <div id="waterStats">
+        <p id="waterLevel">Water Level: 88%</p>
+        <p id="waterConsumption">Water Consumption: 88%</p>
+      </div>
     </div>
+
     <script src="../scripts/waterLevel.js"></script>
   </body>
 </html>
