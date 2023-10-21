@@ -4,6 +4,7 @@
     <!-- Import CSS and Scripts-->
     <link rel="stylesheet" href="/css/main.css" />
     <link rel="stylesheet" href="/css/homepage.css" />
+    <script src="/scripts/homepage.js"></script>
     <!-- Scale page to display width -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Page Title -->
@@ -31,34 +32,34 @@
           <a href="../pages/water.html">
             <div class="stat">
               <img src="/assets/icons/water.svg" />
-              <progress max="100" value="70"></progress>
+              <progress id="water-progress-bar" onclick="" max="100" value="70"></progress>
             </div>
           </a>
           <div class="stat">
             <img src="/assets/icons/food.svg" />
-            <progress max="100" value="70"></progress>
+            <progress id="food-progress-bar" max="100" value="70"></progress>
           </div>
         </div>
         <div class="card">
           <h2>Work</h2>
           <div class="stat">
             <img src="/assets/icons/work.svg" />
-            <progress max="100" value="70"></progress>
+            <progress id="work-progress-bar" max="100" value="70"></progress>
           </div>
           <div class="stat">
-            <img src="/assets/icons/water.svg" />
-            <progress max="100" value="70"></progress>
+            <img src="/assets/icons/work.svg" />
+            <progress id="work-progress-bar" max="100" value="70"></progress>
           </div>
         </div>
         <div class="card">
           <h2>Health and Wellness</h2>
           <div class="stat">
             <img src="/assets/icons/sleep.svg" />
-            <progress max="100" value="70"></progress>
+            <progress id="sleep-progress-bar" max="100" value="70"></progress>
           </div>
           <div class="stat">
             <img src="/assets/icons/exercise.svg" />
-            <progress max="100" value="70"></progress>
+            <progress id="exercise-progress-bar" max="100" value="70"></progress>
           </div>
         </div>
       </div>
