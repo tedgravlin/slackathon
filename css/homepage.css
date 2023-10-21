@@ -43,20 +43,24 @@ div.stat {
     border: 2px solid grey;
     border-radius: 10px;
     display: grid;
-    padding: 1em;
+    padding: 0.5em 1em 0.5em 1em;
     column-gap: 1em;
     width: 75%;
     margin: auto;
-    grid-template-columns: 0.25fr 0.75fr;
+    grid-template-columns: auto;
     margin-bottom: 0.5em;
 }
 
 div.stat img {
-    justify-self: right;
+    justify-self: left;
+}
+
+div.stat label {
+    justify-self: left;
 }
 
 div.stat progress {
-    width: 75%;
+    width: 100%;
 }
 
 div.stat {
@@ -70,6 +74,11 @@ div.stat:hover {
 div.stat-info {
     display: none;
     text-align: center;
+}
+
+div.icon-and-label {
+    display: grid;
+    grid-template-columns: 0.25fr 0.75fr;
 }
 
 #author {
