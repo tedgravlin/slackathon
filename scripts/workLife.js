@@ -3,6 +3,19 @@ let startTime = new Date();
 let endTime = new Date();
 let workLevel = 0;
 
+let timesMessage = "";
+let startHour = 0;
+let endHour = 0;
+let startMinutes = 0;
+let endMinutes = 0;
+let startMeridiem = 0;
+let endMeridiem = 0;
+let startWork = 0;
+let endWork = 0;
+
+let currHour = 0;
+let currMeridiem = 0;
+
 function onLoad() {
     if (localStorage.getItem("startTime") != null) {
         startTime.setTime(localStorage.getItem("startTime"));
@@ -16,6 +29,13 @@ function onLoad() {
         endTime.setHours(17, 0, 0);
     }
 
+    startHour = startTime.getHours() > 12 ? startTime.getHours() - 12 : startTime.getHours();
+    endHour = endTime.getHours() > 12 ? endTime.getHours() - 12: endTime.getHours();
+    startMinutes = (startTime.getMinutes() + "").padStart(2, '0');
+    endMinutes = (endTime.getMinutes() + "").padStart(2, '0');
+    startMeridiem = startTime.getHours() > 12 ? "pm " : "am ";
+    endMeridiem = endTime.getHours() > 12 ? "pm " : "am ";
+
     timeProgress();
 }
 
@@ -24,12 +44,30 @@ function timeProgress() {
     let x = getProgress();
     let progress = document.getElementById("workProgress");
 
+    startWork = d.getTime() < startTime.getTime() ? "Work starts at " : "Work started at ";
+    endWork = d.getTime() < endTime.getTime() ? "work ends at " : "work ended at ";
+
+    timesMessage = startWork + startHour + ":" + startMinutes + startMeridiem + " and " + endWork + endHour
+        + ":" + endMinutes + endMeridiem;
+
+    document.getElementById("timesSet").innerHTML = timesMessage;
+
     document.getElementById("time").innerHTML = x + "%";
 
     let workInterval = setInterval(function () {
         if (workLevel < x) {
           workLevel += 0.2;
           progress.style.width = workLevel + "%";
+
+          currHour = d.getHours() > 12 ? d.getHours() - 12 : d.getHours();
+          currMeridiem = d.getHours() > 12 ? "pm" : "am";
+
+            if (d.getTime() < endTime.getTime()) {
+            document.getElementById("timeCurrent").innerHTML = currHour + ":" + (d.getMinutes() + "").padStart(2, '0')
+             + currMeridiem;
+        } else {
+            document.getElementById("timeCurrent").innerHTML = "";
+        }
         } else {
           clearInterval(workLevel);
         }
@@ -47,15 +85,8 @@ function timeProgress() {
         document.getElementById("time").innerHTML = x + "%";
         progress.style.width = x + "%";
 
-        let timesMessage = "";
-        let startHour = startTime.getHours() > 12 ? startTime.getHours() - 12 : startTime.getHours();
-        let endHour = endTime.getHours() > 12 ? endTime.getHours() - 12: endTime.getHours();
-        let startMinutes = (startTime.getMinutes() + "").padStart(2, '0');
-        let endMinutes = (endTime.getMinutes() + "").padStart(2, '0');
-        let startMeridiem = startTime.getHours() > 12 ? "pm " : "am ";
-        let endMeridiem = endTime.getHours() > 12 ? "pm " : "am ";
-        let startWork = d2.getTime() < startTime.getTime() ? "Work starts at " : "Work started at ";
-        let endWork = d2.getTime() < endTime.getTime() ? "work ends at " : "work ended at ";
+        startWork = d2.getTime() < startTime.getTime() ? "Work starts at " : "Work started at ";
+        endWork = d2.getTime() < endTime.getTime() ? "work ends at " : "work ended at ";
 
         timesMessage = startWork + startHour + ":" + startMinutes + startMeridiem + " and " + endWork + endHour
             + ":" + endMinutes + endMeridiem;
@@ -66,7 +97,8 @@ function timeProgress() {
         let currMeridiem = d2.getHours() > 12 ? "pm" : "am";
 
         if (d2.getTime() < endTime.getTime()) {
-            document.getElementById("timeCurrent").innerHTML = currHour + ":" + d2.getMinutes() + currMeridiem;
+            document.getElementById("timeCurrent").innerHTML = currHour + ":" + (d.getMinutes() + "").padStart(2, '0')
+             + currMeridiem;
         } else {
             document.getElementById("timeCurrent").innerHTML = "";
         }
