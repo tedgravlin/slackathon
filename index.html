@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <!-- Import CSS and Scripts-->
     <link rel="stylesheet" href="/css/main.css" />
     <link rel="stylesheet" href="/css/homepage.css" />
@@ -10,9 +9,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Page Title -->
     <title>Hackathon 2023</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <nav>
         <ul>
             <li><a href="./index.html"><img src="/assets/icons/home.svg" />Home</a></li>
@@ -24,50 +23,67 @@
     </nav>
     <!-- Site Header and Navigation-->
     <header>
-        <h1>Life Stats</h1>
+      <h1>Life Stats</h1>
+      <button onclick="devValues()">Dev Values</button>
     </header>
     <!-- Main Page -->
     <main>
         <div class="card-container">
             <div class="card">
                 <h2><a href="./pages/water.html">Consumption</a></h2>
+                <!-- WATER -->
                 <div onclick="toggleStatInfo('water')" class="stat">
                     <img src="/assets/icons/water.svg" />
-                    <progress id="water-progress-bar" onclick="" max="100" value="0"></progress>
+                    <progress id="water-progress-bar" max="100" value="0"></progress>
                 </div>
                 <div class="stat-info" id="water-stat-info">
-                    <button onclick="addProgress('water', 10)">Add</button>
-                    <button>Settings</button>
+                    <input type="number" id="water-input" placeholder="Cups">
+                    <button onclick="addProgress('water', 'waterCurrentAmount', 'waterProgress')">Add</button>
                 </div>
-                <div class="stat">
+                <!-- FOOD -->
+                <div onclick="toggleStatInfo('food')"  class="stat">
                     <img src="/assets/icons/food.svg" />
                     <progress id="food-progress-bar" max="100" value="0"></progress>
+                </div>
+                <div class="stat-info" id="food-stat-info">
+                    <input type="number" id="food-input" placeholder="Calories">
+                    <button onclick="addProgress('food', 'foodCurrentAmount', 'foodProgress')">Add</button>
                 </div>
             </div>
             <div class="card">
                 <h2>Work</h2>
-                <div class="stat">
+                <!-- WORK -->
+                <div onclick="toggleStatInfo('work')" class="stat">
                     <img src="/assets/icons/work.svg" />
                     <progress id="work-progress-bar" max="100" value="0"></progress>
                 </div>
-                <div class="stat">
-                    <img src="/assets/icons/work.svg" />
-                    <progress id="work-progress-bar" max="100" value="0"></progress>
+                <div class="stat-info" id="work-stat-info">
+                    <input type="number" id="work-input" placeholder="Cups">
+                    <button onclick="addProgress('work', 'workCurrentAmount', 'workProgress')">Add</button>
                 </div>
             </div>
             <div class="card">
                 <h2>Health and Wellness</h2>
-                <div class="stat">
+                <!-- SLEEP -->
+                <div onclick="toggleStatInfo('sleep')" class="stat">
                     <img src="/assets/icons/sleep.svg" />
                     <progress id="sleep-progress-bar" max="100" value="0"></progress>
                 </div>
-                <div class="stat">
+                <div class="stat-info" id="sleep-stat-info">
+                    <input type="number" id="sleep-input" placeholder="Sleep hours">
+                    <button onclick="addProgress('sleep', 'sleepCurrentAmount', 'sleepProgress')">Add</button>
+                </div>
+                <!-- EXERCISE -->
+                <div onclick="toggleStatInfo('exercise')" class="stat">
                     <img src="/assets/icons/exercise.svg" />
                     <progress id="exercise-progress-bar" max="100" value="0"></progress>
+                </div>
+                <div class="stat-info" id="exercise-stat-info">
+                    <input type="number" id="exercise-input" placeholder="Minutes of exercise">
+                    <button onclick="addProgress('exercise', 'exerciseCurrentAmount', 'exerciseProgress')">Add</button>
                 </div>
             </div>
         </div>
     </main>
-</body>
-
+  </body>
 </html>

@@ -12,16 +12,31 @@
     <title>Work Life</title>
 </head>
 
-<body onload=timeProgress()>
+<body onload=onLoad()>
+    <nav>
+        <ul>
+            <li><a href="../index.html"><img src="/assets/icons/home.svg" />Home</a></li>
+            <li><a href="./water.html"><img src="/assets/icons/water.svg" />Consumption</a></li>
+            <li><a href="./workLife.html"><img src="/assets/icons/work.svg"/> Work</a></li>
+            <li><a href="./health.html"><img src="/assets/icons/exercise.svg" />Health</a></li>
+        </ul>
+    </nav>
     <!-- Site Header and Navigation-->
     <header>
         <h1> Work Life Page </h1>
     </header>
     <!-- Main Page -->
     <main>
-        <div class="card container">  
-            <p id="time"></p>
+        <div class="card">
+            <div id="workProgress"><p id="time"></p></div>
         </div>
+        <form name="timeForm" onsubmit=validateForm() method="get">
+            <label for="startTime">Select a start time:</label>
+            <input type="time" id="startTime" name="startTime">
+            <label for="endTime">Select a end time:</label>
+            <input type="time" id="endTime" name="endTime">
+            <input type="submit" value="Submit">
+        </form>
     </main>
 </body>
 
