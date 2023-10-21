@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="/css/water.css" />
     <title>Hackathon 2023</title>
   </head>
-  <body onload="setWaterLevel(88)">
+  <body onload="setWaterLevel(localStorage.getItem('water'))">
     <nav>
       <ul>
         <li>
@@ -29,15 +29,17 @@
       </ul>
     </nav>
     <header>
-      <h1>Water Consumption</h1>
+      <h1>Consumption</h1>
     </header>
-    <div class="container">
+    <h2 id="waterTitle">Daily Water Consumption:</h2>
+    <div id="water-container">
       <div id="glass">
+        <div id="waterStats">
+          <p id="waterConsumption">
+            You have drank 3 of 4 glasses of water today!
+          </p>
+        </div>
         <div id="water"></div>
-      </div>
-      <div id="waterStats">
-        <p id="waterLevel">Water Level: 88%</p>
-        <p id="waterConsumption">Water Consumption: 88%</p>
       </div>
     </div>
 
