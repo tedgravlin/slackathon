@@ -27,6 +27,7 @@ header {
   width: 100%;
   height: fit-content;
   margin: 0;
+  margin-bottom: 1em;
   display: inline-block;
   border-bottom: 2px solid grey;
   background-color: lightgrey;

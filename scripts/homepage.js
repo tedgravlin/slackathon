@@ -1,12 +1,4 @@
 window.addEventListener("load", (event) => {
-  // Water
-  //   setCurrentAmount("waterCurrentAmount", 1);
-  //   setMaxAmount("waterMaxAmount", 8);
-  //   setProgress("water", "waterProgress");
-  //   // Food
-  //   setCurrentAmount("foodCurrentAmount", 500);
-  //   setMaxAmount("foodMaxAmount", 1500);
-  //   setProgress("food", "foodProgress");
   dailyQuote();
   getProgress();
 });
@@ -32,7 +24,7 @@ function devValues() {
   setCurrentAmount("exerciseCurrentAmount", 5);
   setMaxAmount("exerciseMaxAmount", 60);
   setProgress("exercise", "exerciseProgress");
-  getProgress();
+  //getProgress();
 }
 
 function getProgress() {
@@ -42,8 +34,8 @@ function getProgress() {
     .setAttribute("value", localStorage.getItem("waterProgress"));
   // Food
   document
-    .getElementById("food-progress-bar")
-    .setAttribute("value", localStorage.getItem("foodProgress"));
+    .getElementById("calories-progress-bar")
+    .setAttribute("value", localStorage.getItem("caloriesProgress"));
   // Work
   document
     .getElementById("work-progress-bar")
