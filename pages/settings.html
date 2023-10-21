@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Import CSS and Scripts-->
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/homepage.css" />
+    <link rel="stylesheet" href="/css/settings.css" />
+    <script src="/scripts/homepage.js"></script>
+    <!-- Scale page to display width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Page Title -->
+    <title>Hackathon 2023 - Settings</title>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="../index.html"><img src="/assets/icons/home.svg" />Home</a></li>
+            <li><a href="./water.html"><img src="/assets/icons/water.svg" />Consumption</a></li>
+            <li><a href="./workLife.html"><img src="/assets/icons/work.svg" /> Work</a></li>
+            <li><a href="./health.html"><img src="/assets/icons/exercise.svg" />Health</a></li>
+            <li class="settings"><a href="./settings.html"><img src="/assets/icons/gear.svg"></a></li>
+        </ul>
+    </nav>
+    <!-- Site Header and Navigation-->
+    <header>
+        <h1>Settings</h1>
+    </header>
+    <!-- Main Page -->
+    <main>
+        <div class="card-container">
+            <div class="card">
+                <h2>Consumption Goals</h2>
+                <form>
+                    <div class="label-box">
+                        <label>Water:</label>
+                        <input type="number" class="inputs" placeholder="In Cups"></input>
+                        <button id="water-submit">Submit</button>
+                    </div>
+                    <div class="label-box">
+                        <label>Calories:</label>
+                        <input type="number" class="inputs" placeholder="Calories"></input>
+                        <button id="calories-submit">Submit</button>
+                    </div>
+                </form>
+            </div>
+            <div class="card">
+                <h2>Work</h2>
+                <form>
+                    <div class="label-box">
+                        <label>Start:</label>
+                        <input type="time" class="inputs" placeholder=""></input>
+                        <button id="start-time-submit">Submit</button>
+                    </div>
+                    <div class="label-box">
+                        <label>End:</label>
+                        <input type="time" class="inputs" placeholder=""></input>
+                        <button id="end-time-submit">Submit</button>
+                    </div>
+                </form>
+            </div>
+            <div class="card">
+                <h2>Health and Wellness</h2>
+                <form>
+                    <div class="label-box">
+                        <label>Sleep:</label>
+                        <input type="number" class="inputs" placeholder="Hours"></input>
+                        <button id="water-submit">Submit</button>
+                    </div>
+                    <div class="label-box">
+                        <label>Exercise:</label>
+                        <input type="number" class="inputs" placeholder="Minutes"></input>
+                        <button id="calories-submit">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
