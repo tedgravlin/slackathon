@@ -1,8 +1,13 @@
 let waterLevel = 0;
+
 function setWaterLevel(x) {
-  while (waterLevel < x) {
-    waterLevel += 1;
-    console.log(waterLevel);
-    document.getElementById("water").style.height = waterLevel + "%";
-  }
+  let water = document.getElementById("water");
+  let waterInterval = setInterval(function () {
+    if (waterLevel < x) {
+      waterLevel += 0.2;
+      water.style.height = waterLevel + "%";
+    } else {
+      clearInterval(waterInterval);
+    }
+  }, 0.01);
 }

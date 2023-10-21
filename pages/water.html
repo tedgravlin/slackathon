@@ -5,14 +5,42 @@
     <link rel="stylesheet" href="/css/water.css" />
     <title>Hackathon 2023</title>
   </head>
-  <body>
+  <body onload="setWaterLevel(88)">
+    <nav>
+      <ul>
+        <li>
+          <a href="../index.html"><img src="/assets/icons/home.svg" />Home</a>
+        </li>
+        <li>
+          <a href="../pages/water.html"
+            ><img src="/assets/icons/water.svg" />Consumption</a
+          >
+        </li>
+        <li>
+          <a href="../pages/workLife.html"
+            ><img src="/assets/icons/work.svg" /> Work</a
+          >
+        </li>
+        <li>
+          <a href="../pages/health.html"
+            ><img src="/assets/icons/exercise.svg" />Health</a
+          >
+        </li>
+      </ul>
+    </nav>
     <header>
       <h1>Water Consumption</h1>
     </header>
-
-    <div id="glass" onclick="setWaterLevel(80)">
-      <div id="water"></div>
+    <div class="container">
+      <div id="glass">
+        <div id="water"></div>
+      </div>
+      <div id="waterStats">
+        <p id="waterLevel">Water Level: 88%</p>
+        <p id="waterConsumption">Water Consumption: 88%</p>
+      </div>
     </div>
+
     <script src="../scripts/waterLevel.js"></script>
   </body>
 </html>
