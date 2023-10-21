@@ -68,3 +68,7 @@ header img {
 header li.settings {
     float:right;
 }
+
+a:visited {
+  color: inherit;
+}
