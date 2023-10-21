@@ -12,28 +12,33 @@
     <title>Health Life</title>
 </head>
 
-<body>
-    <nav>
-        <ul>
-            <li><a href="../index.html"><img src="/assets/icons/home.svg" />Home</a></li>
-            <li><a href="./water.html"><img src="/assets/icons/water.svg" />Consumption</a></li>
-            <li><a href="./workLife.html"><img src="/assets/icons/work.svg" /> Work</a></li>
-            <li><a href="./health.html"><img src="/assets/icons/exercise.svg" />Health</a></li>
-            <li class="settings"><a href="./settings.html"><img src="/assets/icons/gear.svg"></a></li>
-        </ul>
-    </nav>
-
+<body onload="getSleepGoal()">
     <!-- Site Header and Navigation-->
     <header>
-        <h1> Health Life </h1>
+        <div class="nav-links">
+            <a href="../index.html"><img src="/assets/icons/home.svg" /><p>Home</p></a>
+            <a href="./water.html"><img src="/assets/icons/water.svg" /><p>Nutrition</p></a>
+            <a href="./workLife.html"><img src="/assets/icons/work.svg" /><p>Work</p></a>
+            <a href="./health.html"><img src="/assets/icons/exercise.svg" /><p>Health</p></a>
+            <a href="./settings.html"><img src="/assets/icons/gear.svg"><p>Settings</p></a>
+        </div>
     </header>
     <!-- Main Page -->
     <main>
-        <div class="card container sleep" id="sleep">  
+        <div class="card container sleep" id="sleep">
             <h2>Sleep</h2>
-            <p class="sleep-goal" id="sleep-goal">Sleep Goal: </p> 
-            <p id="prev-sleep">Last Night's Sleep: </p>
-            
+            <p class="sleep-goal" id="sleep-goal">Sleep Goal: </p>
+            <form name="sleep-form" method="get">
+                <label>
+                    Last Nights Sleep: 
+                </label>
+                <p id="last-night-sleep"></p>
+                <div>
+                    <input min="0" max="24" class="input-box" type="number" id="sleep-hours" placeholder="hours">
+                    <input min="0" max="60" class="input-box" type="number" id="sleep-minutes" placeholder="minutes">
+                    <button onclick="setLastSleep()">Submit!</button>
+                </div>
+            </form>
         </div>
         <div class="card container">
             <p>Exercise</p>

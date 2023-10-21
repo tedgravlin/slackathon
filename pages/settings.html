@@ -14,18 +14,15 @@
 </head>
 
 <body>
-    <nav>
-        <ul>
-            <li><a href="../index.html"><img src="/assets/icons/home.svg" />Home</a></li>
-            <li><a href="./water.html"><img src="/assets/icons/water.svg" />Consumption</a></li>
-            <li><a href="./workLife.html"><img src="/assets/icons/work.svg" /> Work</a></li>
-            <li><a href="./health.html"><img src="/assets/icons/exercise.svg" />Health</a></li>
-            <li class="settings"><a href="./settings.html"><img src="/assets/icons/gear.svg"></a></li>
-        </ul>
-    </nav>
     <!-- Site Header and Navigation-->
     <header>
-        <h1>Settings</h1>
+        <div class="nav-links">
+            <a href="../index.html"><img src="/assets/icons/home.svg" /><p>Home</p></a>
+            <a href="./water.html"><img src="/assets/icons/water.svg" /><p>Nutrition</p></a>
+            <a href="./workLife.html"><img src="/assets/icons/work.svg" /><p>Work</p></a>
+            <a href="./health.html"><img src="/assets/icons/exercise.svg" /><p>Health</p></a>
+            <a href="./settings.html"><img src="/assets/icons/gear.svg"><p>Settings</p></a>
+        </div>
     </header>
     <!-- Main Page -->
     <main>
@@ -35,13 +32,13 @@
                 <form>
                     <div class="label-box">
                         <label>Water:</label>
-                        <input type="number" class="inputs" placeholder="In Cups"></input>
-                        <button id="water-submit">Submit</button>
+                        <input id="water-max-input" type="number" class="inputs" placeholder="In Cups"></input>
+                        <button onclick="setMaxAmount('waterMaxAmount', getSettingInput('water'))" id="water-submit">Submit</button>
                     </div>
                     <div class="label-box">
                         <label>Calories:</label>
-                        <input type="number" class="inputs" placeholder="Calories"></input>
-                        <button id="calories-submit">Submit</button>
+                        <input id="calories-max-input" type="number" class="inputs" placeholder="Calories"></input>
+                        <button onclick="setMaxAmount('caloriesMaxAmount', getSettingInput('calories'))" id="calories-submit">Submit</button>
                     </div>
                 </form>
             </div>

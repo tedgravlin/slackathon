@@ -6,7 +6,7 @@ body {
   margin: 0;
 }
 
-header {
+/* header {
   overflow: hidden;
   padding: 10px 10px;
   text-align: center;
@@ -21,18 +21,26 @@ header {
   transition: 0.5s;
   background-color: var(--obj-bg-color);
   clear: left;
-}
+} */
 
-nav {
+header {
   width: 100%;
   height: fit-content;
   margin: 0;
+  margin-bottom: 1em;
   display: inline-block;
-  background-color: #dddddd;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  border-bottom: 2px solid grey;
+  background-color: lightgrey;
 }
 
-nav ul {
+div.nav-links {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    width: 50%;
+    margin: auto;
+}
+
+header ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -40,19 +48,27 @@ nav ul {
   top: 0px;
 }
 
-nav li {
+header li {
   display: inline;
   float: left;
 }
 
-nav a {
-  display: block;
+header a {
+  display: grid;
+  grid-template-columns: auto auto;
   padding: 8px;
-  background-color: #dddddd;
   text-decoration: none;
   color: black;
 }
 
-nav li.settings {
+header img {
+    margin: auto;
+}
+
+header li.settings {
     float:right;
+}
+
+a:visited {
+  color: inherit;
 }
