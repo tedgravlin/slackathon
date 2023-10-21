@@ -12,7 +12,7 @@
     <title>Health Life</title>
 </head>
 
-<body>
+<body onload="getSleepGoal()">
     <nav>
         <ul>
             <li><a href="../index.html"><img src="/assets/icons/home.svg" />Home</a></li>
@@ -29,11 +29,20 @@
     </header>
     <!-- Main Page -->
     <main>
-        <div class="card container sleep" id="sleep">  
+        <div class="card container sleep" id="sleep">
             <h2>Sleep</h2>
-            <p class="sleep-goal" id="sleep-goal">Sleep Goal: </p> 
-            <p id="prev-sleep">Last Night's Sleep: </p>
-            
+            <p class="sleep-goal" id="sleep-goal">Sleep Goal: </p>
+            <form name="sleep-form" method="get">
+                <label>
+                    Last Nights Sleep: 
+                </label>
+                <p id="last-night-sleep"></p>
+                <div>
+                    <input min="0" max="24" class="input-box" type="number" id="sleep-hours" placeholder="hours">
+                    <input min="0" max="60" class="input-box" type="number" id="sleep-minutes" placeholder="minutes">
+                    <button onclick="setLastSleep()">Submit!</button>
+                </div>
+            </form>
         </div>
         <div class="card container">
             <p>Exercise</p>
