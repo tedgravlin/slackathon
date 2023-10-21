@@ -50,7 +50,7 @@ function timeProgress() {
 }
 
 function validateForm() {
-    if (document.forms["timeForm"]["startTime"] != null && document.forms["timeForm"]["endTime"] != null) {
+    if (document.forms["timeForm"]["startTime"].value != "" && document.forms["timeForm"]["endTime"].value != "") {
         let start = document.forms["timeForm"]["startTime"].value;
         let end = document.forms["timeForm"]["endTime"].value;
 
