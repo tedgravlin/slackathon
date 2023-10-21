@@ -14,30 +14,27 @@
 </head>
 
 <body>
-    <nav>
-        <ul>
-            <li><a href="./index.html"><img src="/assets/icons/home.svg" />Home</a></li>
-            <li><a href="./pages/water.html"><img src="/assets/icons/water.svg" />Consumption</a></li>
-            <li><a href="./pages/workLife.html"><img src="/assets/icons/work.svg" /> Work</a></li>
-            <li><a href="./pages/health.html"><img src="/assets/icons/exercise.svg" />Health</a></li>
-            <li class="settings"><a href="./pages/settings.html"><img src="/assets/icons/gear.svg"></a></li>
-        </ul>
-    </nav>
     <!-- Site Header and Navigation-->
     <header>
-        <h1>Life Stats</h1>
-        <button onclick="devValues()">Dev Values</button>
+        <div class="nav-links">
+            <a href="./index.html"><img src="/assets/icons/home.svg" /><p>Home</p></a>
+            <a href="./pages/water.html"><img src="/assets/icons/water.svg" /><p>Nutrition</p></a>
+            <a href="./pages/workLife.html"><img src="/assets/icons/work.svg" /><p>Work</p></a>
+            <a href="./pages/health.html"><img src="/assets/icons/exercise.svg" /><p>Health</p></a>
+            <a href="./pages/settings.html"><img src="/assets/icons/gear.svg"><p>Settings</p></a>
+        </div>
     </header>
+    <button onclick="devValues()">Dev Values</button>
     <!-- Main Page -->
     <main>
         <div class="two-grid-card-container">
             <div class="nutrition-card card">
                 <h2><a href="./pages/water.html">Nutrition</a></h2>
                 <!-- WATER -->
-                <div onclick="toggleStatInfo('water')" class="stat">
+                <div id="water" onclick="toggleStatInfo('water')" class="stat">
                     <div class="icon-and-label">
                         <img src="/assets/icons/water.svg" />
-                    <label for="water-progress-bar">Cups of water</label>
+                        <label for="water-progress-bar">Cups of water</label>
                     </div>
                     <progress id="water-progress-bar" max="100" value="0"></progress>
                 </div>
@@ -48,10 +45,10 @@
                     </button>
                 </div>
                 <!-- CALORIES -->
-                <div onclick="toggleStatInfo('calories')" class="stat">
+                <div id="calories" onclick="toggleStatInfo('calories')" class="stat">
                     <div class="icon-and-label">
                         <img src="/assets/icons/food.svg" />
-                    <label for="calories-progress-bar">Calories</label>
+                        <label for="calories-progress-bar">Calories</label>
                     </div>
                     <progress id="calories-progress-bar" max="100" value="0"></progress>
                 </div>
@@ -65,7 +62,7 @@
                 <div onclick="toggleStatInfo('calories')" class="stat">
                     <div class="icon-and-label">
                         <img src="/assets/icons/food.svg" />
-                    <label for="calories-progress-bar">Calories</label>
+                        <label for="calories-progress-bar">Calories</label>
                     </div>
                     <progress id="calories-progress-bar" max="100" value="0"></progress>
                 </div>
@@ -79,7 +76,7 @@
                 <div onclick="toggleStatInfo('calories')" class="stat">
                     <div class="icon-and-label">
                         <img src="/assets/icons/food.svg" />
-                    <label for="calories-progress-bar">Calories</label>
+                        <label for="calories-progress-bar">Calories</label>
                     </div>
                     <progress id="calories-progress-bar" max="100" value="0"></progress>
                 </div>
@@ -93,7 +90,7 @@
                 <div onclick="toggleStatInfo('calories')" class="stat">
                     <div class="icon-and-label">
                         <img src="/assets/icons/food.svg" />
-                    <label for="calories-progress-bar">Calories</label>
+                        <label for="calories-progress-bar">Calories</label>
                     </div>
                     <progress id="calories-progress-bar" max="100" value="0"></progress>
                 </div>
@@ -107,7 +104,7 @@
                 <div onclick="toggleStatInfo('calories')" class="stat">
                     <div class="icon-and-label">
                         <img src="/assets/icons/food.svg" />
-                    <label for="calories-progress-bar">Calories</label>
+                        <label for="calories-progress-bar">Calories</label>
                     </div>
                     <progress id="calories-progress-bar" max="100" value="0"></progress>
                 </div>
@@ -122,10 +119,10 @@
                 <div class="card">
                     <h2>Work</h2>
                     <!-- WORK -->
-                    <div onclick="toggleStatInfo('work')" class="stat">
+                    <div id="work" onclick="toggleStatInfo('work')" class="stat">
                         <div class="icon-and-label">
                             <img src="/assets/icons/work.svg" />
-                        <label for="work-progress-bar">Time left in workday</label>
+                            <label for="work-progress-bar">Time left in workday</label>
                         </div>
                         <progress id="work-progress-bar" max="100" value="0"></progress>
                     </div>
@@ -139,7 +136,7 @@
                     <div class="stat">
                         <div class="icon-and-label">
                             <img src="/assets/icons/task.svg" />
-                        <label for="task-progress-bar">Tasks left</label>
+                            <label for="task-progress-bar">Tasks left</label>
                         </div>
                         <progress id="task-progress-bar" max="100" value="0"></progress>
                     </div>
@@ -147,10 +144,10 @@
                 <div class="card">
                     <h2>Health and Wellness</h2>
                     <!-- SLEEP -->
-                    <div onclick="toggleStatInfo('sleep')" class="stat">
+                    <div id="sleep" onclick="toggleStatInfo('sleep')" class="stat">
                         <div class="icon-and-label">
                             <img src="/assets/icons/sleep.svg" />
-                        <label for="sleep-progress-bar">Sleep last night</label>
+                            <label for="sleep-progress-bar">Sleep last night</label>
                         </div>
                         <progress id="sleep-progress-bar" max="100" value="0"></progress>
                     </div>
@@ -161,10 +158,10 @@
                         </button>
                     </div>
                     <!-- EXERCISE -->
-                    <div onclick="toggleStatInfo('exercise')" class="stat">
+                    <div id="exercise" onclick="toggleStatInfo('exercise')" class="stat">
                         <div class="icon-and-label">
                             <img src="/assets/icons/exercise.svg" />
-                        <label for="exercise-progress-bar">Exercise Minutes</label>
+                            <label for="exercise-progress-bar">Exercise Minutes</label>
                         </div>
                         <progress id="exercise-progress-bar" max="100" value="0"></progress>
                     </div>

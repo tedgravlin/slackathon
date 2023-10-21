@@ -6,31 +6,16 @@
     <title>Hackathon 2023</title>
   </head>
   <body onload="setWaterLevel(localStorage.getItem('waterProgress'))">
-    <nav>
-      <ul>
-        <li>
-          <a href="../index.html"><img src="/assets/icons/home.svg" />Home</a>
-        </li>
-        <li>
-          <a href="../pages/water.html"
-            ><img src="/assets/icons/water.svg" />Consumption</a
-          >
-        </li>
-        <li>
-          <a href="../pages/workLife.html"
-            ><img src="/assets/icons/work.svg" /> Work</a
-          >
-        </li>
-        <li>
-          <a href="../pages/health.html"
-            ><img src="/assets/icons/exercise.svg" />Health</a
-          >
-        </li>
-      </ul>
-    </nav>
+    <!-- Site Header and Navigation-->
     <header>
-      <h1>Consumption</h1>
-    </header>
+      <div class="nav-links">
+          <a href="../index.html"><img src="/assets/icons/home.svg" /><p>Home</p></a>
+          <a href="./water.html"><img src="/assets/icons/water.svg" /><p>Nutrition</p></a>
+          <a href="./workLife.html"><img src="/assets/icons/work.svg" /><p>Work</p></a>
+          <a href="./health.html"><img src="/assets/icons/exercise.svg" /><p>Health</p></a>
+          <a href="./settings.html"><img src="/assets/icons/gear.svg"><p>Settings</p></a>
+      </div>
+  </header>
     <h2 id="waterTitle">Daily Water Consumption:</h2>
     <div id="water-container">
       <div id="glass">

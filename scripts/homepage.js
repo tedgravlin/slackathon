@@ -16,24 +16,21 @@ function devValues() {
   setCurrentAmount("waterCurrentAmount", 1);
   setMaxAmount("waterMaxAmount", 8);
   setProgress("water", "waterProgress");
-  // Food
-  setCurrentAmount("foodCurrentAmount", 500);
-  setMaxAmount("foodMaxAmount", 1500);
-  setProgress("food", "foodProgress");
-  getProgress();
+  // Calories
+  setCurrentAmount("caloriesCurrentAmount", 500);
+  setMaxAmount("caloriesMaxAmount", 1500);
+  setProgress("calories", "caloriesProgress");
   // Work
-  setCurrentAmount("workCurrentAmount", 500);
-  setMaxAmount("workMaxAmount", 1500);
+  setCurrentAmount("workCurrentAmount", 1);
+  setMaxAmount("workMaxAmount", 9);
   setProgress("work", "workProgress");
-  getProgress();
   // Sleep
-  setCurrentAmount("sleepCurrentAmount", 500);
-  setMaxAmount("sleepMaxAmount", 1500);
+  setCurrentAmount("sleepCurrentAmount", 8);
+  setMaxAmount("sleepMaxAmount", 9);
   setProgress("sleep", "sleepProgress");
-  getProgress();
   // Exercise
-  setCurrentAmount("exerciseCurrentAmount", 500);
-  setMaxAmount("exerciseMaxAmount", 1500);
+  setCurrentAmount("exerciseCurrentAmount", 5);
+  setMaxAmount("exerciseMaxAmount", 60);
   setProgress("exercise", "exerciseProgress");
   getProgress();
 }
@@ -81,7 +78,6 @@ function setMaxAmount(statMaxAmountVar, newAmount) {
 
 function addProgress(statType, statCurrentAmount, statProgressVar) {
   let amount = document.getElementById(statType + "-input").value;
-  let progressBar = document.getElementById(statType + "-progress-bar");
   let currentAmount = localStorage.getItem(statCurrentAmount);
   let newProgress = Number(currentAmount) + Number(amount);
 
@@ -94,6 +90,7 @@ function addProgress(statType, statCurrentAmount, statProgressVar) {
 
 function toggleStatInfo(statType) {
   let statInfo = document.getElementById(statType + "-stat-info");
+  let stat = document.getElementById(statType);
 
   if (statInfo.style.display == "") {
     statInfo.style.display = "none";
@@ -101,7 +98,25 @@ function toggleStatInfo(statType) {
 
   if (statInfo.style.display === "none") {
     statInfo.style.display = "block";
+    stat.style.marginBottom = "0em";
+    stat.style.borderBottomLeftRadius = "0px";
+    stat.style.borderBottomRightRadius = "0px";
+    stat.style.borderBottom = "0px";
   } else if (statInfo.style.display === "block") {
     statInfo.style.display = "none";
+    stat.style.marginBottom = "0.5em";
+    stat.style.borderBottomLeftRadius = "10px";
+    stat.style.borderBottomRightRadius = "10px";
+    stat.style.borderBottom = "2px solid grey";
   }
 }
+
+/* function getSettingInput(statType) {
+    let newMax = document.getElementById(statType + '-max-input').value;
+    alert(newMax);
+    alert(statType);
+    if (newMax != null && newMax != "") {
+        alert("new");
+        setMaxAmount(statType + 'MaxAmount', newMax);
+    }
+} */
