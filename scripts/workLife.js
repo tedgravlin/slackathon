@@ -1,11 +1,20 @@
-const d = new Date();
-const startTime = new Date();
-const endTime = new Date();
+let d = new Date();
+let startTime = new Date();
+let endTime = new Date();
 let workLevel = 0;
 
 function onLoad() {
-    startTime.setHours(12, 0, 0);
-    endTime.setHours(20, 0, 0);
+    if (localStorage.getItem("startTime") != null) {
+        startTime.setTime(localStorage.getItem("startTime"));
+    } else {
+        startTime.setHours(12, 0, 0);
+    }
+
+    if (localStorage.getItem("endTime") != null) {
+        endTime.setTime(localStorage.getItem("endTime"));
+    } else {
+        startTime.setHours(12, 0, 0);
+    }
 
     timeProgress();
 }
@@ -25,15 +34,46 @@ function timeProgress() {
           clearInterval(workLevel);
         }
     }, 0.01);
+
+    setInterval(update, 1000);
+
+    function update() {
+        let d2 = new Date();
+        d.setTime(d2.getTime());
+
+        x = getProgress();
+        progress = document.getElementById("workProgress");
+
+        document.getElementById("time").innerHTML = x + "%";
+        progress.style.width = x + "%";
+    }
 }
 
 function validateForm() {
-    let start = document.forms["timeForm"]["startTime"];
-    let end = document.forms["timeForm"]["endTime"];
+    if (document.forms["timeForm"]["startTime"] != null && document.forms["timeForm"]["endTime"] != null) {
+        let start = document.forms["timeForm"]["startTime"].value;
+        let end = document.forms["timeForm"]["endTime"].value;
 
-    console.log(start + ", " + end);
+        let startT = (start + "").split(":");
+        let endT = (end + "").split(":");
+
+        startTime.setHours(Number(startT[0]));
+        startTime.setMinutes(Number(startT[1]));
+
+        endTime.setHours(Number(endT[0]));
+        endTime.setMinutes(Number(endT[1]));
+
+        localStorage.setItem("startTime", startTime.getTime());
+        localStorage.setItem("endTime", endTime.getTime());
+    }
 }
 
 function getProgress() {
-    return Math.round((d.getTime() - startTime.getTime()) / (endTime.getTime() - startTime.getTime())*10000) / 100;
+    if (d.getTime() < startTime.getTime()) {
+        return 0;
+    } else if (d.getTime() > endTime.getTime()) {
+        return 100;
+    } else {
+        return Math.round((d.getTime() - startTime.getTime()) / (endTime.getTime() - startTime.getTime())*10000) / 100;
+    }
 }
