@@ -6,6 +6,8 @@
 - Kyle Moorhead
 - Matt Braun
 
+Progress
+
 - [ ] Home Page
 - [ ] Water Page
 - [ ] Sleep / Exercise
