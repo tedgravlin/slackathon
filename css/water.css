@@ -1,5 +1,8 @@
-:root {
-  font-family: Arial, Helvetica, sans-serif;
+@import "dark.css";
+
+body {
+  background-color: var(--main-bg-color);
+  color: var(--text-color);
 }
 
 .header {
