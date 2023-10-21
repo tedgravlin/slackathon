@@ -6,7 +6,7 @@
 - Kyle Moorhead
 - Matt Braun
 
-Progress
+## Progress
 
 - [ ] Home Page
 - [ ] Water Page
