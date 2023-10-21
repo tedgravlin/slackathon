@@ -1,7 +1,7 @@
 div.card-container {
     display: grid;
     row-gap: 1em;
-    grid-template-columns: auto;
+    grid-template-columns: auto auto;
     margin: auto;
     width: 50vw;
 }
