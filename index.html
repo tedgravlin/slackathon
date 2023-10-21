@@ -2,7 +2,8 @@
 <html lang="en">
   <head>
     <!-- Import CSS and Scripts-->
-    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/homepage.css">
     <!-- Scale page to display width -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Page Title -->
@@ -12,13 +13,45 @@
   <body>
     <!-- Site Header and Navigation-->
     <header>
-      <h1>Hackathon 2023</h1>
+        <h1> Life Stats </h1>
     </header>
     <!-- Main Page -->
     <main>
-      <div class="card-container">
-        <a href="water.html">  <p>world!</a></p>
-      </div>
+        <div class="card-container">  
+            <div class="card">
+                <h2>Consumption</h2>
+                <div class="stat">
+                    <img src="/assets/icons/water.svg">
+                    <progress max="100" value="70" ></progress>
+                </div>
+                <div class="stat">
+                    <img src="/assets/icons/food.svg">
+                    <progress max="100" value="70" ></progress>
+                </div>
+            </div>
+            <div class="card">
+                <h2>Work</h2>
+                <div class="stat">
+                    <img src="/assets/icons/work.svg">
+                    <progress max="100" value="70" ></progress>
+                </div>
+                <div class="stat">
+                    <img src="/assets/icons/water.svg">
+                    <progress max="100" value="70" ></progress>
+                </div>
+            </div>
+            <div class="card">
+                <h2>Health and Wellness</h2>
+                <div class="stat">
+                    <img src="/assets/icons/sleep.svg">
+                    <progress max="100" value="70" ></progress>
+                </div>
+                <div class="stat">
+                    <img src="/assets/icons/exercise.svg">
+                    <progress max="100" value="70" ></progress>
+                </div>
+            </div>
+        </div>
     </main>
   </body>
 </html>
