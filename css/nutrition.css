@@ -46,8 +46,9 @@ div.food-card-stats label {
 div.food-card-stats progress {
   margin-bottom: 1em;
   border-radius: 24px;
+  border: 1px solid black;
   height: 25px;
-  width: 100%;
+  width: 90%;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -55,6 +56,7 @@ div.food-card-stats progress {
 }
 
 div.food-card-stats progress::-webkit-progress-bar {
+  border: 1px solid black;
   border-radius: 24px;
 }
 
@@ -62,6 +64,7 @@ div.food-card-stats progress::-webkit-progress-value {
   background-color: #0064b4;
   border-top-left-radius: 24px;
   border-bottom-left-radius: 24px;
+  v
 }
  
 .header {
