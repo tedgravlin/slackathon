@@ -46,6 +46,16 @@ div.food-card-stats progress {
   -moz-appearance: none;
   appearance: none;
 }
+
+div.food-card-stats progress::-webkit-progress-bar {
+  border-radius: 24px;
+}
+
+div.food-card-stats progress::-webkit-progress-value {
+  background-color: #0064b4;
+  border-top-left-radius: 24px;
+  border-bottom-left-radius: 24px;
+}
  
 .header {
   overflow: hidden;
