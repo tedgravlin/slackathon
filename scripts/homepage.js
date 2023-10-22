@@ -1,24 +1,61 @@
+let d = new Date();
+let startTime = new Date();
+let endTime = new Date();
+
 window.addEventListener("load", (event) => {
   dailyQuote();
   getProgress();
   changeGreeting();
   onWorkLoad();
+
+  setInterval(update, 1000);
 });
 
 function onWorkLoad() {
-
-  // Set workProgress bar
   let workProgress = document.getElementById("work-progress-bar");
-
-  let d = new Date();
-  let startTime = new Date();
-  let endTime = new Date();
 
   let startWorkTime = localStorage.getItem("startTime") != null ? localStorage.getItem("startTime") : "";
   let endWorkTime = localStorage.getItem("endTime") != null ? localStorage.getItem("endTime") : "";
 
   startTime.setTime(startWorkTime);
   endTime.setTime(endWorkTime);
+
+  if (startWorkTime != "" && endWorkTime != "") {
+    workProgress.value =  Math.round((d.getTime() - startTime.getTime())
+      / (endTime.getTime() - startTime.getTime())*10000) / 100;
+  } else {
+    workProgress.value = 0;
+  }
+
+  let strJSON = localStorage.getItem("tasksJSON") != null ? localStorage.getItem("tasksJSON") : "";
+
+  if (localStorage.getItem("tasksJSON") != null) {
+    let objJSON = JSON.parse(strJSON);
+    let count = 0;
+
+    for (let task in objJSON["tasks"]) {
+      count += objJSON["tasks"][task].status == "complete" ? 1 : 0;
+    }
+
+    let divisor = objJSON["tasks"].length != 0 ? objJSON["tasks"].length : 1;
+    count = objJSON["tasks"].length != 0 ? count : 1;
+
+    let taskBar = document.getElementById("task-progress-bar");
+    taskBar.value = Math.round((count / divisor) * 10000) / 100;
+  } else {
+    let taskBar = document.getElementById("task-progress-bar");
+    taskBar.value = 100;
+  }
+}
+
+function update() {
+
+  let workProgress = document.getElementById("work-progress-bar");
+
+  d = new Date();
+
+  let startWorkTime = localStorage.getItem("startTime") != null ? localStorage.getItem("startTime") : "";
+  let endWorkTime = localStorage.getItem("endTime") != null ? localStorage.getItem("endTime") : "";
 
   if (startWorkTime != "" && endWorkTime != "") {
     workProgress.value =  Math.round((d.getTime() - startTime.getTime())
