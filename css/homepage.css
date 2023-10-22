@@ -6,10 +6,20 @@ body {
   color: var(--light-text);
 }
 
+.stat-info {
+  background-color: var(--light-obj-color);
+}
+
 @media (prefers-color-scheme: dark) {
   body {
     background-color: var(--dark-bg-color);
     color: var(--dark-text);
+  }
+  img {
+    filter: invert(100%);
+  }
+  .stat-info {
+    background-color: var(--dark-obj-color);
   }
 }
 
@@ -93,14 +103,29 @@ div.stat:hover {
 
 div.stat-info {
   display: none;
+  position: fixed;
   text-align: center;
   border: 2px solid grey;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-  border-top: 0px;
-  margin: 0 auto 0.5em auto;
-  width: 75%;
+  border-radius: 24px;
+  margin: auto;
   padding: 0.5em 1em 0.5em 1em;
+  animation: scaleIn ease-in-out 0.25s 1;
+  width: 300px;
+  height: 100px;
+  position: fixed;
+  top: calc(50% - 25px);
+  left: calc(50% - 175px);
+  opacity: 100% !important;
+}
+
+div.overlay {
+  display: none;
+  backdrop-filter: blur(10px);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0%;
+  left: 0%;
 }
 
 div.stat-info input {
@@ -137,5 +162,17 @@ div.greeting {
   100% {
     opacity: 100%;
     transform: translateY(0px);
+  }
+}
+
+@keyframes scaleIn {
+  0% {
+    opacity: 0%;
+    transform: scale(0);
+  }
+
+  100% {
+    opacity: 100%;
+    transform: scale(1);
   }
 }

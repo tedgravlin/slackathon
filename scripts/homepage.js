@@ -83,24 +83,19 @@ function addProgress(statType, statCurrentAmount, statProgressVar) {
 
 function toggleStatInfo(statType) {
   let statInfo = document.getElementById(statType + "-stat-info");
-  let stat = document.getElementById(statType);
+  let overlay = document.getElementById('overlay');
 
-  if (statInfo.style.display == "") {
-    statInfo.style.display = "none";
+  if (overlay.style.display == "") {
+    overlay.style.display = "none";
   }
 
-  if (statInfo.style.display === "none") {
+  if (overlay.style.display === "none") {
+    overlay.style.display = "block";
     statInfo.style.display = "block";
-    stat.style.marginBottom = "0em";
-    stat.style.borderBottomLeftRadius = "0px";
-    stat.style.borderBottomRightRadius = "0px";
-    stat.style.borderBottom = "0px";
-  } else if (statInfo.style.display === "block") {
+  }
+  else if (overlay.style.display === "block") {
+    overlay.style.display = "none";
     statInfo.style.display = "none";
-    stat.style.marginBottom = "0.5em";
-    stat.style.borderBottomLeftRadius = "10px";
-    stat.style.borderBottomRightRadius = "10px";
-    stat.style.borderBottom = "2px solid grey";
   }
 }
 
@@ -120,12 +115,16 @@ function changeGreeting() {
   }
 }
 
-/* function getSettingInput(statType) {
-    let newMax = document.getElementById(statType + '-max-input').value;
-    alert(newMax);
-    alert(statType);
-    if (newMax != null && newMax != "") {
-        alert("new");
-        setMaxAmount(statType + 'MaxAmount', newMax);
-    }
-} */
+function closeOverlay() {
+  let overlay = document.getElementById('overlay');
+  let children = overlay.children;
+  let i = 0;
+
+  // Hide all children of the overlay
+  for (i = 0; i < children.length; i++) {
+    children[i].style.display = "none";
+  }
+
+  // Hide the overlay itself
+  overlay.style.display = "none";
+}

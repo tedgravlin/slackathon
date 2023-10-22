@@ -53,12 +53,6 @@
                     </div>
                     <progress id="water-progress-bar" max="100" value="0"></progress>
                 </div>
-                <div class="stat-info" id="water-stat-info">
-                    <input type="number" id="water-input" placeholder="Cups" />
-                    <button onclick="addProgress('water', 'waterCurrentAmount', 'waterProgress')">
-                        Add
-                    </button>
-                </div>
                 <!-- CALORIES -->
                 <div id="calories" onclick="toggleStatInfo('calories')" class="stat">
                     <div class="icon-and-label">
@@ -67,12 +61,7 @@
                     </div>
                     <progress id="calories-progress-bar" max="100" value="0"></progress>
                 </div>
-                <div class="stat-info" id="calories-stat-info">
-                    <input type="number" id="calories-input" placeholder="Calories" />
-                    <button onclick="addProgress('calories', 'caloriesCurrentAmount', 'caloriesProgress')">
-                        Add
-                    </button>
-                </div>
+
                 <!-- FOOD -->
                 <div onclick="toggleStatInfo('calories')" class="stat">
                     <div class="icon-and-label">
@@ -80,12 +69,6 @@
                         <label for="calories-progress-bar">Carbohydrates</label>
                     </div>
                     <progress id="calories-progress-bar" max="100" value="0"></progress>
-                </div>
-                <div class="stat-info" id="food-stat-info">
-                    <input type="number" id="food-input" placeholder="Calories" />
-                    <button onclick="addProgress('food', 'foodCurrentAmount', 'foodProgress')">
-                        Add
-                    </button>
                 </div>
                 <!-- FOOD -->
                 <div onclick="toggleStatInfo('calories')" class="stat">
@@ -95,12 +78,6 @@
                     </div>
                     <progress id="calories-progress-bar" max="100" value="0"></progress>
                 </div>
-                <div class="stat-info" id="food-stat-info">
-                    <input type="number" id="food-input" placeholder="Calories" />
-                    <button onclick="addProgress('food', 'foodCurrentAmount', 'foodProgress')">
-                        Add
-                    </button>
-                </div>
                 <!-- FOOD -->
                 <div onclick="toggleStatInfo('calories')" class="stat">
                     <div class="icon-and-label">
@@ -109,12 +86,6 @@
                     </div>
                     <progress id="calories-progress-bar" max="100" value="0"></progress>
                 </div>
-                <div class="stat-info" id="food-stat-info">
-                    <input type="number" id="food-input" placeholder="Calories" />
-                    <button onclick="addProgress('food', 'foodCurrentAmount', 'foodProgress')">
-                        Add
-                    </button>
-                </div>
                 <!-- FOOD -->
                 <div onclick="toggleStatInfo('calories')" class="stat">
                     <div class="icon-and-label">
@@ -122,12 +93,6 @@
                         <label for="calories-progress-bar">Calories</label>
                     </div>
                     <progress id="calories-progress-bar" max="100" value="0"></progress>
-                </div>
-                <div class="stat-info" id="food-stat-info">
-                    <input type="number" id="food-input" placeholder="Calories" />
-                    <button onclick="addProgress('food', 'foodCurrentAmount', 'foodProgress')">
-                        Add
-                    </button>
                 </div>
             </div>
             <div class="card-container">
@@ -140,12 +105,6 @@
                             <label for="work-progress-bar">Time left in workday</label>
                         </div>
                         <progress id="work-progress-bar" max="100" value="0"></progress>
-                    </div>
-                    <div class="stat-info" id="work-stat-info">
-                        <input type="number" id="work-input" placeholder="Cups" />
-                        <button onclick="addProgress('work', 'workCurrentAmount', 'workProgress')">
-                            Add
-                        </button>
                     </div>
                     <!-- WORK -->
                     <div class="stat">
@@ -166,12 +125,6 @@
                         </div>
                         <progress id="sleep-progress-bar" max="100" value="0"></progress>
                     </div>
-                    <div class="stat-info" id="sleep-stat-info">
-                        <input type="number" id="sleep-input" placeholder="Sleep hours" />
-                        <button onclick="addProgress('sleep', 'sleepCurrentAmount', 'sleepProgress')">
-                            Add
-                        </button>
-                    </div>
                     <!-- EXERCISE -->
                     <div id="exercise" onclick="toggleStatInfo('exercise')" class="stat">
                         <div class="icon-and-label">
@@ -179,12 +132,6 @@
                             <label for="exercise-progress-bar">Exercise Minutes</label>
                         </div>
                         <progress id="exercise-progress-bar" max="100" value="0"></progress>
-                    </div>
-                    <div class="stat-info" id="exercise-stat-info">
-                        <input type="number" id="exercise-input" placeholder="Minutes of exercise" />
-                        <button onclick="addProgress('exercise', 'exerciseCurrentAmount', 'exerciseProgress')">
-                            Add
-                        </button>
                     </div>
                 </div>
             </div>
@@ -195,6 +142,48 @@
         </div>
         <button onclick="devValues()">Dev Values</button>
     </main>
+    <div id="overlay" class="overlay">
+        <div class="stat-info" id="water-stat-info">
+            <p>Water</p>
+            <input type="number" id="water-input" placeholder="Cups" />
+            <button onclick="addProgress('water', 'waterCurrentAmount', 'waterProgress')">
+                Add
+            </button>
+            <button onclick="closeOverlay()">Close</button>
+        </div>
+        <div class="stat-info" id="calories-stat-info">
+            <p>Calories</p>
+            <input type="number" id="calories-input" placeholder="Calories" />
+            <button onclick="addProgress('calories', 'caloriesCurrentAmount', 'caloriesProgress')">
+                Add
+            </button>
+            <button onclick="closeOverlay()">Close</button>
+        </div>
+        <div class="stat-info" id="work-stat-info">
+            <p>Work</p>
+            <input type="number" id="work-input" placeholder="Cups" />
+            <button onclick="addProgress('work', 'workCurrentAmount', 'workProgress')">
+                Add
+            </button>
+            <button onclick="closeOverlay()">Close</button>
+        </div>
+        <div class="stat-info" id="sleep-stat-info">
+            <p>Sleep</p>
+            <input type="number" id="sleep-input" placeholder="Sleep hours" />
+            <button onclick="addProgress('sleep', 'sleepCurrentAmount', 'sleepProgress')">
+                Add
+            </button>
+            <button onclick="closeOverlay()">Close</button>
+        </div>
+        <div class="stat-info" id="exercise-stat-info">
+            <p>Exercise</p>
+            <input type="number" id="exercise-input" placeholder="Minutes of exercise" />
+            <button onclick="addProgress('exercise', 'exerciseCurrentAmount', 'exerciseProgress')">
+                Add
+            </button>
+            <button onclick="closeOverlay()">Close</button>
+        </div>
+    </div>
 </body>
 
 </html>
