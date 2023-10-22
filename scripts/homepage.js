@@ -1,4 +1,6 @@
-let d = new Date(), startTime = new Date(), endTime = new Date();
+let d = new Date(),
+  startTime = new Date(),
+  endTime = new Date();
 
 window.addEventListener("load", (event) => {
   dailyQuote();
@@ -12,18 +14,31 @@ window.addEventListener("load", (event) => {
 function onWorkLoad() {
   let workProgress = document.getElementById("work-progress-bar");
 
-  let startWorkTime = localStorage.getItem("startTime") != null ? localStorage.getItem("startTime") : "";
-  let endWorkTime = localStorage.getItem("endTime") != null ? localStorage.getItem("endTime") : "";
+  let startWorkTime =
+    localStorage.getItem("startTime") != null
+      ? localStorage.getItem("startTime")
+      : "";
+  let endWorkTime =
+    localStorage.getItem("endTime") != null
+      ? localStorage.getItem("endTime")
+      : "";
 
   startTime.setTime(startWorkTime);
   endTime.setTime(endWorkTime);
 
-  let timeDiff = Math.round((d.getTime() - startTime.getTime())
-    / (endTime.getTime() - startTime.getTime())*10000) / 100;
+  let timeDiff =
+    Math.round(
+      ((d.getTime() - startTime.getTime()) /
+        (endTime.getTime() - startTime.getTime())) *
+        10000
+    ) / 100;
 
-  workProgress.value = (startWorkTime != "" && endWorkTime != "") ? timeDiff : 0;
+  workProgress.value = startWorkTime != "" && endWorkTime != "" ? timeDiff : 0;
 
-  let strJSON = localStorage.getItem("tasksJSON") != null ? localStorage.getItem("tasksJSON") : "";
+  let strJSON =
+    localStorage.getItem("tasksJSON") != null
+      ? localStorage.getItem("tasksJSON")
+      : "";
 
   if (localStorage.getItem("tasksJSON") != null) {
     let objJSON = JSON.parse(strJSON);
@@ -45,18 +60,27 @@ function onWorkLoad() {
 }
 
 function update() {
-
   let workProgress = document.getElementById("work-progress-bar");
 
   d = new Date();
 
-  let startWorkTime = localStorage.getItem("startTime") != null ? localStorage.getItem("startTime") : "";
-  let endWorkTime = localStorage.getItem("endTime") != null ? localStorage.getItem("endTime") : "";
+  let startWorkTime =
+    localStorage.getItem("startTime") != null
+      ? localStorage.getItem("startTime")
+      : "";
+  let endWorkTime =
+    localStorage.getItem("endTime") != null
+      ? localStorage.getItem("endTime")
+      : "";
 
-  let timeDiff = Math.round((d.getTime() - startTime.getTime())
-    / (endTime.getTime() - startTime.getTime())*10000) / 100;
+  let timeDiff =
+    Math.round(
+      ((d.getTime() - startTime.getTime()) /
+        (endTime.getTime() - startTime.getTime())) *
+        10000
+    ) / 100;
 
-  workProgress.value = (startWorkTime != "" && endWorkTime != "") ? timeDiff : 0;
+  workProgress.value = startWorkTime != "" && endWorkTime != "" ? timeDiff : 0;
 }
 
 function devValues() {
@@ -131,10 +155,14 @@ function getProgress() {
 }
 
 function setProgress(statType, statProgressVar) {
-  let currentAmount = localStorage.getItem(statType + "CurrentAmount") != null
-    ? parseInt(localStorage.getItem(statType + "CurrentAmount")) : 0;
-  let maxAmount = localStorage.getItem(statType + "MaxAmount") != null
-    ? parseInt(localStorage.getItem(statType + "MaxAmount")) : 1;
+  let currentAmount =
+    localStorage.getItem(statType + "CurrentAmount") != null
+      ? parseInt(localStorage.getItem(statType + "CurrentAmount"))
+      : 0;
+  let maxAmount =
+    localStorage.getItem(statType + "MaxAmount") != null
+      ? parseInt(localStorage.getItem(statType + "MaxAmount"))
+      : 1;
   let progress = (currentAmount / maxAmount) * 100;
   localStorage.setItem(statProgressVar, progress);
   document
@@ -152,8 +180,10 @@ function setMaxAmount(statMaxAmountVar, newAmount) {
 
 function addProgress(statType, statCurrentAmount, statProgressVar) {
   let amount = document.getElementById(statType + "-input").value;
-  let currentAmount = localStorage.getItem(statCurrentAmount) != null
-    ? parseInt(localStorage.getItem(statCurrentAmount)) : 0;
+  let currentAmount =
+    localStorage.getItem(statCurrentAmount) != null
+      ? parseInt(localStorage.getItem(statCurrentAmount))
+      : 0;
   let newProgress = Number(currentAmount) + Number(amount);
 
   localStorage.setItem(statCurrentAmount, newProgress);
@@ -165,7 +195,7 @@ function addProgress(statType, statCurrentAmount, statProgressVar) {
 
 function toggleStatInfo(statType) {
   let statInfo = document.getElementById(statType + "-stat-info");
-  let overlay = document.getElementById('overlay');
+  let overlay = document.getElementById("overlay");
 
   if (overlay.style.display == "") {
     overlay.style.display = "none";
@@ -174,31 +204,28 @@ function toggleStatInfo(statType) {
   if (overlay.style.display === "none") {
     overlay.style.display = "block";
     statInfo.style.display = "block";
-  }
-  else if (overlay.style.display === "block") {
+  } else if (overlay.style.display === "block") {
     overlay.style.display = "none";
     statInfo.style.display = "none";
   }
 }
 
 function changeGreeting() {
-  let greeting = document.getElementById('greeting');
+  let greeting = document.getElementById("greeting");
   let time = new Date();
   time = time.getHours();
 
   if (time < 12 && time >= 5) {
-    greeting.innerHTML = "🌞 Good morning";
-  }
-  else if (time < 17 && time >= 12) {
-    greeting.innerHTML = "😎 Good afternoon";
-  }
-  else if (time > 5 || time <= 17) {
-    greeting.innerHTML = "🌝 Good evening";
+    greeting.innerHTML = "🌞 Good Morning";
+  } else if (time < 17 && time >= 12) {
+    greeting.innerHTML = "😎 Good Afternoon";
+  } else if (time > 5 || time <= 17) {
+    greeting.innerHTML = "🌝 Good Evening";
   }
 }
 
 function closeOverlay() {
-  let overlay = document.getElementById('overlay');
+  let overlay = document.getElementById("overlay");
   let children = overlay.children;
   let i = 0;
 
