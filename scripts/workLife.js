@@ -62,6 +62,8 @@ function timeProgress() {
                 + ')" type="checkbox" id="task' + objJSON['tasks'][task].taskID + '" name=task"'
                 + objJSON['tasks'][task].taskID + '"' + checked + '><label for="task"'
                 + objJSON['tasks'][task].taskID + '>' + objJSON['tasks'][task].taskName + '</label><br>';
+
+            
         }
 
         document.getElementById("taskList").innerHTML = taskList;
@@ -175,6 +177,8 @@ function addTask() {
 
   strJSON = JSON.stringify(objJSON);
   localStorage.setItem("tasksJSON", strJSON);
+
+  timeProgress();
 }
 
 function updateCompletion(x) {
