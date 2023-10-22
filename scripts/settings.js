@@ -1,56 +1,63 @@
-let waterGoal = 0, sleepGoal = 0, exerciseGoal = 0, calorieGoal = 0, dayStart = 0, dayEnd = 0;
+let waterGoal = 0, sleepGoal = 0, exerciseGoal = 0, calorieGoal = 0;
 
 let startTime = new Date(), endTime = new Date();
 
 function onLoad() {
 
-    waterGoal = localStorage.getItem("waterMaxAmount")
-    sleepGoal = localStorage.getItem("sleepGoal")
-    exerciseGoal = localStorage.getItem("exerciseGoal")
-    calorieGoal = localStorage.getItem("calorieGoal")
-    dayStart = localStorage.getItem("startTime")
-    dayEnd = localStorage.getItem("endTime")
+    waterGoal = localStorage.getItem("waterMaxAmount") != null ? parseInt(localStorage.getItem("waterMaxAmount")) : 0;
+    sleepGoal = localStorage.getItem("sleepGoal") != null ? parseInt(localStorage.getItem("waterMaxAmount")) : 0;
+    exerciseGoal = localStorage.getItem("exerciseGoal") != null ? parseInt(localStorage.getItem("waterMaxAmount")) : 0;
+    calorieGoal = localStorage.getItem("calorieGoal") != null ? parseInt(localStorage.getItem("waterMaxAmount")) : 0;
 
-    if (localStorage.getItem("startTime") != null) {
-        startTime.setTime(localStorage.getItem("startTime"));
-    } else {
-        startTime.setHours(9, 0, 0);
-    }
-
-    if (localStorage.getItem("endTime") != null) {
-        endTime.setTime(localStorage.getItem("endTime"));
-    } else {
-        endTime.setHours(17, 0, 0);
-    }
+    localStorage.getItem("startTime") != null ? startTime.setTime(localStorage.getItem("startTime"))
+        : startTime.setHours(23, 59, 59);
+    localStorage.getItem("endTime") != null ? endTime.setTime(localStorage.getItem("endTime"))
+        : endTime.setHours(23, 59, 59);
 
     document.getElementById("startTime").value = (startTime.getHours() + "").padStart(2, '0')
         + ":" + (startTime.getMinutes() + "").padStart(2, '0');
     document.getElementById("endTime").value = (endTime.getHours() + "").padStart(2, '0')
         + ":" + (endTime.getMinutes() + "").padStart(2, '0');
 
+    let waterMax = localStorage.getItem("waterMaxAmount") != null
+        ? parseInt(localStorage.getItem("waterMaxAmount")) : 0;
+    let calMax = localStorage.getItem("caloriesMaxAmount") != null
+        ? parseInt(localStorage.getItem("caloriesMaxAmount")) : 0;
+    let carbMax = localStorage.getItem("carbsMaxAmount") != null
+        ? parseInt(localStorage.getItem("carbsMaxAmount")) : 0;
+    let sugMax = localStorage.getItem("sugarMaxAmount") != null
+        ? parseInt(localStorage.getItem("sugarMaxAmount")) : 0;
+    let sodMax = localStorage.getItem("sodiumMaxAmount") != null
+        ? parseInt(localStorage.getItem("sodiumMaxAmount")) : 0;
+    let sleepMax = localStorage.getItem("sleepMaxAmount") != null
+        ? parseInt(localStorage.getItem("sleepMaxAmount")) : 0;
+    let exMax = localStorage.getItem("exerciseMaxAmount") != null
+        ? parseInt(localStorage.getItem("exerciseMaxAmount")) : 0;
 
-    document.getElementById("water-max-input").setAttribute("placeholder", localStorage.getItem("waterMaxAmount") + " cups");
-    document.getElementById("calories-max-input").setAttribute("placeholder", localStorage.getItem("caloriesMaxAmount") + " calories");
-    document.getElementById("carbs-max-input").setAttribute("placeholder", localStorage.getItem("carbsMaxAmount") + " carbs");
-    document.getElementById("sugar-max-input").setAttribute("placeholder", localStorage.getItem("sugarMaxAmount") + " sugars");
-    document.getElementById("sodium-max-input").setAttribute("placeholder", localStorage.getItem("sodiumMaxAmount") + " msgs");
-    document.getElementById("sleep-max-input").setAttribute("placeholder", (localStorage.getItem("sleepMaxAmount") / 60) + " hours");
-    document.getElementById("exercise-max-input").setAttribute("placeholder", localStorage.getItem("exerciseMaxAmount") + " minutes");
+
+    document.getElementById("water-max-input").setAttribute("placeholder", waterMax + " cups");
+    document.getElementById("calories-max-input").setAttribute("placeholder", calMax + " calories");
+    document.getElementById("carbs-max-input").setAttribute("placeholder", carbMax + " carbs");
+    document.getElementById("sugar-max-input").setAttribute("placeholder", sugMax + " sugars");
+    document.getElementById("sodium-max-input").setAttribute("placeholder", sodMax + " msgs");
+    document.getElementById("sleep-max-input").setAttribute("placeholder", (sleepMax / 60) + " hours");
+    document.getElementById("exercise-max-input").setAttribute("placeholder", exMax + " minutes");
 }
 
-// Ted Function to set the max value for statType
 function setMax(statType) {
     let max = document.getElementById(statType + "-max-input").value;
-    if (statType == "sleep") {
-        max = max * 60
-    }
+
+    max *= statType == "sleep" ? 60 : 1;
+
     localStorage.setItem(statType + "MaxAmount", max);
     setProgress(statType, statType + "Progress");
 }
-// Ted function to update the progress with the  max value
+
 function setProgress(statType, statProgressVar) {
-    let currentAmount = localStorage.getItem(statType + "CurrentAmount");
-    let maxAmount = localStorage.getItem(statType + "MaxAmount");
+    let currentAmount = localStorage.getItem(statType + "CurrentAmount") != null
+        ? parseInt(localStorage.getItem(statType + "CurrentAmount")) : 0;
+    let maxAmount = localStorage.getItem(statType + "MaxAmount") != null
+        ? parseInt(localStorage.getItem(statType + "MaxAmount")) : 1;
     let progress = (currentAmount / maxAmount) * 100;
     localStorage.setItem(statProgressVar, progress);
 }

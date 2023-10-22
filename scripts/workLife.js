@@ -9,17 +9,10 @@ let strJSON = '{"tasks":[]}', defaultJSON = '{"tasks":[]}', objJSON = null;
 
 function onLoad() {
 
-    if (localStorage.getItem("startTime") != null) {
-        startTime.setTime(localStorage.getItem("startTime"));
-    } else {
-        startTime.setHours(23, 59, 59);
-    }
-
-    if (localStorage.getItem("endTime") != null) {
-        endTime.setTime(localStorage.getItem("endTime"));
-    } else {
-        endTime.setHours(23, 59, 59);
-    }
+    localStorage.getItem("startTime") != null ? startTime.setTime(localStorage.getItem("startTime"))
+        : startTime.setHours(23, 59, 59);
+    localStorage.getItem("endTime") != null ? endTime.setTime(localStorage.getItem("endTime"))
+        : endTime.setHours(23, 59, 59);
 
     if (startTime.getDay() != d.getDay() || endTime.getDay() != d.getDay()) {
         startTime.setHours(23, 59, 59);
