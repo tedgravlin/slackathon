@@ -11,12 +11,13 @@ function setWaterLevel(x) {
     }
   }, 0.1);
 
-  var waterProgress = localStorage.getItem("waterCurrentAmount");
+  var waterProgress = localStorage.getItem("waterProgress");
+  var waterAmount = localStorage.getItem("waterCurrentAmount");
 
   // Check if the value is not null or undefined
   if (waterProgress != null) {
     // Set the innerHTML of the "test" element to the retrieved value
-    document.getElementById("waterProgress").innerHTML = waterProgress;
+    document.getElementById("waterProgress").innerHTML = waterAmount;
   }
   var waterMax = localStorage.getItem("waterMaxAmount");
   if (waterMax != null) {

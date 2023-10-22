@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/css/homepage.css" />
     <link rel="stylesheet" href="/css/settings.css" />
     <script src="/scripts/homepage.js"></script>
+    <script src="/scripts/settings.js"></script>
     <!-- Scale page to display width -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Page Title -->
@@ -16,7 +17,7 @@
     <link rel="icon" type="image/png" href="/assets/favicon/favicon-16x16.png" sizes="16x16" />
 </head>
 
-<body>
+<body onload="onLoad()">
     <!-- Site Header and Navigation-->
     <header>
         <div class="nav-links">
@@ -31,33 +32,28 @@
     <main>
         <div class="card-container">
             <div class="card">
-                <h2>Consumption Goals</h2>
+                <h2>Nutrition Goals</h2>
                 <form>
                     <div class="label-box">
                         <label>Water:</label>
                         <input id="water-max-input" type="number" class="inputs" placeholder="In Cups"></input>
-                        <button onclick="setMaxAmount('waterMaxAmount', getSettingInput('water'))" id="water-submit">Submit</button>
+                        <button onclick="setMax('water')" id="water-submit">Submit</button>
                     </div>
                     <div class="label-box">
                         <label>Calories:</label>
                         <input id="calories-max-input" type="number" class="inputs" placeholder="Calories"></input>
-                        <button onclick="setMaxAmount('caloriesMaxAmount', getSettingInput('calories'))" id="calories-submit">Submit</button>
+                        <button onclick="setMax('calories')" id="calories-submit">Submit</button>
                     </div>
                 </form>
             </div>
             <div class="card">
                 <h2>Work</h2>
-                <form>
-                    <div class="label-box">
-                        <label>Start:</label>
-                        <input type="time" class="inputs" placeholder=""></input>
-                        <button id="start-time-submit">Submit</button>
-                    </div>
-                    <div class="label-box">
-                        <label>End:</label>
-                        <input type="time" class="inputs" placeholder=""></input>
-                        <button id="end-time-submit">Submit</button>
-                    </div>
+                <form style="margin-left: 20px;" name="timeForm" onsubmit=validateForm() method="get">
+                    <label for="startTime">Select a start time:</label>
+                    <input type="time" id="startTime" name="startTime">
+                    <label for="endTime">Select a end time:</label>
+                    <input type="time" id="endTime" name="endTime">
+                    <input type="submit" value="Submit">
                 </form>
             </div>
             <div class="card">
@@ -66,12 +62,12 @@
                     <div class="label-box">
                         <label>Sleep:</label>
                         <input type="number" class="inputs" placeholder="Hours"></input>
-                        <button id="water-submit">Submit</button>
+                        <button onclick="setMax('sleep')" id="sleep-submit">Submit</button>
                     </div>
                     <div class="label-box">
                         <label>Exercise:</label>
                         <input type="number" class="inputs" placeholder="Minutes"></input>
-                        <button id="calories-submit">Submit</button>
+                        <button id="exercise-submit">Submit</button>
                     </div>
                 </form>
             </div>

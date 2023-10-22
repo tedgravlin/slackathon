@@ -1,11 +1,15 @@
 function onLoad() {
   localStorage.setItem("sleepGoal", 8 * 60);
-  let lastHours = localStorage.getItem("lastSleepHours");
-  let lastMinutes = localStorage.getItem("lastSleepMinutes");
+  let lastHours = parseInt(localStorage.getItem("lastSleepHours"));
+  let lastMinutes = parseInt(localStorage.getItem("lastSleepMinutes"));
   let lastSleepTotal = lastHours * 60 + lastMinutes;
+  console.log(localStorage.getItem("sleepGoal"));
   console.log(lastSleepTotal);
   getsleepGoal();
-  setSleepLevel(lastSleepTotal);
+  lastHours = parseInt(localStorage.getItem("lastSleepHours"));
+  lastMinutes = parseInt(localStorage.getItem("lastSleepMinutes"));
+  lastSleepTotal = lastHours * 60 + lastMinutes;
+  setSleepLevel((lastSleepTotal / localStorage.getItem("sleepGoal")) * 100);
 }
 
 function getsleepGoal() {
@@ -15,14 +19,21 @@ function getsleepGoal() {
   let lastHours = localStorage.getItem("lastSleepHours");
   let lastMinutes = localStorage.getItem("lastSleepMinutes");
 
-  let sleepGoal = localStorage.getItem("sleepGoal");
+  let sleepGoal = localStorage.getItem("sleepMaxAmount");
 
   sleepGoalOutput.innerHTML = "<p>Sleep Goal: " + sleepGoal + "</p>";
-  console.log(lastHours);
-  console.log(lastMinutes);
+
   if (lastHours != null && lastMinutes != null) {
     lastSleep.innerHTML =
       "" + lastHours + " Hour(s),  " + lastMinutes + " Minute(s) of sleep.";
+    if (lastHours === "") {
+      localStorage.setItem("lastSleepHours", 0);
+    }
+    if (lastMinutes === "") {
+      localStorage.setItem("lastSleepMinutes", 0);
+    }
+    console.log(lastHours);
+    console.log(lastMinutes);
     if (
       (lastHours == "" || lastHours == 0) &&
       (lastMinutes == "" || lastMinutes == 0)
@@ -70,16 +81,4 @@ function setSleepLevel(x) {
       clearInterval(waterInterval);
     }
   }, 0.1);
-
-  var waterProgress = localStorage.getItem("waterCurrentAmount");
-
-  // Check if the value is not null or undefined
-  if (waterProgress != null) {
-    // Set the innerHTML of the "test" element to the retrieved value
-    document.getElementById("waterProgress").innerHTML = waterProgress;
-  }
-  var waterMax = localStorage.getItem("waterMaxAmount");
-  if (waterMax != null) {
-    document.getElementById("waterMax").innerHTML = waterMax;
-  }
 }
