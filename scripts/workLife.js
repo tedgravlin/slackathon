@@ -13,8 +13,12 @@ let endMeridiem = 0;
 let startWork = 0;
 let endWork = 0;
 
+let currTime = "";
 let currHour = 0;
 let currMeridiem = 0;
+
+let strJSON = "";
+let objJSON = null;
 
 function onLoad() {
     if (localStorage.getItem("startTime") != null) {
@@ -47,8 +51,15 @@ function timeProgress() {
     startWork = d.getTime() < startTime.getTime() ? "Work starts at " : "Work started at ";
     endWork = d.getTime() < endTime.getTime() ? "work ends at " : "work ended at ";
 
+    currHour = d.getHours() > 12 ? d.getHours() - 12 : d.getHours();
+    currMeridiem = d.getHours() > 12 ? "pm" : "am";
+
+    if (d.getTime() < endTime.getTime()) {
+        currTime = currHour + ":" + (d.getMinutes() + "").padStart(2, '0')
+            + currMeridiem;
+
     timesMessage = startWork + startHour + ":" + startMinutes + startMeridiem + " and " + endWork + endHour
-        + ":" + endMinutes + endMeridiem;
+        + ":" + endMinutes + endMeridiem + ", it is currently " + currTime;
 
     document.getElementById("timesSet").innerHTML = timesMessage;
 
@@ -58,16 +69,6 @@ function timeProgress() {
         if (workLevel < x) {
           workLevel += 0.2;
           progress.style.width = workLevel + "%";
-
-          currHour = d.getHours() > 12 ? d.getHours() - 12 : d.getHours();
-          currMeridiem = d.getHours() > 12 ? "pm" : "am";
-
-            if (d.getTime() < endTime.getTime()) {
-            document.getElementById("timeCurrent").innerHTML = currHour + ":" + (d.getMinutes() + "").padStart(2, '0')
-             + currMeridiem;
-        } else {
-            document.getElementById("timeCurrent").innerHTML = "";
-        }
         } else {
           clearInterval(workLevel);
         }
@@ -88,20 +89,21 @@ function timeProgress() {
         startWork = d2.getTime() < startTime.getTime() ? "Work starts at " : "Work started at ";
         endWork = d2.getTime() < endTime.getTime() ? "work ends at " : "work ended at ";
 
-        timesMessage = startWork + startHour + ":" + startMinutes + startMeridiem + " and " + endWork + endHour
-            + ":" + endMinutes + endMeridiem;
-
-        document.getElementById("timesSet").innerHTML = timesMessage;
-
-        let currHour = d2.getHours() > 12 ? d2.getHours() - 12 : d2.getHours();
-        let currMeridiem = d2.getHours() > 12 ? "pm" : "am";
+        currHour = d2.getHours() > 12 ? d2.getHours() - 12 : d2.getHours();
+        currMeridiem = d2.getHours() > 12 ? "pm" : "am";
 
         if (d2.getTime() < endTime.getTime()) {
-            document.getElementById("timeCurrent").innerHTML = currHour + ":" + (d.getMinutes() + "").padStart(2, '0')
+            currTime = currHour + ":" + (d.getMinutes() + "").padStart(2, '0')
              + currMeridiem;
         } else {
             document.getElementById("timeCurrent").innerHTML = "";
         }
+
+        timesMessage = startWork + startHour + ":" + startMinutes + startMeridiem + " and " + endWork + endHour
+        + ":" + endMinutes + endMeridiem + ", it is currently " + currTime;
+
+        document.getElementById("timesSet").innerHTML = timesMessage;
+    }
     }
 }
 
@@ -137,4 +139,16 @@ function getProgress() {
     } else {
         return Math.round((d.getTime() - startTime.getTime()) / (endTime.getTime() - startTime.getTime())*10000) / 100;
     }
+}
+
+function getJSON() {
+    if (localStorage.getItem("JSON") != null) {
+        strJSON = localStorage.getItem("JSON");
+        objJSON = JSON.parse(strJSON);
+    }
+}
+
+function setJSON() {
+    strJSON = JSON.stringify(objJSON);
+    localStorage.setItem("JSON", strJSON);
 }

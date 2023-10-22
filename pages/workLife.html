@@ -25,14 +25,15 @@
     </header>
     <!-- Main Page -->
     <main>
-        <div id="timesSet"></div>
+        <div style="margin-left: 20px;" id="timesSet"></div>
         <div class="card">
             <div id="workProgress">
-                <div style="text-align: center; width: 100%;" id="time"></div>
-                <div style="padding-left: 100%;" id="timeCurrent"></div>
+                <div style="text-align: center; padding-top: 10px; padding-bottom: 10px;">
+                    <p style="width: 100%;" id="time"></p>
+                </div>
             </div>
         </div>
-        <form name="timeForm" onsubmit=validateForm() method="get">
+        <form style="margin-left: 20px;" name="timeForm" onsubmit=validateForm() method="get">
             <label for="startTime">Select a start time:</label>
             <input type="time" id="startTime" name="startTime">
             <label for="endTime">Select a end time:</label>
@@ -40,6 +41,9 @@
             <input type="submit" value="Submit">
         </form>
         <div id="taskList"></div>
+        <button type="button" style="display: block; margin: auto; margin-top: 20px; margin-bottom: 20px;">
+            <a href="./newTask.html">Add Task</a>
+        </button>
     </main>
 </body>
 
