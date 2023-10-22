@@ -64,7 +64,7 @@ h2 {
 }
 
 #water {
-  background-color: blue;
+  background-color: rgb(134, 134, 240);
   width: 0%;
   height: 100%;
 }
@@ -77,4 +77,26 @@ h2 {
   margin: auto;
   overflow: hidden;
   border-radius: 10px;
+}
+#runner {
+  background-color: rgb(46, 209, 54);
+  width: 0%;
+  height: 100%;
+}
+
+#racetrack {
+  width: 85vh;
+  height: 50px;
+  background: rgba(124, 122, 122, 0.2);
+  position: relative;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 10px;
+}
+form {
+  width: 37.5%;
+  align-items: center;
+}
+#ex-div {
+  display: flex;
 }

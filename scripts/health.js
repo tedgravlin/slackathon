@@ -1,4 +1,10 @@
 function onLoad() {
+  exerciseProgress(
+    (localStorage.getItem("exerciseCurrentAmount") /
+      localStorage.getItem("exerciseMaxAmount")) *
+      100
+  );
+
   let lastHours = parseInt(localStorage.getItem("lastSleepHours"));
   let lastMinutes = parseInt(localStorage.getItem("lastSleepMinutes"));
   let lastSleepTotal = lastHours * 60 + lastMinutes;
@@ -9,7 +15,9 @@ function onLoad() {
   lastHours = parseInt(localStorage.getItem("lastSleepHours"));
   lastMinutes = parseInt(localStorage.getItem("lastSleepMinutes"));
   lastSleepTotal = lastHours * 60 + lastMinutes;
-  setSleepLevel((lastSleepTotal / localStorage.getItem("sleepMaxAmount")) * 100);
+  setSleepLevel(
+    (lastSleepTotal / localStorage.getItem("sleepMaxAmount")) * 100
+  );
 }
 
 function setSleepInfo() {
@@ -79,6 +87,20 @@ function setSleepLevel(x) {
       water.style.width = sleepLevel + "%";
     } else {
       clearInterval(waterInterval);
+    }
+  }, 0.1);
+}
+
+function exerciseProgress(x) {
+  let exerciseLevel = 0;
+  let runner = document.getElementById("runner");
+  let man = document.getElementById("man");
+  let exerciseInterval = setInterval(function () {
+    if (exerciseLevel < x) {
+      exerciseLevel += 0.2;
+      runner.style.width = exerciseLevel + "%";
+    } else {
+      clearInterval(exerciseInterval);
     }
   }, 0.1);
 }
