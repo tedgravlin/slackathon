@@ -1,52 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <!-- Import CSS and Scripts-->
-    <link rel="stylesheet" href="/css/main.css">
-    <link rel="stylesheet" href="/css/health.css">
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/health.css" />
     <script src="../scripts/health.js"></script>
     <!-- Scale page to display width -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Page Title -->
     <title>Health | Progress</title>
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="/assets/favicon/favicon-32x32.png" sizes="32x32" />
-    <link rel="icon" type="image/png" href="/assets/favicon/favicon-16x16.png" sizes="16x16" />
-</head>
+    <link
+      rel="icon"
+      type="image/png"
+      href="/assets/favicon/favicon-32x32.png"
+      sizes="32x32"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="/assets/favicon/favicon-16x16.png"
+      sizes="16x16"
+    />
+  </head>
 
-<body onload="getSleepGoal()">
+  <body onload="getSleepGoal()">
     <!-- Site Header and Navigation-->
     <header>
-        <div class="nav-links">
-            <a href="../index.html"><img src="/assets/icons/home.svg" /><p>Home</p></a>
-            <a href="./water.html"><img src="/assets/icons/water.svg" /><p>Nutrition</p></a>
-            <a href="./workLife.html"><img src="/assets/icons/work.svg" /><p>Work</p></a>
-            <a href="./health.html"><img src="/assets/icons/exercise.svg" /><p>Health</p></a>
-            <a href="./settings.html"><img src="/assets/icons/gear.svg"><p>Settings</p></a>
-        </div>
+      <div class="nav-links">
+        <a href="../index.html"
+          ><img src="/assets/icons/home.svg" />
+          <p>Home</p></a
+        >
+        <a href="./water.html"
+          ><img src="/assets/icons/water.svg" />
+          <p>Nutrition</p></a
+        >
+        <a href="./workLife.html"
+          ><img src="/assets/icons/work.svg" />
+          <p>Work</p></a
+        >
+        <a href="./health.html"
+          ><img src="/assets/icons/exercise.svg" />
+          <p>Health</p></a
+        >
+        <a href="./settings.html"
+          ><img src="/assets/icons/gear.svg" />
+          <p>Settings</p></a
+        >
+      </div>
     </header>
     <!-- Main Page -->
     <main>
-        <div class="card container sleep" id="sleep">
-            <h2>Sleep</h2>
-            <p class="sleep-goal" id="sleep-goal">Sleep Goal: </p>
-            <form name="sleep-form" method="get">
-                <label>
-                    Last Nights Sleep: 
-                </label>
-                <p id="last-night-sleep"></p>
-                <div>
-                    <input min="0" max="24" class="input-box" type="number" id="sleep-hours" placeholder="hours">
-                    <input min="0" max="60" class="input-box" type="number" id="sleep-minutes" placeholder="minutes">
-                    <button onclick="setLastSleep()">Submit!</button>
-                </div>
-            </form>
-        </div>
-        <div class="card container">
-            <p>Exercise</p>
-        </div>
+      <div class="card container sleep" id="sleep">
+        <h2>Sleep</h2>
+        <p class="sleep-goal" id="sleep-goal">Sleep Goal:</p>
+        <form name="sleep-form" method="get">
+          <label> Last Nights Sleep: </label>
+          <p id="last-night-sleep"></p>
+          <div>
+            <input
+              min="0"
+              max="24"
+              class="input-box"
+              type="number"
+              id="sleep-hours"
+              placeholder="hours"
+            />
+            <input
+              min="0"
+              max="60"
+              class="input-box"
+              type="number"
+              id="sleep-minutes"
+              placeholder="minutes"
+            />
+            <button onclick="setLastSleep()">Submit!</button>
+          </div>
+        </form>
+      </div>
+      <div class="card container">
+        <p>Exercise</p>
+      </div>
     </main>
-</body>
-
+  </body>
 </html>
