@@ -31,6 +31,7 @@ function onLoad() {
   );
     
   setExerciseValues();
+  localStorage.setItem("exerciseProgress", (exerciseCurrentAmount / exerciseMaxAmount) * 100)
 
 }
 
@@ -137,4 +138,5 @@ function addExercise() {
     console.log(prevWorkoutMinutes)
     
     localStorage.setItem("exerciseCurrentAmount", workoutMinutes + prevWorkoutMinutes);
+    localStorage.setItem("exerciseProgress", (exerciseCurrentAmount / exerciseMaxAmount) * 100)
 }
