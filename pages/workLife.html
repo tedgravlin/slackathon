@@ -1,66 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <!-- Import CSS and Scripts-->
-    <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="../css/work.css">
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/work.css" />
     <script src="../scripts/workLife.js"></script>
     <!-- Scale page to display width -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Page Title -->
     <title>Work | Progress</title>
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="/assets/favicon/favicon-32x32.png" sizes="32x32" />
-    <link rel="icon" type="image/png" href="/assets/favicon/favicon-16x16.png" sizes="16x16" />
-</head>
+    <link
+      rel="icon"
+      type="image/png"
+      href="/assets/favicon/favicon-32x32.png"
+      sizes="32x32"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="/assets/favicon/favicon-16x16.png"
+      sizes="16x16"
+    />
+  </head>
 
-<body onload=onLoad()>
+  <body onload="onLoad()">
     <!-- Site Header and Navigation-->
     <header>
-        <h1>Progress</h1>
-        <div class="nav-links">
-            <a href="../index.html"><img src="/assets/icons/home.svg" />
-                <p>Home</p>
-            </a>
-            <a href="./nutrition.html"><img src="/assets/icons/nutrition.svg" />
-                <p>Nutrition</p>
-            </a>
-            <a class="active" href="./workLife.html"><img src="/assets/icons/work.svg" />
-                <p>Work</p>
-            </a>
-            <a href="./health.html"><img src="/assets/icons/health.svg" />
-                <p>Health</p>
-            </a>
-            <a href="./settings.html"><img src="/assets/icons/gear.svg">
-                <p>Settings</p>
-            </a>
-        </div>
+      <h1>Progress</h1>
+      <div class="nav-links">
+        <a href="../index.html"
+          ><img src="/assets/icons/home.svg" />
+          <p>Home</p>
+        </a>
+        <a href="./nutrition.html"
+          ><img src="/assets/icons/nutrition.svg" />
+          <p>Nutrition</p>
+        </a>
+        <a class="active" href="./workLife.html"
+          ><img src="/assets/icons/work.svg" />
+          <p>Work</p>
+        </a>
+        <a href="./health.html"
+          ><img src="/assets/icons/health.svg" />
+          <p>Health</p>
+        </a>
+        <a href="./settings.html"
+          ><img src="/assets/icons/gear.svg" />
+          <p>Settings</p>
+        </a>
+      </div>
     </header>
     <!-- Main Page -->
     <main>
-        <h1 class="work-title">Work Day Stats</h1>
-        <div class="work-progress-card">
-            <h2>Time left in work day</h2>
-            <div class="work-progress-background">
-                <div class="work-progress" id="workProgress">
-                    <div style="text-align: center; padding-top: 10px; padding-bottom: 10px;">
-                        <p style="width: 100%;" id="time"></p>
-                    </div>
-                </div>
+      <h1 class="work-title">Work Day Stats</h1>
+      <div class="work-progress-card">
+        <h2>Time left in work day</h2>
+        <div class="work-progress-background">
+          <div class="work-progress" id="workProgress">
+            <div
+              style="
+                text-align: center;
+                padding-top: 10px;
+                padding-bottom: 10px;
+              "
+            >
+              <p style="width: 100%" id="time"></p>
             </div>
-            <div id="timesSet"></div>
+          </div>
         </div>
-        <div class="task-card">
-            <div class="task-card-title">
-                <h2>Tasks</h2>
-                <button type="button" onclick="addTask()">
-                    +
-                </button>
-            </div>
-            <div id="taskList"></div>
+        <div id="timesSet"></div>
+      </div>
+      <div class="task-card">
+        <div class="task-card-title">
+          <h2>Tasks</h2>
+          <button type="button" onclick="addTask()">+</button>
         </div>
+        <div id="taskList"></div>
+      </div>
     </main>
-</body>
-
+  </body>
 </html>
