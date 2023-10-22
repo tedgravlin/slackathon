@@ -45,7 +45,14 @@ header {
   margin-bottom: 1em;
   display: inline-block;
   border-bottom: 2px solid grey;
-  background-color: rgb(133, 133, 133);
+  background-color: white;
+}
+
+header h1 {
+  position: absolute;
+  top: 15px;
+  left: 25px;
+  margin: 0;
 }
 
 div.nav-links {
@@ -53,7 +60,7 @@ div.nav-links {
   grid-template-columns: auto auto auto auto auto;
   width: 50%;
   margin: auto;
-  background-color: rgb(133, 133, 133);
+  background-color: white;
 }
 
 header ul {
