@@ -166,7 +166,7 @@ function changeGreeting() {
   else if (time < 17 && time > 12) {
     greeting.innerHTML = "😎 Good afternoon";
   }
-  else if (time > 17) {
+  else if (time > 17 || time < 5) {
     greeting.innerHTML = "🌝 Good evening";
   }
 }
