@@ -63,6 +63,7 @@ header a {
   margin: 8px;
   text-decoration: none;
   color: inherit;
+  min-width: 110px;
 }
 
 header a:hover {
@@ -72,6 +73,8 @@ header a:hover {
 
 header img {
   margin: auto;
+  width: 24px;
+  height: 24px;
 }
 
 a, a:visited {
