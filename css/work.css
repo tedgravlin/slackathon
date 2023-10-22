@@ -24,13 +24,13 @@ h1.work-title {
 }
 
 div.work-progress-card {
-    width: 30vw;
-    border-radius: 24px;
-    padding: 2em;
-    margin: auto;
-    margin-bottom: 1em;
-    background-color: var(--bg-color);
-    border: 2px solid black;
+  width: 30vw;
+  border-radius: 24px;
+  padding: 2em;
+  margin: auto;
+  margin-bottom: 1em;
+  background-color: var(--bg-color);
+  border: 2px solid grey;
 }
 
 div.work-progress-card h2 {
@@ -38,12 +38,12 @@ div.work-progress-card h2 {
 }
 
 div.task-card {
-    border-radius: 24px;
-    padding: 2em;
-    width: 30vw;
-    margin: auto;
-    background-color: var(--bg-color);
-    border: 2px solid black;
+  border-radius: 24px;
+  padding: 2em;
+  width: 30vw;
+  margin: auto;
+  background-color: var(--bg-color);
+  border: 2px solid grey;
 }
 
 div.task-card input[type="checkbox"] {
