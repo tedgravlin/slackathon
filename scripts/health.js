@@ -1,36 +1,49 @@
+let lastHours = 0;
+let lastMinutes = 0;
+
+let exerciseCurrentAmount = localStorage.getItem("exerciseCurrentAmount")
+let exerciseMaxAmount = localStorage.getItem("exerciseMaxAmount")
+
 function onLoad() {
   exerciseProgress(
     (localStorage.getItem("exerciseCurrentAmount") /
       localStorage.getItem("exerciseMaxAmount")) *
       100
   );
+  
+  let sleepCurrent = parseInt(localStorage.getItem("sleepCurrentAmount"));
 
-  let lastHours = parseInt(localStorage.getItem("lastSleepHours"));
-  let lastMinutes = parseInt(localStorage.getItem("lastSleepMinutes"));
-  let lastSleepTotal = lastHours * 60 + lastMinutes;
+  lastHours = Math.round(sleepCurrent / 60);
+  lastMinutes = sleepCurrent % 60;
 
 
-  console.log(localStorage.getItem("sleepMaxAmount"));
-  console.log(lastSleepTotal);
+
   setSleepInfo();
-  lastHours = parseInt(localStorage.getItem("lastSleepHours"));
-  lastMinutes = parseInt(localStorage.getItem("lastSleepMinutes"));
   lastSleepTotal = lastHours * 60 + lastMinutes;
+
+  localStorage.setItem("lastSleepHours", lastHours);
+  localStorage.setItem("lastSleepMinutes", lastMinutes);
+  localStorage.setItem("sleepCurrentAmount", lastHours * 60 + lastMinutes);
+
+  console.log(lastHours + ", " + lastMinutes + " : " + lastSleepTotal);
   setSleepLevel(
-    (lastSleepTotal / localStorage.getItem("sleepMaxAmount")) * 100
+    Math.round((sleepCurrent / localStorage.getItem("sleepMaxAmount")) * 10000) / 100
   );
+    
+  setExerciseValues();
+
 }
 
 function setSleepInfo() {
   let sleepGoalOutput = document.getElementById("sleep-goal");
   let lastSleep = document.getElementById("last-night-sleep");
 
-  let lastHours = localStorage.getItem("lastSleepHours");
-  let lastMinutes = localStorage.getItem("lastSleepMinutes");
+  //let lastHours = localStorage.getItem("lastSleepHours");
+  //let lastMinutes = localStorage.getItem("lastSleepMinutes");
 
   let sleepGoal = localStorage.getItem("sleepMaxAmount") / 60;
 
-  sleepGoalOutput.innerHTML = "<p>Sleep Goal: " + sleepGoal + " hours</p>";
+  sleepGoalOutput.innerHTML = "Sleep Goal: " + sleepGoal + " hours";
 
   if (lastHours != null && lastMinutes != null) {
     lastSleep.innerHTML =
@@ -70,6 +83,10 @@ function setLastSleep() {
   let lastSleep = document.getElementById("last-night-sleep");
   let lastHours = document.getElementById("sleep-hours").value;
   let lastMinutes = document.getElementById("sleep-minutes").value;
+
+  lastHours = parseInt(lastHours);
+  lastMinutes = parseInt(lastMinutes);
+
   let lastSleepTotal = lastHours * 60 + lastMinutes;
 
   console.log(lastHours);
@@ -94,6 +111,11 @@ function setSleepLevel(x) {
   }, 0.1);
 }
 
+function setExerciseValues() {
+    document.getElementById("last-exercise").innerHTML = exerciseCurrentAmount + " minutes"
+    document.getElementById("exercise-goal").innerHTML = "Exercise Goal: " + exerciseMaxAmount + " minutes"
+}
+
 function exerciseProgress(x) {
   let exerciseLevel = 0;
   let runner = document.getElementById("runner");
@@ -106,4 +128,13 @@ function exerciseProgress(x) {
       clearInterval(exerciseInterval);
     }
   }, 0.1);
+}
+
+function addExercise() {
+    let workoutMinutes = Number(document.getElementById("exercise-minutes").value);
+
+    let prevWorkoutMinutes = Number(localStorage.getItem("exerciseCurrentAmount"));
+    console.log(prevWorkoutMinutes)
+    
+    localStorage.setItem("exerciseCurrentAmount", workoutMinutes + prevWorkoutMinutes);
 }

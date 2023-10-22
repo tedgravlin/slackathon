@@ -63,6 +63,10 @@ h2 {
   display: inline-block;
 }
 
+#last-exercise {
+    display: inline-block;
+  }
+
 #water {
   background-color: rgb(134, 134, 240);
   width: 0%;
@@ -70,7 +74,7 @@ h2 {
 }
 
 #glass {
-  width: 85vh;
+  width: 85vw;
   height: 50px;
   background: rgba(124, 122, 122, 0.2);
   position: relative;
@@ -85,7 +89,7 @@ h2 {
 }
 
 #racetrack {
-  width: 85vh;
+  width: 85vw;
   height: 50px;
   background: rgba(124, 122, 122, 0.2);
   position: relative;
