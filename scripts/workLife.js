@@ -49,10 +49,12 @@ function timeProgress() {
     
     let taskList = "";
 
-    for (let task in objJSON['tasks']) {
-        taskList += '<input type="checkbox" id="task' + objJSON['tasks'][task].taskID + '" name=task"'
-         + objJSON['tasks'][task].taskID + '"><label for="task"' + objJSON['tasks'][task].taskID + '>'
-         + objJSON['tasks'][task].taskName + '</label><br>';
+    if (localStorage.getItem("tasksJSON") != null) {
+        for (let task in objJSON['tasks']) {
+            taskList += '<input type="checkbox" id="task' + objJSON['tasks'][task].taskID + '" name=task"'
+                + objJSON['tasks'][task].taskID + '"><label for="task"' + objJSON['tasks'][task].taskID + '>'
+                + objJSON['tasks'][task].taskName + '</label><br>';
+        }
     }
 
     document.getElementById("taskList").innerHTML = taskList;
@@ -154,8 +156,8 @@ function getProgress() {
 }
 
 function getJSON() {
-    if (localStorage.getItem("JSON") != null) {
-        strJSON = localStorage.getItem("JSON");
+    if (localStorage.getItem("tasksJSON") != null) {
+        strJSON = localStorage.getItem("tasksJSON");
         objJSON = JSON.parse(strJSON);
     }
 }
@@ -168,5 +170,5 @@ function addTask() {
   }
 
   strJSON = JSON.stringify(objJSON);
-  localStorage.setItem("JSON", strJSON);
+  localStorage.setItem("tasksJSON", strJSON);
 }
