@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <!-- Import CSS and Scripts-->
     <link rel="stylesheet" href="/css/main.css" />
     <link rel="stylesheet" href="/css/homepage.css" />
@@ -12,211 +11,246 @@
     <!-- Page Title -->
     <title>Progress</title>
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="/assets/favicon/favicon-32x32.png" sizes="32x32" />
-    <link rel="icon" type="image/png" href="/assets/favicon/favicon-16x16.png" sizes="16x16" />
-</head>
+    <link
+      rel="icon"
+      type="image/png"
+      href="/assets/favicon/favicon-32x32.png"
+      sizes="32x32"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="/assets/favicon/favicon-16x16.png"
+      sizes="16x16"
+    />
+  </head>
 
-<body>
+  <body>
     <!-- Site Header and Navigation-->
     <header>
-        <h1>Progress</h1>
-        <div class="nav-links">
-            <a class="active" href="./index.html"><img src="/assets/icons/home.svg" />
-                <p>Home</p>
-            </a>
-            <a href="./pages/nutrition.html"><img src="/assets/icons/nutrition.svg" />
-                <p>Nutrition</p>
-            </a>
-            <a href="./pages/workLife.html"><img src="/assets/icons/work.svg" />
-                <p>Work</p>
-            </a>
-            <a href="./pages/health.html"><img src="/assets/icons/health.svg" />
-                <p>Health</p>
-            </a>
-            <a href="./pages/settings.html"><img src="/assets/icons/gear.svg">
-                <p>Settings</p>
-            </a>
-        </div>
+      <h1>Progress</h1>
+      <div class="nav-links">
+        <a class="active" href="./index.html"
+          ><img src="/assets/icons/home.svg" />
+          <p>Home</p>
+        </a>
+        <a href="./pages/nutrition.html"
+          ><img src="/assets/icons/nutrition.svg" />
+          <p>Nutrition</p>
+        </a>
+        <a href="./pages/workLife.html"
+          ><img src="/assets/icons/work.svg" />
+          <p>Work</p>
+        </a>
+        <a href="./pages/health.html"
+          ><img src="/assets/icons/health.svg" />
+          <p>Health</p>
+        </a>
+        <a href="./pages/settings.html"
+          ><img src="/assets/icons/gear.svg" />
+          <p>Settings</p>
+        </a>
+      </div>
     </header>
     <!-- Main Page -->
     <main>
-        <div class="greeting">
-            <p id="greeting">🌞 Good timeofday</p>
-        </div>
-        <div class="two-grid-card-container">
-            <div class="nutrition-card card">
-                <h2><a href="./pages/nutrition.html">Nutrition</a></h2>
-                <!-- WATER -->
-                <div id="water" onclick="toggleStatInfo('water')" class="stat">
-                    <div class="icon-and-label">
-                        <img src="/assets/icons/water.svg" />
-                        <label for="water-progress-bar">Cups of water</label>
-                    </div>
-                    <progress id="water-progress-bar" max="100" value="0"></progress>
-                </div>
-                <!-- CALORIES -->
-                <div id="calories" onclick="toggleStatInfo('calories')" class="stat">
-                    <div class="icon-and-label">
-                        <img src="/assets/icons/calories.svg" />
-                        <label for="calories-progress-bar">Calories</label>
-                    </div>
-                    <progress id="calories-progress-bar" max="100" value="0"></progress>
-                </div>
-                <!-- PROTEIN -->
-                <div onclick="toggleStatInfo('protein')" class="stat">
-                    <div class="icon-and-label">
-                        <img src="/assets/icons/protein.svg" />
-                        <label for="protein-progress-bar">Protein</label>
-                    </div>
-                    <progress id="protein-progress-bar" max="100" value="0"></progress>
-                </div>
-                <!-- CARBS -->
-                <div onclick="toggleStatInfo('carbs')" class="stat">
-                    <div class="icon-and-label">
-                        <img src="/assets/icons/carbs.svg" />
-                        <label for="calories-progress-bar">Carbs</label>
-                    </div>
-                    <progress id="carbs-progress-bar" max="100" value="0"></progress>
-                </div>
-                <!-- SUGAR -->
-                <div onclick="toggleStatInfo('sugar')" class="stat">
-                    <div class="icon-and-label">
-                        <img src="/assets/icons/sugar.svg" />
-                        <label for="sugar-progress-bar">Sugar</label>
-                    </div>
-                    <progress id="sugar-progress-bar" max="100" value="0"></progress>
-                </div>
-                <!-- SODIUM -->
-                <!-- <div onclick="toggleStatInfo('sodium')" class="stat">
+      <div class="greeting">
+        <p id="greeting">🌞 Good timeofday</p>
+      </div>
+      <div class="two-grid-card-container">
+        <div class="nutrition-card card">
+          <h2><a href="./pages/nutrition.html">Nutrition</a></h2>
+          <!-- WATER -->
+          <div id="water" onclick="toggleStatInfo('water')" class="stat">
+            <div class="icon-and-label">
+              <img src="/assets/icons/water.svg" />
+              <label for="water-progress-bar">Cups of water</label>
+            </div>
+            <progress id="water-progress-bar" max="100" value="0"></progress>
+          </div>
+          <!-- CALORIES -->
+          <div id="calories" onclick="toggleStatInfo('calories')" class="stat">
+            <div class="icon-and-label">
+              <img src="/assets/icons/calories.svg" />
+              <label for="calories-progress-bar">Calories</label>
+            </div>
+            <progress id="calories-progress-bar" max="100" value="0"></progress>
+          </div>
+          <!-- PROTEIN -->
+          <div onclick="toggleStatInfo('protein')" class="stat">
+            <div class="icon-and-label">
+              <img src="/assets/icons/protein.svg" />
+              <label for="protein-progress-bar">Protein</label>
+            </div>
+            <progress id="protein-progress-bar" max="100" value="0"></progress>
+          </div>
+          <!-- CARBS -->
+          <div onclick="toggleStatInfo('carbs')" class="stat">
+            <div class="icon-and-label">
+              <img src="/assets/icons/carbs.svg" />
+              <label for="calories-progress-bar">Carbs</label>
+            </div>
+            <progress id="carbs-progress-bar" max="100" value="0"></progress>
+          </div>
+          <!-- SUGAR -->
+          <div onclick="toggleStatInfo('sugar')" class="stat">
+            <div class="icon-and-label">
+              <img src="/assets/icons/sugar.svg" />
+              <label for="sugar-progress-bar">Sugar</label>
+            </div>
+            <progress id="sugar-progress-bar" max="100" value="0"></progress>
+          </div>
+          <!-- SODIUM -->
+          <!-- <div onclick="toggleStatInfo('sodium')" class="stat">
                     <div class="icon-and-label">
                         <img src="/assets/icons/salt.svg" />
                         <label for="sodium-progress-bar">Sodium</label>
                     </div>
                     <progress id="sodium-progress-bar" max="100" value="0"></progress>
                 </div> -->
-            </div>
-            <div class="card">
-                <h2><a href="./pages/workLife.html">Work</a></h2>
-                <!-- WORK -->
-                <div id="work" class="stat">
-                    <div class="icon-and-label">
-                        <img src="/assets/icons/work.svg" />
-                        <label for="work-progress-bar">Time left in workday</label>
-                    </div>
-                    <progress id="work-progress-bar" max="100" value="0"></progress>
-                </div>
-                <!-- WORK -->
-                <div class="stat">
-                    <div class="icon-and-label">
-                        <img src="/assets/icons/task.svg" />
-                        <label for="task-progress-bar">Tasks left</label>
-                    </div>
-                    <progress id="task-progress-bar" max="100" value="0"></progress>
-                </div>
-            </div>
-            <div class="card">
-                <h2><a href="./pages/health.html">Health</a></h2>
-                <!-- SLEEP -->
-                <div id="sleep" onclick="toggleStatInfo('sleep')" class="stat">
-                    <div class="icon-and-label">
-                        <img src="/assets/icons/sleep.svg" />
-                        <label for="sleep-progress-bar">Sleep last night</label>
-                    </div>
-                    <progress id="sleep-progress-bar" max="100" value="0"></progress>
-                </div>
-                <!-- EXERCISE -->
-                <div id="exercise" onclick="toggleStatInfo('exercise')" class="stat">
-                    <div class="icon-and-label">
-                        <img src="/assets/icons/exercise.svg" />
-                        <label for="exercise-progress-bar">Exercise Minutes</label>
-                    </div>
-                    <progress id="exercise-progress-bar" max="100" value="0"></progress>
-                </div>
-            </div>
-            <div class="quote-card">
-                <img src="/assets/icons/quote.svg">
-                <div class="quote-text">
-                    <p id="quote"></p>
-                    <p id="author"></p>
-                </div>
-            </div>
         </div>
-        <button onclick="devValues()">Dev Values</button>
+        <div class="card">
+          <h2><a href="./pages/workLife.html">Work</a></h2>
+          <!-- WORK -->
+          <div id="work" class="stat">
+            <div class="icon-and-label">
+              <img src="/assets/icons/work.svg" />
+              <label for="work-progress-bar">Time left in workday</label>
+            </div>
+            <progress id="work-progress-bar" max="100" value="0"></progress>
+          </div>
+          <!-- WORK -->
+          <div class="stat">
+            <div class="icon-and-label">
+              <img src="/assets/icons/task.svg" />
+              <label for="task-progress-bar">Tasks left</label>
+            </div>
+            <progress id="task-progress-bar" max="100" value="0"></progress>
+          </div>
+        </div>
+        <div class="card">
+          <h2><a href="./pages/health.html">Health</a></h2>
+          <!-- SLEEP -->
+          <div id="sleep" onclick="toggleStatInfo('sleep')" class="stat">
+            <div class="icon-and-label">
+              <img src="/assets/icons/sleep.svg" />
+              <label for="sleep-progress-bar">Sleep last night</label>
+            </div>
+            <progress id="sleep-progress-bar" max="100" value="0"></progress>
+          </div>
+          <!-- EXERCISE -->
+          <div id="exercise" onclick="toggleStatInfo('exercise')" class="stat">
+            <div class="icon-and-label">
+              <img src="/assets/icons/exercise.svg" />
+              <label for="exercise-progress-bar">Exercise Minutes</label>
+            </div>
+            <progress id="exercise-progress-bar" max="100" value="0"></progress>
+          </div>
+        </div>
+        <div class="quote-card">
+          <img src="/assets/icons/quote.svg" onclick="devValues()" />
+          <div class="quote-text">
+            <p id="quote"></p>
+            <p id="author"></p>
+          </div>
+        </div>
+      </div>
     </main>
     <div id="overlay" class="overlay">
-        <div class="stat-info" id="water-stat-info">
-            <p>Water</p>
-            <input type="number" id="water-input" placeholder="Cups" />
-            <button onclick="addProgress('water', 'waterCurrentAmount', 'waterProgress')">
-                Add
-            </button>
-            <button onclick="closeOverlay()">Close</button>
-        </div>
-        <div class="stat-info" id="calories-stat-info">
-            <p>Calories</p>
-            <input type="number" id="calories-input" placeholder="Calories" />
-            <button onclick="addProgress('calories', 'caloriesCurrentAmount', 'caloriesProgress')">
-                Add
-            </button>
-            <button onclick="closeOverlay()">Close</button>
-        </div>
-        <div class="stat-info" id="protein-stat-info">
-            <p>Protein</p>
-            <input type="number" id="protein-input" placeholder="Protein" />
-            <button onclick="addProgress('protein', 'proteinCurrentAmount', 'proteinProgress')">
-                Add
-            </button>
-            <button onclick="closeOverlay()">Close</button>
-        </div>
-        <div class="stat-info" id="carbs-stat-info">
-            <p>Carbs</p>
-            <input type="number" id="carbs-input" placeholder="Carbs" />
-            <button onclick="addProgress('carbs', 'carbsCurrentAmount', 'carbsProgress')">
-                Add
-            </button>
-            <button onclick="closeOverlay()">Close</button>
-        </div>
-        <div class="stat-info" id="sugar-stat-info">
-            <p>Sugar</p>
-            <input type="number" id="sugar-input" placeholder="Sugar" />
-            <button onclick="addProgress('sugar', 'sugarCurrentAmount', 'sugarProgress')">
-                Add
-            </button>
-            <button onclick="closeOverlay()">Close</button>
-        </div>
-        <div class="stat-info" id="sodium-stat-info">
-            <p>Sodium</p>
-            <input type="number" id="sodium-input" placeholder="Sodium" />
-            <button onclick="addProgress('sodium', 'sodiumCurrentAmount', 'sodiumProgress')">
-                Add
-            </button>
-            <button onclick="closeOverlay()">Close</button>
-        </div>
-        <div class="stat-info" id="work-stat-info">
-            <p>Work</p>
-            <input type="number" id="work-input" placeholder="Cups" />
-            <button onclick="addProgress('work', 'workCurrentAmount', 'workProgress')">
-                Add
-            </button>
-            <button onclick="closeOverlay()">Close</button>
-        </div>
-        <div class="stat-info" id="sleep-stat-info">
-            <p>Sleep</p>
-            <input type="number" id="sleep-input" placeholder="Sleep hours" />
-            <button onclick="addProgress('sleep', 'sleepCurrentAmount', 'sleepProgress')">
-                Add
-            </button>
-            <button onclick="closeOverlay()">Close</button>
-        </div>
-        <div class="stat-info" id="exercise-stat-info">
-            <p>Exercise</p>
-            <input type="number" id="exercise-input" placeholder="Minutes of exercise" />
-            <button onclick="addProgress('exercise', 'exerciseCurrentAmount', 'exerciseProgress')">
-                Add
-            </button>
-            <button onclick="closeOverlay()">Close</button>
-        </div>
+      <div class="stat-info" id="water-stat-info">
+        <p>Water</p>
+        <input type="number" id="water-input" placeholder="Cups" />
+        <button
+          onclick="addProgress('water', 'waterCurrentAmount', 'waterProgress')"
+        >
+          Add
+        </button>
+        <button onclick="closeOverlay()">Close</button>
+      </div>
+      <div class="stat-info" id="calories-stat-info">
+        <p>Calories</p>
+        <input type="number" id="calories-input" placeholder="Calories" />
+        <button
+          onclick="addProgress('calories', 'caloriesCurrentAmount', 'caloriesProgress')"
+        >
+          Add
+        </button>
+        <button onclick="closeOverlay()">Close</button>
+      </div>
+      <div class="stat-info" id="protein-stat-info">
+        <p>Protein</p>
+        <input type="number" id="protein-input" placeholder="Protein" />
+        <button
+          onclick="addProgress('protein', 'proteinCurrentAmount', 'proteinProgress')"
+        >
+          Add
+        </button>
+        <button onclick="closeOverlay()">Close</button>
+      </div>
+      <div class="stat-info" id="carbs-stat-info">
+        <p>Carbs</p>
+        <input type="number" id="carbs-input" placeholder="Carbs" />
+        <button
+          onclick="addProgress('carbs', 'carbsCurrentAmount', 'carbsProgress')"
+        >
+          Add
+        </button>
+        <button onclick="closeOverlay()">Close</button>
+      </div>
+      <div class="stat-info" id="sugar-stat-info">
+        <p>Sugar</p>
+        <input type="number" id="sugar-input" placeholder="Sugar" />
+        <button
+          onclick="addProgress('sugar', 'sugarCurrentAmount', 'sugarProgress')"
+        >
+          Add
+        </button>
+        <button onclick="closeOverlay()">Close</button>
+      </div>
+      <div class="stat-info" id="sodium-stat-info">
+        <p>Sodium</p>
+        <input type="number" id="sodium-input" placeholder="Sodium" />
+        <button
+          onclick="addProgress('sodium', 'sodiumCurrentAmount', 'sodiumProgress')"
+        >
+          Add
+        </button>
+        <button onclick="closeOverlay()">Close</button>
+      </div>
+      <div class="stat-info" id="work-stat-info">
+        <p>Work</p>
+        <input type="number" id="work-input" placeholder="Cups" />
+        <button
+          onclick="addProgress('work', 'workCurrentAmount', 'workProgress')"
+        >
+          Add
+        </button>
+        <button onclick="closeOverlay()">Close</button>
+      </div>
+      <div class="stat-info" id="sleep-stat-info">
+        <p>Sleep</p>
+        <input type="number" id="sleep-input" placeholder="Sleep hours" />
+        <button
+          onclick="addProgress('sleep', 'sleepCurrentAmount', 'sleepProgress')"
+        >
+          Add
+        </button>
+        <button onclick="closeOverlay()">Close</button>
+      </div>
+      <div class="stat-info" id="exercise-stat-info">
+        <p>Exercise</p>
+        <input
+          type="number"
+          id="exercise-input"
+          placeholder="Minutes of exercise"
+        />
+        <button
+          onclick="addProgress('exercise', 'exerciseCurrentAmount', 'exerciseProgress')"
+        >
+          Add
+        </button>
+        <button onclick="closeOverlay()">Close</button>
+      </div>
     </div>
-</body>
-
+  </body>
 </html>
