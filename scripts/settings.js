@@ -10,6 +10,9 @@ let endTime = new Date();
 
 function setMax(statType) {
     let max = document.getElementById(statType + "-max-input").value;
+    if (statType == "sleep") {
+        max = max * 60
+    }
     localStorage.setItem(statType + "MaxAmount", max);
     setProgress(statType, statType + "Progress");
 }
