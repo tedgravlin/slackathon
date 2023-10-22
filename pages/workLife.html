@@ -19,27 +19,46 @@
     <!-- Site Header and Navigation-->
     <header>
         <div class="nav-links">
-            <a href="../index.html"><img src="/assets/icons/home.svg" /><p>Home</p></a>
-            <a href="./nutrition.html"><img src="/assets/icons/water.svg" /><p>Nutrition</p></a>
-            <a href="./workLife.html"><img src="/assets/icons/work.svg" /><p>Work</p></a>
-            <a href="./health.html"><img src="/assets/icons/exercise.svg" /><p>Health</p></a>
-            <a href="./settings.html"><img src="/assets/icons/gear.svg"><p>Settings</p></a>
+            <a href="../index.html"><img src="/assets/icons/home.svg" />
+                <p>Home</p>
+            </a>
+            <a href="./nutrition.html"><img src="/assets/icons/water.svg" />
+                <p>Nutrition</p>
+            </a>
+            <a href="./workLife.html"><img src="/assets/icons/work.svg" />
+                <p>Work</p>
+            </a>
+            <a href="./health.html"><img src="/assets/icons/exercise.svg" />
+                <p>Health</p>
+            </a>
+            <a href="./settings.html"><img src="/assets/icons/gear.svg">
+                <p>Settings</p>
+            </a>
         </div>
     </header>
     <!-- Main Page -->
     <main>
-        <div style="margin-left: 20px;" id="timesSet"></div>
-        <div class="card">
-            <div id="workProgress">
-                <div style="text-align: center; padding-top: 10px; padding-bottom: 10px;">
-                    <p style="width: 100%;" id="time"></p>
+        <h1 class="work-title">Work Day Stats</h1>
+        <div class="work-progress-card">
+            <h2>Time left in work day</h2>
+            <div class="work-progress-background">
+                <div class="work-progress" id="workProgress">
+                    <div style="text-align: center; padding-top: 10px; padding-bottom: 10px;">
+                        <p style="width: 100%;" id="time"></p>
+                    </div>
                 </div>
             </div>
+            <div id="timesSet"></div>
         </div>
-        <div id="taskList"></div>
-        <button type="button" style="display: block; margin: auto; margin-top: 20px; margin-bottom: 20px;" onclick="addTask()">
-            Add a Task
-        </button>
+        <div class="task-card">
+            <div class="task-card-title">
+                <h2>Tasks</h2>
+                <button type="button" onclick="addTask()">
+                    +
+                </button>
+            </div>
+            <div id="taskList"></div>
+        </div>
     </main>
 </body>
 
