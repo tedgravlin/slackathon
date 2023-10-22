@@ -21,6 +21,7 @@ let strJSON = '{"tasks":[]}';
 let objJSON = null;
 
 function onLoad() {
+
     if (localStorage.getItem("startTime") != null) {
         startTime.setTime(localStorage.getItem("startTime"));
     } else {
@@ -68,9 +69,8 @@ function timeProgress() {
     currHour = d.getHours() > 12 ? d.getHours() - 12 : d.getHours();
     currMeridiem = d.getHours() > 12 ? "pm" : "am";
 
-    if (d.getTime() < endTime.getTime()) {
-        currTime = currHour + ":" + (d.getMinutes() + "").padStart(2, '0')
-            + currMeridiem;
+    currTime = currHour + ":" + (d.getMinutes() + "").padStart(2, '0')
+        + currMeridiem;
 
     timesMessage = startWork + startHour + ":" + startMinutes + startMeridiem + " and " + endWork + endHour
         + ":" + endMinutes + endMeridiem + ", it is currently " + currTime;
@@ -109,15 +109,12 @@ function timeProgress() {
         if (d2.getTime() < endTime.getTime()) {
             currTime = currHour + ":" + (d.getMinutes() + "").padStart(2, '0')
              + currMeridiem;
-        } else {
-            document.getElementById("timeCurrent").innerHTML = "";
         }
 
         timesMessage = startWork + startHour + ":" + startMinutes + startMeridiem + " and " + endWork + endHour
         + ":" + endMinutes + endMeridiem + ", it is currently " + currTime;
 
         document.getElementById("timesSet").innerHTML = timesMessage;
-    }
     }
 }
 
