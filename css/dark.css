@@ -4,4 +4,8 @@
     --obj-color: #444 !important;
     --text: #fff !important;
   }
+
+  img {
+    filter: invert(100%);
+  }
 }
