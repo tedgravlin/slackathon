@@ -106,8 +106,6 @@ function timeProgress() {
         let d2 = new Date();
         d.setTime(d2.getTime());
 
-        // d.setDate(21);
-
         if (d2.getDay() != d.getDay()) {
             strJSON = defaultJSON;
             localStorage.setItem("tasksJSON", strJSON);
