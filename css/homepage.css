@@ -182,6 +182,7 @@ div.greeting {
   width: 50%;
   margin: auto;
   font-size: 30px;
+  font-weight: bold;
   text-align: center;
 }
 
