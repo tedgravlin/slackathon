@@ -77,3 +77,18 @@ header img {
 a, a:visited {
   color: inherit;
 }
+
+main {
+    animation: slideUp ease-in 0.5s 1;
+}
+
+@keyframes slideUp {
+    0% {
+      opacity: 0%;
+      transform: translateY(10px);
+    }
+    100% {
+      opacity: 100%;
+      transform: translateY(0px);
+    }
+  }

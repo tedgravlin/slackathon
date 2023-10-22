@@ -33,6 +33,10 @@ body {
   margin-bottom: 20px;
 }
 
+.health-title {
+    text-align:center;
+}
+
 a {
   text-decoration: none;
 }
