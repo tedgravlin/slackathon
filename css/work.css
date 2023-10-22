@@ -6,6 +6,11 @@ body {
   color: var(--text);
 }
 
+div.work-progress-background {
+  border-radius: 10px;
+  background-color: var(--obj-color);
+}
+
 @media (prefers-color-scheme: dark) {
   body {
     background-color: var(--bg-color);
@@ -72,10 +77,6 @@ div.task-card-title button {
   justify-self: right;
 }
 
-div.work-progress-background {
-  border-radius: 10px;
-}
-
 div.task-card h2 {
   margin: 0;
 }
@@ -104,7 +105,6 @@ a {
   padding-left: 5px;
   position: absolute;
   color: black;
-  top: 25%;
 }
 
 #workProgress {
