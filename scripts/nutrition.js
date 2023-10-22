@@ -1,19 +1,16 @@
+let waterLevel = 0;
+
 window.addEventListener("load", (event) => {
-  // Calories
   setFoodStat('calories');
-  // Protein
   setFoodStat('protein');
-  // Carbs
   setFoodStat('carbs');
-  // Sugar
   setFoodStat('sugar');
-  // Sodium
   setFoodStat('sodium');
 });
-let waterLevel = 0;
 
 function setWaterLevel(x) {
   let water = document.getElementById("water");
+
   let waterInterval = setInterval(function () {
     if (waterLevel < x) {
       waterLevel += 0.2;
@@ -23,22 +20,24 @@ function setWaterLevel(x) {
     }
   }, 0.1);
 
-  var waterProgress = localStorage.getItem("waterProgress");
-  var waterAmount = localStorage.getItem("waterCurrentAmount");
+  let waterAmount = localStorage.getItem("waterCurrentAmount") != null
+    ? parseInt(localStorage.getItem("waterCurrentAmount")) : 0;
+  let waterProgress = localStorage.getItem("waterProgress") != null ? waterAmount : 0;
 
-  // Check if the value is not null or undefined
-  if (waterProgress != null) {
-    // Set the innerHTML of the "test" element to the retrieved value
-    document.getElementById("waterProgress").innerHTML = waterAmount;
-  }
-  var waterMax = localStorage.getItem("waterMaxAmount");
-  if (waterMax != null) {
-    document.getElementById("waterMax").innerHTML = waterMax;
-  }
+  document.getElementById("waterProgress").innerHTML = waterProgress;
+
+  let waterMax = localStorage.getItem("waterMaxAmount") != null
+    ? parseInt(localStorage.getItem("waterMaxAmount")) : 0;
+
+  document.getElementById("waterMax").innerHTML = waterMax;
+
 }
 
 function setFoodStat(statType) {
   let progressBar = document.getElementById(statType + '-progress');
 
-  progressBar.setAttribute("value", localStorage.getItem(statType + "Progress"));
+  let progType = localStorage.getItem(statType + "Progress") != null
+    ? parseInt(localStorage.getItem(statType + "Progress")) : 0;
+
+  progressBar.setAttribute("value", progType);
 }
