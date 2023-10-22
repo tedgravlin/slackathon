@@ -57,33 +57,21 @@ div.nav-links {
   background-color: var(--bg-color);
 }
 
-header ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  position: static;
-  top: 0px;
-}
-
-header li {
-  display: inline;
-  float: left;
-}
-
 header a {
   display: grid;
   grid-template-columns: auto auto;
-  padding: 8px;
+  margin: 8px;
   text-decoration: none;
   color: black;
 }
 
-header img {
-  margin: auto;
+header a:hover {
+  background-color: var(--obj-color);
+  border-radius: 24px;
 }
 
-header li.settings {
-  float: right;
+header img {
+  margin: auto;
 }
 
 a:visited {
