@@ -40,11 +40,6 @@ function onLoad() {
         endTime.setHours(23, 59, 59);
     }
 
-    document.getElementById("startTime").value = (startTime.getHours() + "").padStart(2, '0')
-        + ":" + (startTime.getMinutes() + "").padStart(2, '0');
-    document.getElementById("endTime").value = (endTime.getHours() + "").padStart(2, '0')
-        + ":" + (endTime.getMinutes() + "").padStart(2, '0');
-
     startHour = startTime.getHours() > 12 ? startTime.getHours() - 12 : startTime.getHours();
     endHour = endTime.getHours() > 12 ? endTime.getHours() - 12: endTime.getHours();
     startMinutes = (startTime.getMinutes() + "").padStart(2, '0');
@@ -137,34 +132,6 @@ function timeProgress() {
         + ":" + endMinutes + endMeridiem + ", it is currently " + currTime;
 
         document.getElementById("timesSet").innerHTML = timesMessage;
-    }
-}
-
-function validateForm() {
-    if (document.forms["timeForm"]["startTime"].value != "") {
-        let start = document.forms["timeForm"]["startTime"].value;
-
-        let startT = (start + "").split(":");
-
-        startTime = new Date();
-
-        startTime.setHours(Number(startT[0]));
-        startTime.setMinutes(Number(startT[1]));
-
-        localStorage.setItem("startTime", startTime.getTime());
-    }
-
-    if (document.forms["timeForm"]["endTime"].value != "") {
-        let end = document.forms["timeForm"]["endTime"].value;
-
-        let endT = (end + "").split(":");
-
-        endTime = new Date();
-
-        endTime.setHours(Number(endT[0]));
-        endTime.setMinutes(Number(endT[1]));
-
-        localStorage.setItem("endTime", endTime.getTime());
     }
 }
 
