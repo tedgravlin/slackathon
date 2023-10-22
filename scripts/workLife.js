@@ -34,6 +34,11 @@ function onLoad() {
         endTime.setHours(17, 0, 0);
     }
 
+    document.getElementById("startTime").value = (startTime.getHours() + "").padStart(2, '0')
+        + ":" + (startTime.getMinutes() + "").padStart(2, '0');
+    document.getElementById("endTime").value = (endTime.getHours() + "").padStart(2, '0')
+        + ":" + (endTime.getMinutes() + "").padStart(2, '0');
+
     startHour = startTime.getHours() > 12 ? startTime.getHours() - 12 : startTime.getHours();
     endHour = endTime.getHours() > 12 ? endTime.getHours() - 12: endTime.getHours();
     startMinutes = (startTime.getMinutes() + "").padStart(2, '0');
