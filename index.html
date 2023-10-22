@@ -87,58 +87,59 @@
                     <progress id="sugar-progress-bar" max="100" value="0"></progress>
                 </div>
                 <!-- SODIUM -->
-                <div onclick="toggleStatInfo('sodium')" class="stat">
+                <!-- <div onclick="toggleStatInfo('sodium')" class="stat">
                     <div class="icon-and-label">
                         <img src="/assets/icons/salt.svg" />
                         <label for="sodium-progress-bar">Sodium</label>
                     </div>
                     <progress id="sodium-progress-bar" max="100" value="0"></progress>
+                </div> -->
+            </div>
+            <div class="card">
+                <h2><a href="./pages/workLife.html">Work</a></h2>
+                <!-- WORK -->
+                <div id="work" class="stat">
+                    <div class="icon-and-label">
+                        <img src="/assets/icons/work.svg" />
+                        <label for="work-progress-bar">Time left in workday</label>
+                    </div>
+                    <progress id="work-progress-bar" max="100" value="0"></progress>
+                </div>
+                <!-- WORK -->
+                <div class="stat">
+                    <div class="icon-and-label">
+                        <img src="/assets/icons/task.svg" />
+                        <label for="task-progress-bar">Tasks left</label>
+                    </div>
+                    <progress id="task-progress-bar" max="100" value="0"></progress>
                 </div>
             </div>
-            <div class="card-container">
-                <div class="card">
-                    <h2><a href="./pages/workLife.html">Work</a></h2>
-                    <!-- WORK -->
-                    <div id="work" class="stat">
-                        <div class="icon-and-label">
-                            <img src="/assets/icons/work.svg" />
-                            <label for="work-progress-bar">Time left in workday</label>
-                        </div>
-                        <progress id="work-progress-bar" max="100" value="0"></progress>
+            <div class="card">
+                <h2><a href="./pages/health.html">Health</a></h2>
+                <!-- SLEEP -->
+                <div id="sleep" onclick="toggleStatInfo('sleep')" class="stat">
+                    <div class="icon-and-label">
+                        <img src="/assets/icons/sleep.svg" />
+                        <label for="sleep-progress-bar">Sleep last night</label>
                     </div>
-                    <!-- WORK -->
-                    <div class="stat">
-                        <div class="icon-and-label">
-                            <img src="/assets/icons/task.svg" />
-                            <label for="task-progress-bar">Tasks left</label>
-                        </div>
-                        <progress id="task-progress-bar" max="100" value="0"></progress>
-                    </div>
+                    <progress id="sleep-progress-bar" max="100" value="0"></progress>
                 </div>
-                <div class="card">
-                    <h2><a href="./pages/health.html">Health</a></h2>
-                    <!-- SLEEP -->
-                    <div id="sleep" onclick="toggleStatInfo('sleep')" class="stat">
-                        <div class="icon-and-label">
-                            <img src="/assets/icons/sleep.svg" />
-                            <label for="sleep-progress-bar">Sleep last night</label>
-                        </div>
-                        <progress id="sleep-progress-bar" max="100" value="0"></progress>
+                <!-- EXERCISE -->
+                <div id="exercise" onclick="toggleStatInfo('exercise')" class="stat">
+                    <div class="icon-and-label">
+                        <img src="/assets/icons/exercise.svg" />
+                        <label for="exercise-progress-bar">Exercise Minutes</label>
                     </div>
-                    <!-- EXERCISE -->
-                    <div id="exercise" onclick="toggleStatInfo('exercise')" class="stat">
-                        <div class="icon-and-label">
-                            <img src="/assets/icons/exercise.svg" />
-                            <label for="exercise-progress-bar">Exercise Minutes</label>
-                        </div>
-                        <progress id="exercise-progress-bar" max="100" value="0"></progress>
-                    </div>
+                    <progress id="exercise-progress-bar" max="100" value="0"></progress>
                 </div>
             </div>
-        </div>
-        <div class="quote-card">
-            <p id="quote"></p>
-            <p id="author"></p>
+            <div class="quote-card">
+                <img src="/assets/icons/quote.svg">
+                <div class="quote-text">
+                    <p id="quote"></p>
+                    <p id="author"></p>
+                </div>
+            </div>
         </div>
         <button onclick="devValues()">Dev Values</button>
     </main>
