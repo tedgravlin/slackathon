@@ -77,23 +77,8 @@ div.exercise-inputs {
   background-color: white;
   height: 0px;
   padding: 0;
-  cursor: pointer;
 }
 
-.input-box {
-    border-radius: 24px;
-    color: var(--text);
-    width: 100px;
-    padding: 0px 10px;
-    height: 90%;
-    margin-bottom: 15px;
-    border: none;
-    background-color: rgba(124, 122, 122, 0.2);
-}
-
-.input-box:focus-visible, .input-box:focus, .input-box:focus-within {
-    outline: 1px solid grey;
-}
 #last-night-sleep {
   display: inline-block;
 }
