@@ -13,6 +13,22 @@ function devValues() {
   setCurrentAmount("caloriesCurrentAmount", 500);
   setMaxAmount("caloriesMaxAmount", 1500);
   setProgress("calories", "caloriesProgress");
+  // Protein
+  setCurrentAmount("proteinCurrentAmount", 10);
+  setMaxAmount("proteinMaxAmount", 50);
+  setProgress("protein", "proteinProgress");
+  // Carbs
+  setCurrentAmount("carbsCurrentAmount", 75);
+  setMaxAmount("carbsMaxAmount", 200);
+  setProgress("carbs", "carbsProgress");
+  // Sugar
+  setCurrentAmount("sugarCurrentAmount", 35);
+  setMaxAmount("sugarMaxAmount", 60);
+  setProgress("sugar", "sugarProgress");
+  // Sodium
+  setCurrentAmount("sodiumCurrentAmount", 500);
+  setMaxAmount("sodiumMaxAmount", 2000);
+  setProgress("sodium", "sodiumProgress");
   // Work
   setCurrentAmount("workCurrentAmount", 1);
   setMaxAmount("workMaxAmount", 9);
@@ -25,7 +41,7 @@ function devValues() {
   setCurrentAmount("exerciseCurrentAmount", 5);
   setMaxAmount("exerciseMaxAmount", 60);
   setProgress("exercise", "exerciseProgress");
-  //getProgress();
+  getProgress();
 }
 
 function getProgress() {
@@ -33,10 +49,26 @@ function getProgress() {
   document
     .getElementById("water-progress-bar")
     .setAttribute("value", localStorage.getItem("waterProgress"));
-  // Food
+  // Calories
   document
     .getElementById("calories-progress-bar")
     .setAttribute("value", localStorage.getItem("caloriesProgress"));
+  // Protein
+  document
+    .getElementById("protein-progress-bar")
+    .setAttribute("value", localStorage.getItem("proteinProgress"));
+  // Carbs
+  document
+    .getElementById("carbs-progress-bar")
+    .setAttribute("value", localStorage.getItem("carbsProgress"));
+  // Sugar
+  document
+    .getElementById("sugar-progress-bar")
+    .setAttribute("value", localStorage.getItem("sugarProgress"));
+  // Sodium
+  document
+    .getElementById("sodium-progress-bar")
+    .setAttribute("value", localStorage.getItem("sodiumProgress"));
   // Work
   document
     .getElementById("work-progress-bar")

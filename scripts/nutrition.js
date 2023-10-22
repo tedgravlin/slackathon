@@ -1,3 +1,15 @@
+window.addEventListener("load", (event) => {
+  // Calories
+  setFoodStat('calories');
+  // Protein
+  setFoodStat('protein');
+  // Carbs
+  setFoodStat('carbs');
+  // Sugar
+  setFoodStat('sugar');
+  // Sodium
+  setFoodStat('sodium');
+});
 let waterLevel = 0;
 
 function setWaterLevel(x) {
@@ -23,4 +35,10 @@ function setWaterLevel(x) {
   if (waterMax != null) {
     document.getElementById("waterMax").innerHTML = waterMax;
   }
+}
+
+function setFoodStat(statType) {
+  let progressBar = document.getElementById(statType + '-progress');
+
+  progressBar.setAttribute("value", localStorage.getItem(statType + "Progress"));
 }
