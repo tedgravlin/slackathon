@@ -21,11 +21,21 @@
     <!-- Site Header and Navigation-->
     <header>
         <div class="nav-links">
-            <a href="../index.html"><img src="/assets/icons/home.svg" /><p>Home</p></a>
-            <a href="./nutrition.html"><img src="/assets/icons/water.svg" /><p>Nutrition</p></a>
-            <a href="./workLife.html"><img src="/assets/icons/work.svg" /><p>Work</p></a>
-            <a href="./health.html"><img src="/assets/icons/exercise.svg" /><p>Health</p></a>
-            <a href="./settings.html"><img src="/assets/icons/gear.svg"><p>Settings</p></a>
+            <a href="../index.html"><img src="/assets/icons/home.svg" />
+                <p>Home</p>
+            </a>
+            <a href="./nutrition.html"><img src="/assets/icons/water.svg" />
+                <p>Nutrition</p>
+            </a>
+            <a href="./workLife.html"><img src="/assets/icons/work.svg" />
+                <p>Work</p>
+            </a>
+            <a href="./health.html"><img src="/assets/icons/exercise.svg" />
+                <p>Health</p>
+            </a>
+            <a href="./settings.html"><img src="/assets/icons/gear.svg">
+                <p>Settings</p>
+            </a>
         </div>
     </header>
     <!-- Main Page -->
@@ -44,16 +54,32 @@
                         <input id="calories-max-input" type="number" class="inputs" placeholder="Calories"></input>
                         <button onclick="setMax('calories')" id="calories-submit">Submit</button>
                     </div>
+                    <!-- Carbs -->
+                    <div class="label-box">
+                        <label>Carbs:</label>
+                        <input id="carbs-max-input" type="number" class="inputs" placeholder="Carbs"></input>
+                        <button onclick="setMax('carbs')" id="carbs-submit">Submit</button>
+                    </div>
+                    <!-- Sugar -->
+                    <div class="label-box">
+                        <label>Sugar:</label>
+                        <input id="sugar-max-input" type="number" class="inputs" placeholder="Sugar"></input>
+                        <button onclick="setMax('sugar')" id="sugar-submit">Submit</button>
+                    </div>
+                    <!-- Sodium -->
                 </form>
             </div>
             <div class="card">
                 <h2>Work</h2>
-                <form style="margin-left: 20px;" name="timeForm" onsubmit=validateForm() method="get">
-                    <label for="startTime">Select a start time:</label>
-                    <input type="time" id="startTime" name="startTime">
+                <form name="timeForm" onsubmit=validateForm() method="get">
+                    <div>
+                        <label for="startTime">Select a start time:</label>
+                        <input type="time" id="startTime" name="startTime">
+                    </div>
+                    <br>
                     <label for="endTime">Select a end time:</label>
                     <input type="time" id="endTime" name="endTime">
-                    <input type="submit" value="Submit">
+                    <input class="submit-button" type="submit" value="Submit">
                 </form>
             </div>
             <div class="card">
@@ -61,13 +87,14 @@
                 <form>
                     <div class="label-box">
                         <label>Sleep:</label>
-                        <input id="sleep-max-input" type="number" class="inputs" placeholder="Hours"></input>
+                        <input min="0" max="24" id="sleep-max-input" type="number" class="inputs"
+                            placeholder=""></input>
                         <button onclick="setMax('sleep')" id="sleep-submit">Submit</button>
                     </div>
                     <div class="label-box">
                         <label>Exercise:</label>
                         <input id="exercise-max-input" type="number" class="inputs" placeholder="Minutes"></input>
-                        <button onclick="setMax('exercise') "id="exercise-submit">Submit</button>
+                        <button onclick="setMax('exercise') " id="exercise-submit">Submit</button>
                     </div>
                 </form>
             </div>

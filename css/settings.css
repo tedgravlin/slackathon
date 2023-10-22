@@ -5,13 +5,44 @@ input {
 
 label {
     display:inline-block;
-    width:30%;
+    width:40%;
 }
 
 button {
     display: inline-block;
 }
 
+form {
+    margin:0;
+}
+
+.submit-button {
+    width:auto;
+}
+
 .label-box {
     margin-top:15px;
 }
+
+div.card-container {
+    display: grid;
+    row-gap: 1em;
+    grid-template-columns: auto;
+    margin: auto;
+  }
+  
+  div.two-grid-card-container {
+    display: grid;
+    row-gap: 1em;
+    grid-template-columns: auto auto;
+    margin: auto;
+    width: 50vw;
+  }
+  
+  div.card {
+    width: 30vw;
+    margin: auto;
+    border: 2px solid grey;
+    border-radius: 24px;
+    padding: 1em;
+  }

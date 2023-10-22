@@ -25,6 +25,7 @@ function setProgress(statType, statProgressVar) {
 }
 
 function onLoad() {
+
     if (localStorage.getItem("startTime") != null) {
         startTime.setTime(localStorage.getItem("startTime"));
     } else {
@@ -41,6 +42,8 @@ function onLoad() {
         + ":" + (startTime.getMinutes() + "").padStart(2, '0');
     document.getElementById("endTime").value = (endTime.getHours() + "").padStart(2, '0')
         + ":" + (endTime.getMinutes() + "").padStart(2, '0');
+
+    document.getElementById("sleep-max-input").setAttribute("placeholder", (localStorage.getItem("sleepMaxAmount") / 60) + " hours"); 
 }
 
 
