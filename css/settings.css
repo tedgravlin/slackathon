@@ -50,6 +50,11 @@ div.card {
     padding: 1em;
 }
 
+.settings-title {
+    text-align:center;
+    margin: 1em auto 1em auto;
+}
+
 main h1 {
     width: 70%;
     margin: 1em auto 1em auto;
