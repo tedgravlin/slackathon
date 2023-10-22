@@ -24,6 +24,11 @@ div.card {
   padding: 1em;
 }
 
+h1.nutrition-title {
+  margin: 1em auto 1em auto;
+  width: 75%;
+}
+
 div.food-card-stats {
 
 }
@@ -35,6 +40,7 @@ div.food-card-stats * {
 div.food-card-stats label {
   font-size: 24px;
   margin-bottom: 0.5em;
+  margin-left: 1em;
 }
 
 div.food-card-stats progress {
@@ -45,6 +51,7 @@ div.food-card-stats progress {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  margin-left: 1em;
 }
 
 div.food-card-stats progress::-webkit-progress-bar {
