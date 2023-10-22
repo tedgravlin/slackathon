@@ -118,6 +118,10 @@ function devValues() {
   setProgress("exercise", "exerciseProgress");
 
   // Times
+  d = new Date();
+  startTime = new Date();
+  endTime = new Date();
+
   startTime.setHours(7, 0, 0);
   localStorage.setItem("startTime", startTime.getTime());
   endTime.setHours(17, 0, 0);
