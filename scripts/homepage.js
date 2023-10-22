@@ -157,6 +157,8 @@ function devValues() {
   strJSON = JSON.stringify(objJSON);
   localStorage.setItem("tasksJSON", strJSON);
 
+  onWorkLoad();
+
   getProgress();
 }
 
