@@ -18,11 +18,18 @@ body {
     background-color: var(--obj-color);
   }
   div.stat progress::-moz-progress-bar {
-    background-color: rgb(134, 134, 240);
+    background-color: rgb(134, 134, 240) !important;
   }
   div.stat progress::-webkit-progress-value {
-    background-color: rgb(134, 134, 240);
+    background-color: rgb(134, 134, 240) !important;
   }
+}
+
+div.stat progress::-moz-progress-bar {
+  background-color: #0064b4;
+}
+div.stat progress::-webkit-progress-value {
+  background-color: #0064b4;
 }
 
 main {
