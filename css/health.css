@@ -29,11 +29,12 @@ body {
 div.card {
   width: 30vw;
   border-radius: 24px;
-  padding: 2em;
+  padding: .9em;
   margin: auto;
   margin-bottom: 1em;
   background-color: var(--bg-color);
   border: 2px solid grey;
+
 }
 
 div.card h2 {
@@ -44,10 +45,6 @@ div.card h2 {
 
 div.sleep-progress {
   width: 90%;
-}
-
-div.sleep-card {
-  
 }
 
 a {
@@ -84,11 +81,19 @@ div.exercise-inputs {
 }
 
 .input-box {
-  width: 100px;
-  height: 90%;
-  margin-bottom: 15px;
+    border-radius: 24px;
+    color: var(--text);
+    width: 100px;
+    padding: 0px 10px;
+    height: 90%;
+    margin-bottom: 15px;
+    border: none;
+    background-color: rgba(124, 122, 122, 0.2);
 }
 
+.input-box:focus-visible, .input-box:focus, .input-box:focus-within {
+    outline: 1px solid grey;
+}
 #last-night-sleep {
   display: inline-block;
 }
@@ -104,7 +109,7 @@ div.exercise-inputs {
 }
 
 #sleep-container {
-  height: 50px;
+  height: 35px;
   background: rgba(124, 122, 122, 0.2);
   position: relative;
   overflow: hidden;
@@ -117,7 +122,7 @@ div.exercise-inputs {
 }
 
 #racetrack {
-  height: 50px;
+  height: 35px;
   background: rgba(124, 122, 122, 0.2);
   position: relative;
   overflow: hidden;
