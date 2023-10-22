@@ -1,11 +1,8 @@
-let lastHours = 0;
-let lastMinutes = 0;
+let lastHours = 0, lastMinutes = 0;
 
-let exerciseCurrentAmount = 0;
-let exerciseMaxAmount = 0;
+let exerciseCurrentAmount = 0, exerciseMaxAmount = 0;
 
-let sleepCurrent = 0;
-let sleepMax = 0;
+let sleepCurrent = 0, sleepMax = 0;
 
 function onLoad() {
 

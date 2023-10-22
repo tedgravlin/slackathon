@@ -1,33 +1,16 @@
-let waterGoal = localStorage.getItem("waterMaxAmount")
-let sleepGoal = localStorage.getItem("sleepGoal")
-let exerciseGoal = localStorage.getItem("exerciseGoal")
-let calorieGoal = localStorage.getItem("calorieGoal")
-let dayStart = localStorage.getItem("startTime")
-let dayEnd = localStorage.getItem("endTime")
+let waterGoal = 0, sleepGoal = 0, exerciseGoal = 0, calorieGoal = 0, dayStart = 0, dayEnd = 0;
 
-let startTime = new Date();
-let endTime = new Date();
+let startTime = new Date(), endTime = new Date();
 
-// Ted Function to set the max value for statType
-function setMax(statType) {
-    let max = document.getElementById(statType + "-max-input").value;
-    if (statType == "sleep") {
-        max = max * 60
-    }
-    localStorage.setItem(statType + "MaxAmount", max);
-    setProgress(statType, statType + "Progress");
-}
-// Ted function to update the progress with the  max value
-function setProgress(statType, statProgressVar) {
-    let currentAmount = localStorage.getItem(statType + "CurrentAmount");
-    let maxAmount = localStorage.getItem(statType + "MaxAmount");
-    let progress = (currentAmount / maxAmount) * 100;
-    localStorage.setItem(statProgressVar, progress);
-}
-
-// Adrian Function to set Time stuff
-// Also setting placeholders to current max for said category
 function onLoad() {
+
+    waterGoal = localStorage.getItem("waterMaxAmount")
+    sleepGoal = localStorage.getItem("sleepGoal")
+    exerciseGoal = localStorage.getItem("exerciseGoal")
+    calorieGoal = localStorage.getItem("calorieGoal")
+    dayStart = localStorage.getItem("startTime")
+    dayEnd = localStorage.getItem("endTime")
+
     if (localStorage.getItem("startTime") != null) {
         startTime.setTime(localStorage.getItem("startTime"));
     } else {
@@ -53,6 +36,23 @@ function onLoad() {
     document.getElementById("sodium-max-input").setAttribute("placeholder", localStorage.getItem("sodiumMaxAmount") + " msgs");
     document.getElementById("sleep-max-input").setAttribute("placeholder", (localStorage.getItem("sleepMaxAmount") / 60) + " hours");
     document.getElementById("exercise-max-input").setAttribute("placeholder", localStorage.getItem("exerciseMaxAmount") + " minutes");
+}
+
+// Ted Function to set the max value for statType
+function setMax(statType) {
+    let max = document.getElementById(statType + "-max-input").value;
+    if (statType == "sleep") {
+        max = max * 60
+    }
+    localStorage.setItem(statType + "MaxAmount", max);
+    setProgress(statType, statType + "Progress");
+}
+// Ted function to update the progress with the  max value
+function setProgress(statType, statProgressVar) {
+    let currentAmount = localStorage.getItem(statType + "CurrentAmount");
+    let maxAmount = localStorage.getItem(statType + "MaxAmount");
+    let progress = (currentAmount / maxAmount) * 100;
+    localStorage.setItem(statProgressVar, progress);
 }
 
 // Adrian Function to deal with the time stuff

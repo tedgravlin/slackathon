@@ -1,25 +1,11 @@
-let d = new Date();
-let startTime = new Date();
-let endTime = new Date();
-let workLevel = 0;
+let d = new Date(), startTime = new Date(), endTime = new Date(), workLevel = 0;
 
-let timesMessage = "";
-let startHour = 0;
-let endHour = 0;
-let startMinutes = 0;
-let endMinutes = 0;
-let startMeridiem = 0;
-let endMeridiem = 0;
-let startWork = 0;
-let endWork = 0;
+let timesMessage = "", startHour = 0, endHour = 0, startMinutes = 0, endMinutes = 0, startMeridiem = 0
+    , endMeridiem = 0, startWork = 0, endWork = 0;
 
-let currTime = "";
-let currHour = 0;
-let currMeridiem = 0;
+let currTime = "", currHour = 0, currMeridiem = 0;
 
-let strJSON = '{"tasks":[]}';
-let defaultJSON = '{"tasks":[]}';
-let objJSON = null;
+let strJSON = '{"tasks":[]}', defaultJSON = '{"tasks":[]}', objJSON = null;
 
 function onLoad() {
 
