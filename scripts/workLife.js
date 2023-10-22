@@ -133,7 +133,7 @@ function getJSON() {
 
 function addTask() {
     let task = prompt("Please enter the name of the task", "");
-  if (task != null && task != "") {
+  if (task != null && !task.match(/^\s*$/)) {
     objJSON = JSON.parse(strJSON);
     objJSON['tasks'].push({"taskID":objJSON['tasks'].length, "taskName":task, "status":"incomplete"});
   }
