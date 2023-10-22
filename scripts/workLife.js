@@ -50,8 +50,12 @@ function timeProgress() {
     let taskList = "";
 
     for (let task in objJSON['tasks']) {
-        taskList += '<input type="checkbox" id="task' + task.taskName + '">';
+        taskList += '<input type="checkbox" id="task' + objJSON['tasks'][task].taskID + '" name=task"'
+         + objJSON['tasks'][task].taskID + '"><label for="task"' + objJSON['tasks'][task].taskID + '>'
+         + objJSON['tasks'][task].taskName + '</label><br>';
     }
+
+    document.getElementById("taskList").innerHTML = taskList;
 
     let x = getProgress();
     let progress = document.getElementById("workProgress");
