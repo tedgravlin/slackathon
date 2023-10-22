@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <!-- Import CSS and Scripts-->
     <link rel="stylesheet" href="/css/main.css" />
     <link rel="stylesheet" href="/css/health.css" />
@@ -10,21 +11,11 @@
     <!-- Page Title -->
     <title>Health | Progress</title>
     <!-- Favicon -->
-    <link
-      rel="icon"
-      type="image/png"
-      href="/assets/favicon/favicon-32x32.png"
-      sizes="32x32"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      href="/assets/favicon/favicon-16x16.png"
-      sizes="16x16"
-    />
-  </head>
+    <link rel="icon" type="image/png" href="/assets/favicon/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="/assets/favicon/favicon-16x16.png" sizes="16x16" />
+</head>
 
-  <body onload="onLoad()">
+<body onload="onLoad()">
     <!-- Site Header and Navigation-->
     <header>
       <h1>Progress</h1>
@@ -53,68 +44,44 @@
     </header>
     <!-- Main Page -->
     <main>
-      <div class="card container sleep" id="sleep">
-        <h2>Sleep</h2>
-        <p class="sleep-goal" id="sleep-goal">Sleep Goal:</p>
-        <form name="sleep-form" method="get">
-          <label> Last Nights Sleep: </label>
-          <p id="last-night-sleep"></p>
-          <div>
-            <input
-              min="0"
-              max="24"
-              class="input-box"
-              type="number"
-              id="sleep-hours"
-              placeholder="hours"
-            />
-            <input
-              min="0"
-              max="60"
-              class="input-box"
-              type="number"
-              id="sleep-minutes"
-              placeholder="minutes"
-            />
-            <button onclick="setLastSleep()">Submit!</button>
-          </div>
-        </form>
-        <div id="glass">
-          <div id="water"></div>
-        </div>
-      </div>
-      <div class="card container sleep" id="exercise">
-        <h2>Exercise</h2>
-        <p class="exercise-goal" id="sleep-goal">Exercise Goal:</p>
-        <div id="ex-div">
-          <form name="exercise-form" method="get">
-            <label>Todays Exercise: </label>
-            <p id="last-exercise"></p>
-            <div>
-              <input
-                min="0"
-                max="24"
-                class="input-box"
-                type="number"
-                id="exercise-hours"
-                placeholder="hours"
-              />
-              <input
-                min="0"
-                max="60"
-                class="input-box"
-                type="number"
-                id="exercise-minutes"
-                placeholder="minutes"
-              />
-              <button onclick="onLoad()">Submit!</button>
+        <div class="card container sleep" id="sleep">
+            <h2>Sleep</h2>
+            <p class="sleep-goal" id="sleep-goal">Sleep Goal:</p>
+            <div id="ex-div">
+                <form name="sleep-form" method="get">
+                    <label> Last Nights Sleep: </label>
+                    <p id="last-night-sleep"></p>
+                    <div>
+                        <input min="0" max="24" class="input-box" type="number" id="sleep-hours" placeholder="hours" />
+                        <input min="0" max="60" class="input-box" type="number" id="sleep-minutes"
+                            placeholder="minutes" />
+                        <button onclick="setLastSleep()">Submit!</button>
+                    </div>
+                </form>
+                <div id="glass">
+                    <div id="water"></div>
+                </div>
             </div>
-          </form>
-          <div id="racetrack">
-            <div id="runner"></div>
-          </div>
         </div>
-      </div>
+        <div class="card container sleep" id="exercise">
+            <h2>Exercise</h2>
+            <p class="exercise-goal" id="exercise-goal">Exercise Goal:</p>
+            <div id="ex-div">
+                <form name="exercise-form" method="get">
+                    <label>Todays Exercise: </label>
+                    <p id="last-exercise"></p>
+                    <div>
+                        <input min="0" max="60" class="input-box" type="number" id="exercise-minutes"
+                            placeholder="minutes" />
+                        <button onclick="addExercise()">Submit!</button>
+                    </div>
+                </form>
+                <div id="racetrack">
+                    <div id="runner"></div>
+                </div>
+            </div>
+        </div>
     </main>
-  </body>
+</body>
+
 </html>
