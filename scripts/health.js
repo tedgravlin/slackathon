@@ -13,15 +13,15 @@ function getSleepGoal() {
     console.log(lastHours)
     console.log(lastMinutes)
     if (lastHours != null && lastMinutes != null) {
-        lastSleep.innerHTML = "<p>" + lastHours + " Hour(s),  " + lastMinutes + " Minute(s) of sleep.</p>"
+        lastSleep.innerHTML = "" + lastHours + " Hour(s),  " + lastMinutes + " Minute(s) of sleep."
         if ((lastHours == "" || lastHours == 0) && (lastMinutes == "" || lastMinutes == 0)) {
-            lastSleep.innerHTML = "<p>Get some sleep!</p>"
+            lastSleep.innerHTML = "Get some sleep!"
         }
         else if ((lastHours != "" && lastHours != 0) && (lastMinutes == "" || lastMinutes == 0)) {
-            lastSleep.innerHTML = "<p>" + lastHours + " Hour(s) of sleep.</p>"
+            lastSleep.innerHTML = "" + lastHours + " Hour(s) of sleep."
         }
         else if ((lastMinutes != "" && lastMinutes != 0) && (lastHours == "" || lastHours == 0)) {
-            lastSleep.innerHTML = "<p>" + lastMinutes + " Minute(s) of sleep.</p>"
+            lastSleep.innerHTML = "" + lastMinutes + " Minute(s) of sleep."
         }
     }
     else {
