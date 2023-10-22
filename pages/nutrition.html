@@ -2,73 +2,74 @@
 <html lang="en">
 
 <head>
-  <link rel="stylesheet" href="/css/main.css" />
-  <link rel="stylesheet" href="/css/nutrition.css" />
-  <title>Nutrition | Progress</title>
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="/assets/favicon/favicon-32x32.png" sizes="32x32" />
-  <link rel="icon" type="image/png" href="/assets/favicon/favicon-16x16.png" sizes="16x16" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/nutrition.css" />
+    <title>Nutrition | Progress</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/assets/favicon/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="/assets/favicon/favicon-16x16.png" sizes="16x16" />
 </head>
 
 <body onload="setWaterLevel(localStorage.getItem('waterProgress'))">
-  <!-- Site Header and Navigation-->
-  <header>
-    <h1>Progress</h1>
-    <div class="nav-links">
-      <a href="../index.html"><img src="/assets/icons/home.svg" />
-        <p>Home</p>
-      </a>
-      <a href="./nutrition.html"><img src="/assets/icons/water.svg" />
-        <p>Nutrition</p>
-      </a>
-      <a href="./workLife.html"><img src="/assets/icons/work.svg" />
-        <p>Work</p>
-      </a>
-      <a href="./health.html"><img src="/assets/icons/exercise.svg" />
-        <p>Health</p>
-      </a>
-      <a href="./settings.html"><img src="/assets/icons/gear.svg">
-        <p>Settings</p>
-      </a>
-    </div>
-  </header>
-  <h1 class="nutrition-title">Nutrition Stats</h1>
-  <div class="card-container">
-    <div class="card">
-      <h2 id="waterTitle">Water</h2>
-      <div id="water-container">
-        <div id="glass">
-          <div id="water"></div>
-          <div id="waterStats">
-            <p id="waterConsumption">
-              You have drank <span id="waterProgress"></span> of
-              <span id="waterMax"></span> glasses of water today!
-            </p>
-          </div>
+
+    <!-- Site Header and Navigation-->
+    <header>
+        <h1>Progress</h1>
+        <div class="nav-links">
+            <a href="../index.html"><img src="/assets/icons/home.svg" />
+                <p>Home</p>
+            </a>
+            <a href="./nutrition.html"><img src="/assets/icons/water.svg" />
+                <p>Nutrition</p>
+            </a>
+            <a href="./workLife.html"><img src="/assets/icons/work.svg" />
+                <p>Work</p>
+            </a>
+            <a href="./health.html"><img src="/assets/icons/exercise.svg" />
+                <p>Health</p>
+            </a>
+            <a href="./settings.html"><img src="/assets/icons/gear.svg">
+                <p>Settings</p>
+            </a>
         </div>
-        <div id="waterAllTime"></div>
-      </div>
-    </div>
-    <div class="card">
-      <h2>Food</h2>
-      <div class="food-card-stats">
-        <label for="calories-progress">Calories</label>
-        <progress id="calories-progress" max="100" value="1"></progress>
-        <label for="protein-progress">Protein</label>
-        <progress id="protein-progress" max="100" value="0"></progress>
-        <label for="carbs-progress">Carbs</label>
-        <progress id="carbs-progress" max="100" value="0"></progress>
-        <label for="sugar-progress">Sugar</label>
-        <progress id="sugar-progress" max="100" value="0"></progress>
-        <label for="sodium-progress">Sodium</label>
-        <progress id="sodium-progress" max="100" value="0"></progress>
-      </div>
-    </div>
-  </div>
-  </div>
-
-
-  <script src="../scripts/nutrition.js"></script>
+    </header>
+    <main>
+        <h1 class="nutrition-title">Nutrition Stats</h1>
+        <div class="card-container">
+            <div class="card">
+                <h2 id="waterTitle">Water</h2>
+                <div id="water-container">
+                    <div id="glass">
+                        <div id="water"></div>
+                        <div id="waterStats">
+                            <p id="waterConsumption">
+                                You have drank <span id="waterProgress"></span> of
+                                <span id="waterMax"></span> glasses of water today!
+                            </p>
+                        </div>
+                    </div>
+                    <div id="waterAllTime"></div>
+                </div>
+            </div>
+            <div class="card">
+                <h2>Food</h2>
+                <div class="food-card-stats">
+                    <label for="calories-progress">Calories</label>
+                    <progress id="calories-progress" max="100" value="1"></progress>
+                    <label for="protein-progress">Protein</label>
+                    <progress id="protein-progress" max="100" value="0"></progress>
+                    <label for="carbs-progress">Carbs</label>
+                    <progress id="carbs-progress" max="100" value="0"></progress>
+                    <label for="sugar-progress">Sugar</label>
+                    <progress id="sugar-progress" max="100" value="0"></progress>
+                    <label for="sodium-progress">Sodium</label>
+                    <progress id="sodium-progress" max="100" value="0"></progress>
+                </div>
+            </div>
+        </div>
+        </div>
+    </main>
+    <script src="../scripts/nutrition.js"></script>
 </body>
 
 </html>

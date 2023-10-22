@@ -86,10 +86,6 @@ function devValues() {
   setCurrentAmount("sugarCurrentAmount", 35);
   setMaxAmount("sugarMaxAmount", 60);
   setProgress("sugar", "sugarProgress");
-  // Sodium
-  setCurrentAmount("sodiumCurrentAmount", 500);
-  setMaxAmount("sodiumMaxAmount", 2000);
-  setProgress("sodium", "sodiumProgress");
   // Work
   setCurrentAmount("workCurrentAmount", 1);
   setMaxAmount("workMaxAmount", 9);
@@ -126,10 +122,6 @@ function getProgress() {
   document
     .getElementById("sugar-progress-bar")
     .setAttribute("value", localStorage.getItem("sugarProgress"));
-  // Sodium
-  document
-    .getElementById("sodium-progress-bar")
-    .setAttribute("value", localStorage.getItem("sodiumProgress"));
   // Work
   document
     .getElementById("work-progress-bar")
@@ -197,13 +189,13 @@ function changeGreeting() {
   let time = new Date();
   time = time.getHours();
 
-  if (time < 12 && time > 5) {
+  if (time < 12 && time >= 5) {
     greeting.innerHTML = "🌞 Good morning";
   }
   else if (time < 17 && time > 12) {
     greeting.innerHTML = "😎 Good afternoon";
   }
-  else if (time > 17 || time < 5) {
+  else if (time > 17 || time <= 4) {
     greeting.innerHTML = "🌝 Good evening";
   }
 }

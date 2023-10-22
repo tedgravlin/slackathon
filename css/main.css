@@ -62,7 +62,8 @@ header a {
   grid-template-columns: auto auto;
   margin: 8px;
   text-decoration: none;
-  color: black;
+  color: inherit;
+  min-width: 110px;
 }
 
 header a:hover {
@@ -72,8 +73,25 @@ header a:hover {
 
 header img {
   margin: auto;
+  width: 24px;
+  height: 24px;
 }
 
-a:visited {
+a, a:visited {
   color: inherit;
 }
+
+main {
+    animation: slideUp ease-in 0.5s 1;
+}
+
+@keyframes slideUp {
+    0% {
+      opacity: 0%;
+      transform: translateY(10px);
+    }
+    100% {
+      opacity: 100%;
+      transform: translateY(0px);
+    }
+  }

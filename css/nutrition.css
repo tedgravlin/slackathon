@@ -80,6 +80,10 @@ div.food-card-stats progress::-webkit-progress-value {
   background-color: var(--obj-color);
 }
 
+.nutrition-title {
+    text-align:center;
+}
+
 #glass {
   width: 100%;
   height: 55vh;
