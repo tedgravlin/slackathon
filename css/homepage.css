@@ -17,6 +17,12 @@ body {
   .stat-info {
     background-color: var(--obj-color);
   }
+  div.stat progress::-moz-progress-bar {
+    background-color: rgb(134, 134, 240);
+  }
+  div.stat progress::-webkit-progress-value {
+    background-color: rgb(134, 134, 240);
+  }
 }
 
 main {
@@ -107,6 +113,16 @@ div.stat progress {
   background-color: rgba(124, 122, 122, 0.2);
 }
 
+div.stat progress::-webkit-progress-bar {
+  height: 7.5px;
+  border-radius: 24px;
+  background-color: var(--obj-color);
+}
+
+div.stat progress::-webkit-progress-value {
+  border-radius: 24px;
+}
+
 div.stat {
   cursor: pointer;
 }
@@ -157,8 +173,9 @@ div.icon-and-label {
 }
 
 #quote {
+  width: 80%;
+  margin: auto;
   text-align: center;
-  margin-top: 10px;
 }
 
 div.greeting {

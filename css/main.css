@@ -62,7 +62,7 @@ header a {
   grid-template-columns: auto auto;
   margin: 8px;
   text-decoration: none;
-  color: black;
+  color: inherit;
 }
 
 header a:hover {
@@ -74,6 +74,6 @@ header img {
   margin: auto;
 }
 
-a:visited {
+a, a:visited {
   color: inherit;
 }
