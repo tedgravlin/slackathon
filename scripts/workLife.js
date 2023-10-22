@@ -18,6 +18,7 @@ let currHour = 0;
 let currMeridiem = 0;
 
 let strJSON = '{"tasks":[]}';
+let defaultJSON = '{"tasks":[]}';
 let objJSON = null;
 
 function onLoad() {
@@ -31,6 +32,11 @@ function onLoad() {
     if (localStorage.getItem("endTime") != null) {
         endTime.setTime(localStorage.getItem("endTime"));
     } else {
+        endTime.setHours(17, 0, 0);
+    }
+
+    if (startTime.getDay() != d.getDay() || endTime.getDay() != d.getDay()) {
+        startTime.setHours(9, 0, 0);
         endTime.setHours(17, 0, 0);
     }
 
@@ -62,6 +68,8 @@ function timeProgress() {
                 + ')" type="checkbox" id="task' + objJSON['tasks'][task].taskID + '" name=task"'
                 + objJSON['tasks'][task].taskID + '"' + checked + '><label for="task"'
                 + objJSON['tasks'][task].taskID + '>' + objJSON['tasks'][task].taskName + '</label><br>';
+
+            
         }
 
         document.getElementById("taskList").innerHTML = taskList;
@@ -101,6 +109,13 @@ function timeProgress() {
         let d2 = new Date();
         d.setTime(d2.getTime());
 
+        // d.setDate(21);
+
+        if (d2.getDay() != d.getDay()) {
+            strJSON = defaultJSON;
+            localStorage.setItem("tasksJSON", strJSON);
+        }
+
         x = getProgress();
         progress = document.getElementById("workProgress");
 
@@ -131,6 +146,8 @@ function validateForm() {
 
         let startT = (start + "").split(":");
 
+        startTime = new Date();
+
         startTime.setHours(Number(startT[0]));
         startTime.setMinutes(Number(startT[1]));
 
@@ -141,6 +158,8 @@ function validateForm() {
         let end = document.forms["timeForm"]["endTime"].value;
 
         let endT = (end + "").split(":");
+
+        endTime = new Date();
 
         endTime.setHours(Number(endT[0]));
         endTime.setMinutes(Number(endT[1]));
@@ -175,6 +194,8 @@ function addTask() {
 
   strJSON = JSON.stringify(objJSON);
   localStorage.setItem("tasksJSON", strJSON);
+
+  timeProgress();
 }
 
 function updateCompletion(x) {
