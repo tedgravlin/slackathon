@@ -1,27 +1,27 @@
 function onLoad() {
-  localStorage.setItem("sleepGoal", 8 * 60);
   let lastHours = parseInt(localStorage.getItem("lastSleepHours"));
   let lastMinutes = parseInt(localStorage.getItem("lastSleepMinutes"));
   let lastSleepTotal = lastHours * 60 + lastMinutes;
-  console.log(localStorage.getItem("sleepGoal"));
+
+  console.log(localStorage.getItem("sleepMaxAmount"));
   console.log(lastSleepTotal);
-  getsleepGoal();
+  setSleepInfo();
   lastHours = parseInt(localStorage.getItem("lastSleepHours"));
   lastMinutes = parseInt(localStorage.getItem("lastSleepMinutes"));
   lastSleepTotal = lastHours * 60 + lastMinutes;
-  setSleepLevel((lastSleepTotal / localStorage.getItem("sleepGoal")) * 100);
+  setSleepLevel((lastSleepTotal / localStorage.getItem("sleepMaxAmount")) * 100);
 }
 
-function getsleepGoal() {
+function setSleepInfo() {
   let sleepGoalOutput = document.getElementById("sleep-goal");
   let lastSleep = document.getElementById("last-night-sleep");
 
   let lastHours = localStorage.getItem("lastSleepHours");
   let lastMinutes = localStorage.getItem("lastSleepMinutes");
 
-  let sleepGoal = localStorage.getItem("sleepMaxAmount");
+  let sleepGoal = localStorage.getItem("sleepMaxAmount") / 60;
 
-  sleepGoalOutput.innerHTML = "<p>Sleep Goal: " + sleepGoal + "</p>";
+  sleepGoalOutput.innerHTML = "<p>Sleep Goal: " + sleepGoal + " hours</p>";
 
   if (lastHours != null && lastMinutes != null) {
     lastSleep.innerHTML =

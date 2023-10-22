@@ -61,13 +61,13 @@
                 <form>
                     <div class="label-box">
                         <label>Sleep:</label>
-                        <input type="number" class="inputs" placeholder="Hours"></input>
+                        <input id="sleep-max-input" type="number" class="inputs" placeholder="Hours"></input>
                         <button onclick="setMax('sleep')" id="sleep-submit">Submit</button>
                     </div>
                     <div class="label-box">
                         <label>Exercise:</label>
-                        <input type="number" class="inputs" placeholder="Minutes"></input>
-                        <button id="exercise-submit">Submit</button>
+                        <input id="exercise-max-input" type="number" class="inputs" placeholder="Minutes"></input>
+                        <button onclick="setMax('exercise') "id="exercise-submit">Submit</button>
                     </div>
                 </form>
             </div>
