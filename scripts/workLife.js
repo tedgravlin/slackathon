@@ -53,17 +53,19 @@ function onLoad() {
 
 function timeProgress() {
     
-    let taskList = "";
-
     if (localStorage.getItem("tasksJSON") != null) {
+        let taskList = "";
         for (let task in objJSON['tasks']) {
-            taskList += '<input type="checkbox" id="task' + objJSON['tasks'][task].taskID + '" name=task"'
-                + objJSON['tasks'][task].taskID + '"><label for="task"' + objJSON['tasks'][task].taskID + '>'
-                + objJSON['tasks'][task].taskName + '</label><br>';
+            let checked = objJSON['tasks'][task].status == "complete" ? " checked=true" : "";
+            console.log(objJSON['tasks'][task].taskID + ", " + checked);
+            taskList += '<input onclick="updateCompletion(' + objJSON['tasks'][task].taskID
+                + ')" type="checkbox" id="task' + objJSON['tasks'][task].taskID + '" name=task"'
+                + objJSON['tasks'][task].taskID + '"' + checked + '><label for="task"'
+                + objJSON['tasks'][task].taskID + '>' + objJSON['tasks'][task].taskName + '</label><br>';
         }
-    }
 
-    document.getElementById("taskList").innerHTML = taskList;
+        document.getElementById("taskList").innerHTML = taskList;
+    }
 
     let x = getProgress();
     let progress = document.getElementById("workProgress");
@@ -173,4 +175,13 @@ function addTask() {
 
   strJSON = JSON.stringify(objJSON);
   localStorage.setItem("tasksJSON", strJSON);
+}
+
+function updateCompletion(x) {
+    console.log(objJSON['tasks'][x]);
+
+    objJSON['tasks'][x].status = objJSON['tasks'][x].status == "incomplete" ? "complete" : "incomplete";
+
+    strJSON = JSON.stringify(objJSON);
+    localStorage.setItem("tasksJSON", strJSON);
 }
