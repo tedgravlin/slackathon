@@ -29,10 +29,6 @@ h1.nutrition-title {
   width: 75%;
 }
 
-div.food-card-stats {
-
-}
-
 div.food-card-stats * {
   display: block;
 }
@@ -53,6 +49,7 @@ div.food-card-stats progress {
   -moz-appearance: none;
   appearance: none;
   margin-left: 1em;
+  background-color: rgba(124, 122, 122, 0.2);
 }
 
 div.food-card-stats progress::-webkit-progress-bar {
