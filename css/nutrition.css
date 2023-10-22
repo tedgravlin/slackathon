@@ -50,6 +50,7 @@ div.food-card-stats progress {
   appearance: none;
   margin-left: 1em;
   background-color: rgba(124, 122, 122, 0.2);
+  overflow: hidden;
 }
 
 div.food-card-stats progress::-webkit-progress-bar {
@@ -62,7 +63,7 @@ div.food-card-stats progress::-webkit-progress-value {
   border-top-left-radius: 24px;
   border-bottom-left-radius: 24px;
 }
- 
+
 .header {
   overflow: hidden;
   padding: 20px 10px;
@@ -81,7 +82,7 @@ div.food-card-stats progress::-webkit-progress-value {
 }
 
 .nutrition-title {
-    text-align:center;
+  text-align: center;
 }
 
 #glass {
@@ -136,7 +137,6 @@ div.food-card-stats progress::-webkit-progress-value {
     background: rgba(255, 255, 255, 0.2);
   }
   #water {
-
     background: rgba(106, 137, 165, 0.4);
   }
 }
