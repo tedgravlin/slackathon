@@ -116,6 +116,43 @@ function devValues() {
   setCurrentAmount("exerciseCurrentAmount", 5);
   setMaxAmount("exerciseMaxAmount", 60);
   setProgress("exercise", "exerciseProgress");
+
+  // Times
+  startTime.setHours(7, 0, 0);
+  localStorage.setItem("startTime", startTime.getTime());
+  endTime.setHours(17, 0, 0);
+  localStorage.setItem("endTime", endTime.getTime());
+
+  let workProgress = document.getElementById("work-progress-bar");
+
+  let startWorkTime =
+    localStorage.getItem("startTime") != null
+      ? localStorage.getItem("startTime")
+      : "";
+  let endWorkTime =
+    localStorage.getItem("endTime") != null
+      ? localStorage.getItem("endTime")
+      : "";
+
+  let timeDiff =
+    Math.round(
+      ((d.getTime() - startTime.getTime()) /
+        (endTime.getTime() - startTime.getTime())) *
+        10000
+    ) / 100;
+
+  workProgress.value = startWorkTime != "" && endWorkTime != "" ? timeDiff : 0;
+
+  // tasks
+  let strJSON = '{"tasks":[]}'
+  objJSON = JSON.parse(strJSON);
+  objJSON['tasks'].push({"taskID":0, "taskName":"Do career fair", "status":"complete"});
+  objJSON['tasks'].push({"taskID":1, "taskName":"Present at hackathon", "status":"incomplete"});
+  objJSON['tasks'].push({"taskID":2, "taskName":"Drive home", "status":"incomplete"});
+
+  strJSON = JSON.stringify(objJSON);
+  localStorage.setItem("tasksJSON", strJSON);
+
   getProgress();
 }
 
