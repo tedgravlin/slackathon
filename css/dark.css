@@ -1,5 +1,7 @@
-:root {
-  --dark-bg-color: #333;
-  --dark-obj-color: #444;
-  --dark-text: #fff;
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: #333 !important;
+    --obj-color: #444 !important;
+    --text: #fff !important;
+  }
 }

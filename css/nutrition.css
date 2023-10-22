@@ -2,8 +2,8 @@
 @import "light.css";
 
 body {
-  background-color: var(--light-bg-color);
-  color: var(--light-text);
+  background-color: var(--bg-color);
+  color: var(--text);
 }
 
 div.card-container {
@@ -64,7 +64,6 @@ div.food-card-stats progress::-webkit-progress-value {
   background-color: #0064b4;
   border-top-left-radius: 24px;
   border-bottom-left-radius: 24px;
-  v
 }
  
 .header {
@@ -81,7 +80,7 @@ div.food-card-stats progress::-webkit-progress-value {
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   transition: 0.5s;
-  background-color: var(--light-obj-color);
+  background-color: var(--obj-color);
 }
 
 #glass {
@@ -120,8 +119,8 @@ div.food-card-stats progress::-webkit-progress-value {
 
 @media (prefers-color-scheme: dark) {
   body {
-    background-color: var(--dark-bg-color);
-    color: var(--dark-text);
+    background-color: var(--bg-color);
+    color: var(--text);
   }
   img {
     filter: invert(100%);
@@ -129,7 +128,7 @@ div.food-card-stats progress::-webkit-progress-value {
 
   .header {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    background-color: var(--dark-obj-color);
+    background-color: var(--obj-color);
   }
 
   #glass {

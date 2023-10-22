@@ -2,24 +2,20 @@
 @import "light.css";
 
 body {
-  background-color: var(--light-bg-color);
-  color: var(--light-text);
+  background-color: var(--bg-color);
+  color: var(--text);
 }
 
 .stat-info {
-  background-color: var(--light-obj-color);
+  background-color: var(--obj-color);
 }
 
 @media (prefers-color-scheme: dark) {
-  body {
-    background-color: var(--dark-bg-color);
-    color: var(--dark-text);
-  }
   img {
     filter: invert(100%);
   }
   .stat-info {
-    background-color: var(--dark-obj-color);
+    background-color: var(--obj-color);
   }
 }
 
@@ -48,6 +44,7 @@ div.card {
   border: 2px solid grey;
   border-radius: 24px;
   padding: 1em;
+  background-color: var(--bg-color);
 }
 
 .nutrition-card {
