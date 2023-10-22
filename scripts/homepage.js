@@ -1,6 +1,7 @@
 window.addEventListener("load", (event) => {
   dailyQuote();
   getProgress();
+  changeGreeting();
 });
 
 function devValues() {
@@ -100,6 +101,22 @@ function toggleStatInfo(statType) {
     stat.style.borderBottomLeftRadius = "10px";
     stat.style.borderBottomRightRadius = "10px";
     stat.style.borderBottom = "2px solid grey";
+  }
+}
+
+function changeGreeting() {
+  let greeting = document.getElementById('greeting');
+  let time = new Date();
+  time = time.getHours();
+
+  if (time < 12 && time > 5) {
+    greeting.innerHTML = "🌞 Good morning";
+  }
+  else if (time < 17 && time > 12) {
+    greeting.innerHTML = "😎 Good afternoon";
+  }
+  else if (time > 17) {
+    greeting.innerHTML = "🌝 Good evening";
   }
 }
 

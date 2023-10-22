@@ -1,47 +1,59 @@
-@import "main.css";
+@import "dark.css";
+@import "light.css";
+
+body {
+  background-color: var(--light-bg-color);
+  color: var(--light-text);
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: var(--dark-bg-color);
+    color: var(--dark-text);
+  }
+}
 
 .card {
-    margin: 0px 10px;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    transition: 0.3s;
+  margin: 0px 10px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  border: 1px solid grey;
 }
-  
 
 .card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
-  
- 
+
 .container {
-    padding: 2px 16px;
+  padding: 2px 16px;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 p.sleep-goal {
-    display:inline-block;
+  display: inline-block;
 }
 
 h2 {
-    text-align:center;
+  text-align: center;
 }
 
 .settings-button {
-    display:inline-block;
-    border:none;
-    background-color:white;
-    height:0px;
-    padding: 0;
-    cursor:pointer;
+  display: inline-block;
+  border: none;
+  background-color: white;
+  height: 0px;
+  padding: 0;
+  cursor: pointer;
 }
 
 .input-box {
-    width:15%;
+  width: 15%;
 }
 
 #last-night-sleep {
-    display:inline-block;
+  display: inline-block;
 }

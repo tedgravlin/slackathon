@@ -1,104 +1,141 @@
+@import "dark.css";
+@import "light.css";
+
+body {
+  background-color: var(--light-bg-color);
+  color: var(--light-text);
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: var(--dark-bg-color);
+    color: var(--dark-text);
+  }
+}
+
+main {
+  animation: slideUp ease-in 0.5s 1;
+}
+
 div.card-container {
-    display: grid;
-    row-gap: 1em;
-    grid-template-columns: auto;
-    margin: auto;
+  display: grid;
+  row-gap: 1em;
+  grid-template-columns: auto;
+  margin: auto;
 }
 
 div.two-grid-card-container {
-    display: grid;
-    row-gap: 1em;
-    grid-template-columns: auto auto;
-    margin: auto;
-    width: 50vw;
+  display: grid;
+  row-gap: 1em;
+  grid-template-columns: auto auto;
+  margin: auto;
+  width: 50vw;
 }
 
 div.card {
-    width: 20vw;
-    margin: auto;
-    border: 2px solid grey;
-    border-radius: 24px;
-    padding: 1em;
+  width: 20vw;
+  margin: auto;
+  border: 2px solid grey;
+  border-radius: 24px;
+  padding: 1em;
 }
 
 .nutrition-card {
-    height: 90% !important;
+  height: 90% !important;
 }
 
 div.quote-card {
-    border: 2px solid grey;
-    border-radius: 24px;
-    padding: 1em;
-    width: 45vw;
-    margin: 1em auto 1em auto;
+  border: 2px solid grey;
+  border-radius: 24px;
+  padding: 1em;
+  width: 45vw;
+  margin: 1em auto 1em auto;
 }
 
 div.card h2 {
-    text-align: center;
-    margin: 0;
-    margin-bottom: 1em;
+  text-align: center;
+  margin: 0;
+  margin-bottom: 1em;
 }
 
 div.stat {
-    border: 2px solid grey;
-    border-radius: 10px;
-    display: grid;
-    padding: 0.5em 1em 0.5em 1em;
-    column-gap: 1em;
-    width: 75%;
-    margin: auto;
-    grid-template-columns: auto;
-    margin-bottom: 0.5em;
+  border: 2px solid grey;
+  border-radius: 10px;
+  display: grid;
+  padding: 0.5em 1em 0.5em 1em;
+  column-gap: 1em;
+  width: 75%;
+  margin: auto;
+  grid-template-columns: auto;
+  margin-bottom: 0.5em;
 }
 
 div.stat img {
-    justify-self: left;
+  justify-self: left;
 }
 
 div.stat label {
-    justify-self: left;
-    pointer-events: none;
+  justify-self: left;
+  pointer-events: none;
 }
 
 div.stat progress {
-    width: 100%;
+  width: 100%;
 }
 
 div.stat {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 div.stat:hover {
-    background-color: rgba(0, 72, 255, 0.187);
+  background-color: rgba(0, 72, 255, 0.187);
 }
 
 div.stat-info {
-    display: none;
-    text-align: center;
-    border: 2px solid grey;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    border-top: 0px;
-    margin: 0 auto 0.5em auto;
-    width: 75%;
-    padding: 0.5em 1em 0.5em 1em;
+  display: none;
+  text-align: center;
+  border: 2px solid grey;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-top: 0px;
+  margin: 0 auto 0.5em auto;
+  width: 75%;
+  padding: 0.5em 1em 0.5em 1em;
 }
 
 div.stat-info input {
-    width: 50%;
+  width: 50%;
 }
 
 div.icon-and-label {
-    display: grid;
-    grid-template-columns: 0.25fr 0.75fr;
+  display: grid;
+  grid-template-columns: 0.25fr 0.75fr;
 }
 
 #author {
-    text-align: center;
-    margin-top: 1em;
+  text-align: center;
+  margin-top: 1em;
 }
 
 #quote {
-    text-align: center;
-    margin-top: 10px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+div.greeting {
+  width: 50%;
+  margin: auto;
+  font-size: 30px;
+  text-align: center;
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0%;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 100%;
+    transform: translateY(0px);
+  }
 }
