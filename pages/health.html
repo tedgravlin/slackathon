@@ -45,41 +45,42 @@
     <!-- Main Page -->
     <main>
         <h1 class="health-title">Health Stats</h1>
-        <div class="card container sleep" id="sleep">
+        <div class="sleep-card card" id="sleep">
             <h2>Sleep</h2>
+            <div class="sleep-progress" id="sleep-container">
+                <div id="sleep-amount"></div>
+            </div>
             <p class="sleep-goal" id="sleep-goal">Sleep Goal:</p>
             <div id="ex-div">
                 <form name="sleep-form" method="get">
                     <label> Last Nights Sleep: </label>
                     <p id="last-night-sleep"></p>
-                    <div>
+                    <div class="sleep-inputs">
                         <input min="0" max="24" class="input-box" type="number" id="sleep-hours" placeholder="hours" />
                         <input min="0" max="60" class="input-box" type="number" id="sleep-minutes"
                             placeholder="minutes" />
                         <button onclick="setLastSleep()">Submit!</button>
                     </div>
                 </form>
-                <div id="sleep-container">
-                    <div id="sleep-amount"></div>
-                </div>
+
             </div>
         </div>
-        <div class="card container sleep" id="exercise">
+        <div class="exercise-card card" id="exercise">
             <h2>Exercise</h2>
+            <div class="sleep-progress" id="racetrack">
+                <div id="runner"></div>
+            </div>
             <p class="exercise-goal" id="exercise-goal">Exercise Goal:</p>
             <div id="ex-div">
                 <form name="exercise-form" method="get">
                     <label>Todays Exercise: </label>
                     <p id="last-exercise"></p>
-                    <div>
+                    <div class="exercise-inputs">
                         <input min="0" max="60" class="input-box" type="number" id="exercise-minutes"
                             placeholder="minutes" />
                         <button onclick="addExercise()">Submit!</button>
                     </div>
                 </form>
-                <div id="racetrack">
-                    <div id="runner"></div>
-                </div>
             </div>
         </div>
     </main>
