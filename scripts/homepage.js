@@ -58,8 +58,8 @@ function devValues() {
   setMaxAmount("workMaxAmount", 9);
   setProgress("work", "workProgress");
   // Sleep
-  setCurrentAmount("sleepCurrentAmount", 8);
-  setMaxAmount("sleepMaxAmount", 9);
+  setCurrentAmount("sleepCurrentAmount", 540);
+  setMaxAmount("sleepMaxAmount", 720);
   setProgress("sleep", "sleepProgress");
   // Exercise
   setCurrentAmount("exerciseCurrentAmount", 5);
