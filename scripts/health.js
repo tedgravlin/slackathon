@@ -15,7 +15,7 @@ function getsleepGoal() {
   let lastHours = localStorage.getItem("lastSleepHours");
   let lastMinutes = localStorage.getItem("lastSleepMinutes");
 
-  let sleepGoal = localStorage.getItem("sleepGoal");
+  let sleepGoal = localStorage.getItem("sleepMaxAmount");
 
   sleepGoalOutput.innerHTML = "<p>Sleep Goal: " + sleepGoal + "</p>";
   console.log(lastHours);
