@@ -30,7 +30,7 @@ body {
 
 .container {
   padding: 2px 16px;
-  margin-bottom:20px;
+  margin-bottom: 20px;
 }
 
 a {
@@ -56,7 +56,7 @@ h2 {
 
 .input-box {
   width: 15%;
-  margin-bottom:15px;
+  margin-bottom: 15px;
 }
 
 #last-night-sleep {
@@ -64,17 +64,17 @@ h2 {
 }
 
 #water {
-    background-color: blue;
-    width:0%;
-    height:100%;
+  background-color: blue;
+  width: 1%;
+  height: 100%;
 }
 
 #glass {
-    width: 85vh;
-    height: 50px;
-    background: rgba(124, 122, 122, 0.2);
-    position: relative;
-    margin: auto;
-    overflow: hidden;
-    border-radius: 10px;
+  width: 85vh;
+  height: 50px;
+  background: rgba(124, 122, 122, 0.2);
+  position: relative;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 10px;
 }
