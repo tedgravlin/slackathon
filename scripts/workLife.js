@@ -41,11 +41,13 @@ function onLoad() {
     }
 
     startHour = startTime.getHours() > 12 ? startTime.getHours() - 12 : startTime.getHours();
+    startHour = startHour == 0 ? 12 : startHour;
     endHour = endTime.getHours() > 12 ? endTime.getHours() - 12: endTime.getHours();
+    endHour = endHour == 0 ? 12 : endHour;
     startMinutes = (startTime.getMinutes() + "").padStart(2, '0');
     endMinutes = (endTime.getMinutes() + "").padStart(2, '0');
-    startMeridiem = startTime.getHours() > 12 ? "pm " : "am ";
-    endMeridiem = endTime.getHours() > 12 ? "pm " : "am ";
+    startMeridiem = startTime.getHours() >= 12 ? "pm " : "am ";
+    endMeridiem = endTime.getHours() >= 12 ? "pm " : "am ";
 
     getJSON();
 
