@@ -9,6 +9,7 @@ function onLoad() {
   let lastMinutes = parseInt(localStorage.getItem("lastSleepMinutes"));
   let lastSleepTotal = lastHours * 60 + lastMinutes;
 
+
   console.log(localStorage.getItem("sleepMaxAmount"));
   console.log(lastSleepTotal);
   setSleepInfo();
@@ -69,6 +70,7 @@ function setLastSleep() {
   let lastSleep = document.getElementById("last-night-sleep");
   let lastHours = document.getElementById("sleep-hours").value;
   let lastMinutes = document.getElementById("sleep-minutes").value;
+  let lastSleepTotal = lastHours * 60 + lastMinutes;
 
   console.log(lastHours);
   console.log(lastMinutes);
@@ -76,6 +78,7 @@ function setLastSleep() {
   lastSleep.innerHTML = "<p>" + lastHours + " " + lastMinutes + "</p>";
   localStorage.setItem("lastSleepHours", lastHours);
   localStorage.setItem("lastSleepMinutes", lastMinutes);
+  localStorage.setItem("sleepCurrentAmount", lastSleepTotal)
 }
 
 function setSleepLevel(x) {
