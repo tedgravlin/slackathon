@@ -89,7 +89,7 @@
                 <div onclick="toggleStatInfo('sodium')" class="stat">
                     <div class="icon-and-label">
                         <img src="/assets/icons/food.svg" />
-                        <label for="sodium-progress-bar">Calories</label>
+                        <label for="sodium-progress-bar">Sodium</label>
                     </div>
                     <progress id="sodium-progress-bar" max="100" value="0"></progress>
                 </div>
@@ -154,6 +154,38 @@
             <p>Calories</p>
             <input type="number" id="calories-input" placeholder="Calories" />
             <button onclick="addProgress('calories', 'caloriesCurrentAmount', 'caloriesProgress')">
+                Add
+            </button>
+            <button onclick="closeOverlay()">Close</button>
+        </div>
+        <div class="stat-info" id="protein-stat-info">
+            <p>Protein</p>
+            <input type="number" id="protein-input" placeholder="Protein" />
+            <button onclick="addProgress('protein', 'proteinCurrentAmount', 'proteinProgress')">
+                Add
+            </button>
+            <button onclick="closeOverlay()">Close</button>
+        </div>
+        <div class="stat-info" id="carbs-stat-info">
+            <p>Carbs</p>
+            <input type="number" id="carbs-input" placeholder="Carbs" />
+            <button onclick="addProgress('carbs', 'carbsCurrentAmount', 'carbsProgress')">
+                Add
+            </button>
+            <button onclick="closeOverlay()">Close</button>
+        </div>
+        <div class="stat-info" id="sugar-stat-info">
+            <p>Sugar</p>
+            <input type="number" id="sugar-input" placeholder="Sugar" />
+            <button onclick="addProgress('sugar', 'sugarCurrentAmount', 'sugarProgress')">
+                Add
+            </button>
+            <button onclick="closeOverlay()">Close</button>
+        </div>
+        <div class="stat-info" id="sodium-stat-info">
+            <p>Sodium</p>
+            <input type="number" id="sodium-input" placeholder="Sodium" />
+            <button onclick="addProgress('sodium', 'sodiumCurrentAmount', 'sodiumProgress')">
                 Add
             </button>
             <button onclick="closeOverlay()">Close</button>

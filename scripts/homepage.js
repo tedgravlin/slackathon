@@ -95,8 +95,8 @@ function devValues() {
   setMaxAmount("workMaxAmount", 9);
   setProgress("work", "workProgress");
   // Sleep
-  setCurrentAmount("sleepCurrentAmount", 8);
-  setMaxAmount("sleepMaxAmount", 9);
+  setCurrentAmount("sleepCurrentAmount", 360);
+  setMaxAmount("sleepMaxAmount", 480);
   setProgress("sleep", "sleepProgress");
   // Exercise
   setCurrentAmount("exerciseCurrentAmount", 5);
@@ -203,7 +203,7 @@ function changeGreeting() {
   else if (time < 17 && time > 12) {
     greeting.innerHTML = "😎 Good afternoon";
   }
-  else if (time > 17) {
+  else if (time > 17 || time < 5) {
     greeting.innerHTML = "🌝 Good evening";
   }
 }
