@@ -17,7 +17,7 @@ let currTime = "";
 let currHour = 0;
 let currMeridiem = 0;
 
-let strJSON = "";
+let strJSON = '{"tasks":[]}';
 let objJSON = null;
 
 function onLoad() {
@@ -40,10 +40,18 @@ function onLoad() {
     startMeridiem = startTime.getHours() > 12 ? "pm " : "am ";
     endMeridiem = endTime.getHours() > 12 ? "pm " : "am ";
 
+    getJSON();
+
     timeProgress();
 }
 
 function timeProgress() {
+    
+    let taskList = "";
+
+    for (let task in objJSON['tasks']) {
+        taskList += '<input type="checkbox" id="task' + task.taskName + '">';
+    }
 
     let x = getProgress();
     let progress = document.getElementById("workProgress");
@@ -148,7 +156,13 @@ function getJSON() {
     }
 }
 
-function setJSON() {
-    strJSON = JSON.stringify(objJSON);
-    localStorage.setItem("JSON", strJSON);
+function addTask() {
+    let task = prompt("Please enter the name of the task", "");
+  if (task != null) {
+    objJSON = JSON.parse(strJSON);
+    objJSON['tasks'].push({"taskID":objJSON['tasks'].length, "taskName":task, "status":"incomplete"});
+  }
+
+  strJSON = JSON.stringify(objJSON);
+  localStorage.setItem("JSON", strJSON);
 }
