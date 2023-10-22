@@ -26,18 +26,18 @@ function onLoad() {
     if (localStorage.getItem("startTime") != null) {
         startTime.setTime(localStorage.getItem("startTime"));
     } else {
-        startTime.setHours(9, 0, 0);
+        startTime.setHours(23, 59, 59);
     }
 
     if (localStorage.getItem("endTime") != null) {
         endTime.setTime(localStorage.getItem("endTime"));
     } else {
-        endTime.setHours(17, 0, 0);
+        endTime.setHours(23, 59, 59);
     }
 
     if (startTime.getDay() != d.getDay() || endTime.getDay() != d.getDay()) {
-        startTime.setHours(9, 0, 0);
-        endTime.setHours(17, 0, 0);
+        startTime.setHours(23, 59, 59);
+        endTime.setHours(23, 59, 59);
     }
 
     document.getElementById("startTime").value = (startTime.getHours() + "").padStart(2, '0')

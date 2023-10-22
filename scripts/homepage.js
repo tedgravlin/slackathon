@@ -2,7 +2,31 @@ window.addEventListener("load", (event) => {
   dailyQuote();
   getProgress();
   changeGreeting();
+  onWorkLoad();
 });
+
+function onWorkLoad() {
+
+  // Set workProgress bar
+  let workProgress = document.getElementById("work-progress-bar");
+
+  let d = new Date();
+  let startTime = new Date();
+  let endTime = new Date();
+
+  let startWorkTime = localStorage.getItem("startTime") != null ? localStorage.getItem("startTime") : "";
+  let endWorkTime = localStorage.getItem("endTime") != null ? localStorage.getItem("endTime") : "";
+
+  startTime.setTime(startWorkTime);
+  endTime.setTime(endWorkTime);
+
+  if (startWorkTime != "" && endWorkTime != "") {
+    workProgress.value =  Math.round((d.getTime() - startTime.getTime())
+      / (endTime.getTime() - startTime.getTime())*10000) / 100;
+  } else {
+    workProgress.value = 0;
+  }
+}
 
 function devValues() {
   // Water
