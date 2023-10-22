@@ -133,9 +133,6 @@ div.food-card-stats progress::-webkit-progress-value {
     background-color: var(--obj-color);
   }
 
-  #glass {
-    background: rgba(255, 255, 255, 0.2);
-  }
   #water {
     background: rgba(106, 137, 165, 0.4);
   }
