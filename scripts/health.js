@@ -13,6 +13,8 @@ function onLoad() {
   
   sleepCurrent = localStorage.getItem("sleepCurrentAmount") != null ? parseInt(localStorage.getItem("sleepCurrentAmount")) : 0;
 
+  console.log(sleepCurrent);
+
   lastHours = Math.round(sleepCurrent / 60);
   lastMinutes = sleepCurrent % 60;
 
@@ -26,7 +28,7 @@ function onLoad() {
 
   sleepMax = localStorage.getItem("sleepMaxAmount") != null ? parseInt(localStorage.getItem("sleepMaxAmount")) : 1;
 
-  setSleepLevel(Math.round((sleepCurrent / sleepMax) * 10_000) / 100);
+  setSleepLevel(Math.round((sleepCurrent / sleepMax) * 10000) / 100);
     
   setExerciseValues();
 
@@ -44,10 +46,10 @@ function setSleepInfo() {
 
   let sleepMessage = "";
 
-  sleepMessage += lastHours != 0 ? lastHours + " Hour(s)" : "";
+  sleepMessage += (lastHours != 0 && !isNaN(lastHours)) ? lastHours + " Hour(s)" : "";
   sleepMessage += (sleepMessage != "" && lastMinutes != 0) ? ", " : "";
-  sleepMessage += lastMinutes != 0 ? lastMinutes + " Minute(s) of sleep." : "";
-  sleepMessage = sleepMessage != "" ? sleepMessage : "Get some sleep!";
+  sleepMessage += (lastMinutes != 0 && !isNaN(lastMinutes)) ? lastMinutes + " Minute(s)" : "";
+  sleepMessage += sleepMessage != "" ? " of sleep." : "Get some sleep!";
 
   lastSleep.innerHTML = sleepMessage;
 
@@ -56,8 +58,12 @@ function setSleepInfo() {
 }
 
 function setLastSleep() {
-  let lastHours = document.getElementById("sleep-hours").value;
-  let lastMinutes = document.getElementById("sleep-minutes").value;
+  let lastHours = document.getElementById("sleep-hours").value != ""
+    ? document.getElementById("sleep-hours").value : 0;
+  let lastMinutes = document.getElementById("sleep-minutes").value != ""
+    ? document.getElementById("sleep-minutes").value : 0;
+
+  console.log(lastHours + ", " + lastMinutes);
 
   lastHours = parseInt(lastHours);
   lastMinutes = parseInt(lastMinutes);
@@ -101,7 +107,8 @@ function exerciseProgress(x) {
 }
 
 function addExercise() {
-    let workoutMinutes = parseInt(document.getElementById("exercise-minutes").value);
+    let workoutMinutes = document.getElementById("exercise-minutes").value != ""
+    ? document.getElementById("exercise-minutes").value : 0;
 
     let prevWorkoutMinutes = localStorage.getItem("exerciseCurrentAmmount") != null ?
       parseInt(localStorage.getItem("exerciseCurrentAmount")) : 0;
