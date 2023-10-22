@@ -62,6 +62,9 @@ body {
     background-color: var(--dark-bg-color);
     color: var(--dark-text);
   }
+  img {
+    filter: invert(100%);
+  }
 
   .header {
     overflow: hidden;

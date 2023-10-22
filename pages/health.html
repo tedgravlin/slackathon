@@ -24,7 +24,7 @@
     />
   </head>
 
-  <body onload="getSleepGoal()">
+  <body onload="onLoad()">
     <!-- Site Header and Navigation-->
     <header>
       <div class="nav-links">
@@ -78,10 +78,36 @@
             <button onclick="setLastSleep()">Submit!</button>
           </div>
         </form>
+        <div id="glass">
+            <div id="water">
+            </div>
+        </div>
       </div>
-      <div class="card container">
-        <p>Exercise</p>
-      </div>
+      <div class="card container sleep" id="exercise">
+        <h2>Exercise</h2>
+        <p class="exercise-goal" id="sleep-goal">Exercise Goal:</p>
+        <form name="exercise-form" method="get">
+          <label>Todays Exercise: </label>
+          <p id="last-exercise"></p>
+          <div>
+            <input
+              min="0"
+              max="24"
+              class="input-box"
+              type="number"
+              id="exercise-hours"
+              placeholder="hours"
+            />
+            <input
+              min="0"
+              max="60"
+              class="input-box"
+              type="number"
+              id="exercise-minutes"
+              placeholder="minutes"
+            />
+            <button onclick="setLastSleep()">Submit!</button>
+          </div>
     </main>
   </body>
 </html>
